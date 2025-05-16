@@ -1,17 +1,16 @@
-'use client';
 import { Label } from '../label';
 import { cn } from '@/lib/utils';
 import { Check } from 'lucide-react';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
-import React, { useState, useEffect } from 'react';
+import type { CheckedState } from '@radix-ui/react-checkbox';
+import React from 'react';
 
 export type CheckBoxProps = {
   title?: string;
   description?: string;
-  status?: boolean;
   checked?: boolean;
   disabled?: boolean;
-  onClick?: () => void;
+  onCheckedChange?: (checked: boolean) => void;
   className?: string;
   innerClass?: string;
   titleClass?: string;
@@ -22,27 +21,18 @@ export type CheckBoxProps = {
 const Checkbox = ({
   title,
   description = '',
-  checked = false,
+  checked = false, //Controlled checked state. Pass true/false from parent.
   disabled = false,
   className,
   innerClass,
   titleClass,
   descriptionClass,
   checkClass,
-  onClick,
+  onCheckedChange, //Handler for checked state change. Receives boolean value.
 }: CheckBoxProps) => {
-  const [select, setSelect] = useState<boolean>(checked);
-
-  useEffect(() => {
-    setSelect(checked);
-  }, [checked]);
-
-  const handleCheckedChange = (newValue: boolean) => {
-    if (!disabled) {
-      setSelect(newValue === true);
-      if (onClick) {
-        onClick();
-      }
+  const handleCheckedChange = (newValue: CheckedState) => {
+    if (!disabled && onCheckedChange) {
+      onCheckedChange(newValue === true);
     }
   };
 
@@ -54,7 +44,7 @@ const Checkbox = ({
       )}
     >
       <CheckboxPrimitive.Root
-        checked={select}
+        checked={checked}
         disabled={disabled}
         onCheckedChange={handleCheckedChange}
         className={cn(
