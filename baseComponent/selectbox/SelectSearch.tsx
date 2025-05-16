@@ -1,17 +1,13 @@
 import React from 'react';
 import { Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-interface IOptions {
-  label: string;
-  [key: string]: string | number | boolean | undefined;
-}
+import { SelectBoxOption } from './index';
 
 type SelectSearchProps = {
   className?: string;
   searchPlaceholder?: string;
-  options?: IOptions[];
-  setFilteredOptions: (options: IOptions[]) => void;
+  options?: SelectBoxOption[];
+  setFilteredOptions: (options: SelectBoxOption[]) => void;
 };
 
 function SelectSearch({
