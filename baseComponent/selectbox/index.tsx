@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   Select,
   SelectContent,
@@ -47,7 +45,10 @@ export type SelectBoxProps = {
   tooltipText?: string;
   multipleCheck?: boolean;
   onMultiChange?: (values: string[]) => void;
-  selectedValues?: string[];
+  filteredOptions: SelectBoxOption[];
+  setFilteredOptions: (options: SelectBoxOption[]) => void;
+  selectedItems: string[];
+  setSelectedItems: (items: string[]) => void;
 };
 
 export const SelectBox = ({
@@ -70,17 +71,11 @@ export const SelectBox = ({
   tooltipText,
   multipleCheck,
   onMultiChange,
-  selectedValues = [],
+  filteredOptions, // The filtered list of options to display in the dropdown
+  setFilteredOptions, // Function to update the filtered options (used for search functionality)
+  selectedItems, // The currently selected items (for multi-select scenarios)
+  setSelectedItems, // Function to update the selected items (for multi-select scenarios)
 }: SelectBoxProps) => {
-  const [filteredOptions, setFilteredOptions] =
-    useState<SelectBoxOption[]>(options);
-  const [selectedItems, setSelectedItems] = useState<string[]>(selectedValues);
-  useEffect(() => {
-    if (JSON.stringify(filteredOptions) !== JSON.stringify(options)) {
-      setFilteredOptions(options);
-    }
-  }, [options]);
-
   const updateFilterOption = (option: SelectBoxOption[]) => {
     setFilteredOptions(option);
   };
@@ -92,7 +87,6 @@ export const SelectBox = ({
     setSelectedItems(newSelectedItems);
     onMultiChange?.(newSelectedItems);
   };
-
   return (
     <div className={cn('flex flex-col gap-1 w-full', className)}>
       {title?.length || requiredField ? (
