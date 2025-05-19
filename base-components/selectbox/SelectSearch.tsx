@@ -1,7 +1,7 @@
 import React from 'react';
 import { Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { SelectBoxOption } from './index';
+import { SelectBoxOption } from './type';
 
 type SelectSearchProps = {
   className?: string;
