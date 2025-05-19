@@ -2,14 +2,15 @@
 
 import * as React from 'react';
 import { addDays, format, isBefore, subDays } from 'date-fns';
-import { Calendar as CalendarIcon } from 'lucide-react';
+import { FaRegCalendarAlt } from 'react-icons/fa';
 import { DateRange } from 'react-day-picker';
 import { Button } from '../button';
 import { cn } from '../../lib/utils';
 import { useEffect, useState } from 'react';
-import SelectBox, { SelectBoxOption } from '../selectbox';
+import SelectBox from '../selectbox';
 import { Popover, PopoverContent, PopoverTrigger } from './Popover';
 import { Calendar } from './Calendar';
+import { SelectBoxOption } from '../selectbox/type';
 
 type DatePickerProps = {
   className?: string;
@@ -218,7 +219,7 @@ export function DatePicker({
             className
           )}
         >
-          <CalendarIcon className="mr-2 h-4 w-4" />
+          <FaRegCalendarAlt className="mr-2 h-4 w-4" />
           {formattedDate}
         </Button>
       </PopoverTrigger>

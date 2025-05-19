@@ -6,8 +6,8 @@ export default async function ProtectedLayout({
   children,
 }: {
   children: React.ReactNode;
-  dashboard: React.ReactNode;
-  profile: React.ReactNode;
+  // dashboard: React.ReactNode;
+  // profile: React.ReactNode;
 }) {
   const cookieStore = await cookies();
   const token = cookieStore.get('token')?.value;
