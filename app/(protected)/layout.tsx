@@ -4,8 +4,6 @@ import { verifyToken } from '@/lib/auth';
 
 export default async function ProtectedLayout({
   children,
-  dashboard,
-  profile,
 }: {
   children: React.ReactNode;
   dashboard: React.ReactNode;
@@ -20,10 +18,6 @@ export default async function ProtectedLayout({
       <nav className="bg-blue-600 text-white p-4">
         <h1 className="text-lg font-semibold">Secure App</h1>
       </nav>
-      <div className="flex">
-        <div className="w-1/2 p-4">{dashboard}</div>
-        <div className="w-1/2 p-4">{profile}</div>
-      </div>
       {children}
     </div>
   );

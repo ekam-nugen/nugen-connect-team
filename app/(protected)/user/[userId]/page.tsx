@@ -1,14 +1,12 @@
 import axiosInstance from '@/lib/axios';
 import { cookies } from 'next/headers';
 
-export default async function UserPage({
-  params,
-}: {
-  params: { userId: string };
-}) {
+type Params = Promise<{ userId: string }>;
+export default async function UserPage({ params }: { params: Params }) {
+  const { userId } = await params;
   const cookieStore = await cookies();
   const token = cookieStore.get('token')?.value;
-  const user = await axiosInstance.get(`/user?userId=${params.userId}`, {
+  const user = await axiosInstance.get(`/user?userId=${userId}`, {
     headers: { Authorization: `Bearer ${token}` },
   });
 
