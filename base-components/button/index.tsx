@@ -6,32 +6,25 @@ import { cn } from '@/lib/utils';
 import { Loader } from 'lucide-react';
 
 const buttonVariants = cva(
-  'flex gap-2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-95 transition-all',
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
       variant: {
-        default: 'bg-blue-400 hover:bg-primary-foreground text-white',
+        default: 'bg-primary text-primary-foreground hover:bg-primary/90',
         destructive:
           'bg-destructive text-destructive-foreground hover:bg-destructive/90',
         outline:
           'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
         secondary:
           'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        ghost: 'hover:text-accent-foreground text-black border-1',
+        ghost: 'hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
-        guest:
-          'bg-background text-primary border shadow-lg hover:bg-slate-100 min-w-4 w-full',
-        mic: 'bg-transparent text-slate-400 w-12 hover:text-black',
-        checkout:
-          'max-w-[178px] max-w-44 max-h-12 bg-foreground text-white font-extrabold text-base rounded',
       },
       size: {
         default: 'h-10 px-4 py-2',
         sm: 'h-9 rounded-md px-3',
-        xs: 'h-7 rounded-md px-2',
         lg: 'h-11 rounded-md px-8',
-        icon: 'p-2 text-[#797F99]',
-        checkout: 'py-3 px-14',
+        icon: 'h-10 w-10',
       },
     },
     defaultVariants: {
