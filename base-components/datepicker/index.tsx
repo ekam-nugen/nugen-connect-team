@@ -11,7 +11,6 @@ import { Popover, PopoverContent, PopoverTrigger } from './Popover';
 import { Calendar } from './Calendar';
 import { SelectBoxOption } from '../selectbox/type';
 import SelectBox from '../selectbox';
-
 type DatePickerProps = {
   className?: string;
   mode: 'range' | 'single';
