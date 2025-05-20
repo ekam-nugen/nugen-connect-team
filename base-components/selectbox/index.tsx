@@ -19,7 +19,7 @@ import {
   TooltipContent,
 } from '../tooltip';
 import Checkbox from '../checkbox';
-import { SelectBoxOption, SelectBoxProps } from './type';
+import { SelectBoxOption, SelectBoxProps } from './types';
 
 export const SelectBox = ({
   title,

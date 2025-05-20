@@ -8,11 +8,11 @@ import OTP from '@/base-components/otp';
 
 function OTPVerification() {
   const router = useRouter();
-  const [otp, setOtp] = useState('');
+  const [otp, setOtp] = useState<string>('');
 
   const handleBack = () => router.push('./');
 
-  const [showOptions, setShowOptions] = useState(false);
+  const [showOptions, setShowOptions] = useState<boolean>(false);
 
   const toggleOptions = () => {
     setShowOptions(prev => !prev);

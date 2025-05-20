@@ -4,19 +4,7 @@ import { FaCheck } from 'react-icons/fa';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import type { CheckedState } from '@radix-ui/react-checkbox';
 import React from 'react';
-
-export type CheckBoxProps = {
-  title?: string;
-  description?: string;
-  checked?: boolean;
-  disabled?: boolean;
-  onCheckedChange?: (checked: boolean) => void;
-  className?: string;
-  innerClass?: string;
-  titleClass?: string;
-  descriptionClass?: string;
-  checkClass?: string;
-};
+import { CheckBoxProps } from './types';
 
 const Checkbox = ({
   title,

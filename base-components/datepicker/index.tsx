@@ -9,26 +9,9 @@ import { cn } from '../../lib/utils';
 import { useEffect, useState } from 'react';
 import { Popover, PopoverContent, PopoverTrigger } from './Popover';
 import { Calendar } from './Calendar';
-import { SelectBoxOption } from '../selectbox/type';
+import { SelectBoxOption } from '../selectbox/types';
 import SelectBox from '../selectbox';
-
-type DatePickerProps = {
-  className?: string;
-  mode: 'range' | 'single';
-  handleCheckInValue?: (value: Date) => void;
-  checkInPropValue?: Date;
-  handleDateRange?: (val: DateRange) => void;
-  checkInVariant?: boolean;
-  checkoutVariant?: boolean;
-};
-
-type SelectedOptionType = {
-  id: string;
-  label: string;
-  value: string;
-};
-
-const dummyOption: SelectedOptionType = { id: '', label: '', value: '' };
+import { DatePickerProps, DPSelectedOption } from './types';
 
 export function DatePicker({
   className,
@@ -39,7 +22,8 @@ export function DatePicker({
   checkInVariant,
   checkoutVariant,
 }: Readonly<DatePickerProps>) {
-  const selectBoxOptions: SelectedOptionType[] =
+  const dummyOption: DPSelectedOption = { id: '', label: '', value: '' };
+  const selectBoxOptions: DPSelectedOption[] =
     checkInVariant || checkoutVariant
       ? [
           { id: 'id-0', label: 'Today', value: '0' },
@@ -63,7 +47,7 @@ export function DatePicker({
     mode === 'single' ? new Date() : undefined
   );
   const [selectedOption, setSelectedOption] =
-    useState<SelectedOptionType>(dummyOption);
+    useState<DPSelectedOption>(dummyOption);
   const [isPopoverOpen, setIsPopoverOpen] = useState<boolean>(false);
   const [filteredOptions, setFilteredOptions] =
     useState<SelectBoxOption[]>(selectBoxOptions);
@@ -150,8 +134,8 @@ export function DatePicker({
       setSingleDate(newToDate);
     }
     setIsPopoverOpen(false);
-    const selectedValue: SelectedOptionType | undefined = selectBoxOptions.find(
-      (item: SelectedOptionType) => item.value === value
+    const selectedValue: DPSelectedOption | undefined = selectBoxOptions.find(
+      (item: DPSelectedOption) => item.value === value
     );
     setSelectedOption(selectedValue ?? dummyOption);
   };

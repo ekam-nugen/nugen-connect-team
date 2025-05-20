@@ -1,11 +1,5 @@
 import React, { useRef, useCallback } from 'react';
-
-type OTPProps = {
-  separator?: React.ReactNode;
-  length: number;
-  value: string;
-  onChange: React.Dispatch<React.SetStateAction<string>>;
-};
+import { OTPProps } from './types';
 
 const OTP: React.FC<OTPProps> = ({
   separator = <span />,
