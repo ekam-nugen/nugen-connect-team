@@ -3,7 +3,8 @@ import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 import { LuLoader } from 'react-icons/lu';
-
+import { motion } from 'framer-motion';
+import { fadeInAnimation } from '@/lib/animationUtils';
 const buttonVariants = cva(
   'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   {
@@ -60,28 +61,34 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const Comp = asChild ? Slot : 'button';
     const widthClass = isBlock ? 'w-full' : 'w-auto';
-    if (loading) {
-      return (
-        <div
-          className={cn('flex items-center justify-center w-full', loaderClass)}
-        >
-          <LuLoader className="animate-spin" />
-        </div>
-      );
-    } else {
-      return (
-        <Comp
-          className={cn(
-            buttonVariants({ variant, size, className }),
-            widthClass
-          )}
-          ref={ref}
-          {...props}
-        />
-      );
-    }
+    const content = loading ? (
+      <div
+        className={cn('flex items-center justify-center w-full', loaderClass)}
+      >
+        <LuLoader className="animate-spin" />
+      </div>
+    ) : (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }), widthClass)}
+        ref={ref}
+        disabled={disabled}
+        {...props}
+      />
+    );
+
+    return (
+      <motion.div
+        variants={fadeInAnimation}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        {content}
+      </motion.div>
+    );
   }
 );
+
 Button.displayName = 'Button';
 
 export { Button, buttonVariants };

@@ -8,6 +8,14 @@ import { Input } from '@/base-components/input';
 import { Button } from '@/base-components/button';
 import SelectBox from '@/base-components/selectbox';
 import { FaGoogle, FaFacebook } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import {
+  bottomToTopAnimation,
+  fadeInAnimation,
+  rightToLeftAnimation,
+  staggerParent,
+  topToBottomAnimation,
+} from '@/lib/animationUtils';
 import { SignUpFormType } from './types';
 
 export default function SignUp() {
@@ -49,31 +57,43 @@ export default function SignUp() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-white py-10">
-      <h2 className="mb-8 text-center text-3xl font-bold tracking-tight text-[#2998ff]">
+    <motion.div
+      {...staggerParent}
+      className="min-h-screen w-full bg-white py-10 overflow-x-hidden"
+    >
+      <motion.h2
+        variants={fadeInAnimation}
+        className="mb-8 text-center text-3xl font-bold tracking-tight text-[#2998ff]"
+      >
         connecteam
-      </h2>
+      </motion.h2>
 
-      <section className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 md:flex-row">
+      <section className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 md:flex-row overflow-x-hidden">
         <div className="flex overflow-hidden rounded-2xl bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.15)] md:min-w-3xl">
-          <div className="relative hidden flex-none items-center justify-center bg-gradient-to-br from-purple-50 to-purple-200 md:flex md:w-[350px]">
+          <motion.div
+            variants={fadeInAnimation}
+            className="relative hidden flex-none items-center justify-center bg-gradient-to-br from-purple-50 to-purple-200 md:flex md:w-[350px]"
+          >
             <Image
               src={phoneMock}
               alt="phone demo"
               className="w-[285px] drop-shadow-2xl"
             />
-          </div>
+          </motion.div>
 
           <div className="flex w-full flex-col px-10 py-5 md:w-[418px]">
-            <h3 className="mb-6 text-center text-xl font-medium text-gray-800">
+            <motion.h3
+              variants={topToBottomAnimation}
+              className="mb-6 text-center text-xl font-medium text-gray-800"
+            >
               A small step for you,
               <br />
               <span className="font-normal">
                 a giant leap for your business.
               </span>
-            </h3>
+            </motion.h3>
 
-            <div className="space-y-4">
+            <motion.div variants={rightToLeftAnimation} className="space-y-4">
               <div className="flex gap-4">
                 <Input
                   name="firstName"
@@ -133,7 +153,7 @@ export default function SignUp() {
               >
                 LET&apos;S GO
               </Button>
-            </div>
+            </motion.div>
             <div className="flex gap-2 mt-6 items-center justify-center">
               <Button
                 // onClick={handleGoogleSignUp}
@@ -150,7 +170,10 @@ export default function SignUp() {
                 Facebook
               </Button>
             </div>
-            <p className="pt-5 text-center text-sm text-gray-500">
+            <motion.p
+              variants={bottomToTopAnimation}
+              className="pt-5 text-center text-sm text-gray-500"
+            >
               Joining an existing account?{' '}
               <Link
                 href="/login"
@@ -158,13 +181,16 @@ export default function SignUp() {
               >
                 Click here
               </Link>
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>
 
       {/* footer text */}
-      <p className="mx-auto mt-8 max-w-[768px] px-4 text-center text-[11px] leading-snug text-gray-400">
+      <motion.p
+        variants={bottomToTopAnimation}
+        className="mx-auto mt-8 max-w-[768px] px-4 text-center text-[11px] leading-snug text-gray-400"
+      >
         By signing up, you agree to our{' '}
         <Link
           href="#"
@@ -191,7 +217,7 @@ export default function SignUp() {
           Privacy Notice
         </Link>
         .
-      </p>
-    </div>
+      </motion.p>
+    </motion.div>
   );
 }
