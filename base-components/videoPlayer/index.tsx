@@ -64,7 +64,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         <div className="relative w-full max-w-2xl mx-auto p-4">
           <button
             onClick={handleClosePopup}
-            className="absolute top-2 right-2 z-10 text-white bg-black/60 rounded-full p-2 hover:bg-black/80"
+            className="absolute top-[25px] right-8 z-10 text-white bg-black/60 rounded-full p-2 hover:bg-black/80"
           >
             <X size={20} />
           </button>
