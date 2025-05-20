@@ -24,15 +24,18 @@ const UserProfileDropdown = ({
         </>
       )}
       <div>
-        {Modaldata.map((item, index) => (
-          <div
-            key={index}
-            className="flex items-center gap-2 p-2 rounded-lg hover:bg-accent-foreground hover:text-accent cursor-pointer"
-          >
-            <div className="text-lg">{item.icon}</div>
-            <span className="text-sm">{item.text}</span>
-          </div>
-        ))}
+        {Modaldata?.map((item, index) => {
+          const Icon = item.icon;
+          return (
+            <div
+              key={item.text + index}
+              className="flex items-center gap-2 p-2 rounded-lg hover:bg-accent-foreground hover:text-accent cursor-pointer"
+            >
+              <Icon className="text-lg" />
+              <span className="text-sm">{item.text}</span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

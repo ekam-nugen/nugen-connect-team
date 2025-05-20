@@ -7,7 +7,6 @@ import { MdAccessibility } from 'react-icons/md';
 import { PiChats } from 'react-icons/pi';
 import { IoMdNotificationsOutline, IoIosHelpCircle } from 'react-icons/io';
 import { RiCustomerService2Line } from 'react-icons/ri';
-import logoImage from '../../public/images/connecteam-logo.svg';
 import logoMobile from '../../public/images/icon.jpg';
 import userImage from '../../public/images/connecteam-logo.svg';
 import { Button } from '@/base-components/button';
@@ -15,7 +14,7 @@ import { Input } from '@/base-components/input';
 import UserProfileCard from './UserAvatarCard';
 import { ModalCardData3 } from './constant';
 
-const TopbarComponent = () => {
+const Topbar = () => {
   const [modalcard, setModalcard] = useState<boolean>(false);
   const modalRef = useRef<HTMLDivElement | null>(null);
 
@@ -38,7 +37,7 @@ const TopbarComponent = () => {
     <div className="py-2 px-4 w-full flex flex-wrap items-center justify-between gap-y-2">
       <div className="flex items-center gap-4">
         <Image
-          src={logoImage}
+          src={userImage}
           alt="Logo"
           width={120}
           height={50}
@@ -89,4 +88,4 @@ const TopbarComponent = () => {
   );
 };
 
-export default TopbarComponent;
+export default Topbar;
