@@ -6,6 +6,13 @@ import 'react-phone-input-2/lib/style.css';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/base-components/button';
+import { motion } from 'framer-motion';
+import {
+  bottomToTopAnimation,
+  rightToLeftAnimation,
+  staggerParent,
+  topToBottomAnimation,
+} from '@/lib/animationUtils';
 
 function LoginPhone() {
   const [phone, setPhone] = useState('');
@@ -20,13 +27,27 @@ function LoginPhone() {
   };
 
   return (
-    <div className="mx-auto p-6   bg-white w-full max-w-sm rounded-2xl shadow-lg">
-      <h2 className="text-3xl font-bold text-center text-zinc-800">Welcome</h2>
-      <p className="text-gray-500 mt-2 text-center text-base">
+    <motion.div
+      {...staggerParent}
+      className="mx-auto p-6 bg-white w-full max-w-sm rounded-2xl shadow-lg overflow-hidden"
+    >
+      <motion.h2
+        variants={topToBottomAnimation}
+        className="text-3xl font-bold text-center text-zinc-800"
+      >
+        Welcome
+      </motion.h2>
+      <motion.p
+        variants={topToBottomAnimation}
+        className="text-gray-500 mt-2 text-center text-base"
+      >
         Log in to your company app
-      </p>
+      </motion.p>
 
-      <div className="mt-6 md:px-10 flex flex-col items-center">
+      <motion.div
+        variants={rightToLeftAnimation}
+        className="mt-6 md:px-10 flex flex-col items-center"
+      >
         <PhoneInput
           country="in"
           value={phone}
@@ -37,7 +58,7 @@ function LoginPhone() {
         <p className="text-xs text-gray-400 text-center mt-2">
           We’ll send you a code to verify your number
         </p>
-      </div>
+      </motion.div>
 
       <div className="text-center mt-6">
         <Button
@@ -50,7 +71,10 @@ function LoginPhone() {
 
       <hr className="my-6 border-gray-200" />
 
-      <p className="text-center text-sm text-gray-500">
+      <motion.p
+        variants={bottomToTopAnimation}
+        className="text-center text-sm text-gray-500"
+      >
         Don’t have an account?{' '}
         <Link
           href="/signup"
@@ -58,8 +82,8 @@ function LoginPhone() {
         >
           Create one now
         </Link>
-      </p>
-    </div>
+      </motion.p>
+    </motion.div>
   );
 }
 
