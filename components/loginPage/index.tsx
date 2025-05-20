@@ -29,7 +29,7 @@ function LoginPhone() {
   return (
     <motion.div
       {...staggerParent}
-      className="mx-auto p-6 bg-white w-full max-w-sm rounded-2xl shadow-lg overflow-hidden"
+      className="mx-auto p-6 bg-accent w-full max-w-sm rounded-2xl shadow-lg overflow-hidden"
     >
       <motion.h2
         variants={topToBottomAnimation}
@@ -63,7 +63,7 @@ function LoginPhone() {
       <div className="text-center mt-6">
         <Button
           onClick={handleLogin}
-          className="bg-[#2998ff] hover:bg-[#2381D9] text-white font-semibold py-2 px-6 rounded-full text-sm transition"
+          className="bg-primary hover:bg-primary-hover text-accent font-semibold py-2 px-6 rounded-full text-sm transition"
         >
           Verify
         </Button>
@@ -78,7 +78,7 @@ function LoginPhone() {
         Don’t have an account?{' '}
         <Link
           href="/signup"
-          className="text-[#2998ff] font-medium hover:underline"
+          className="text-primary font-medium hover:underline"
         >
           Create one now
         </Link>

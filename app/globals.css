@@ -5,8 +5,13 @@
 :root {
   --background: #ffffff;
   --foreground: #71717a;
-  --primary: #60a5fa;
-  --primary-foreground: #f9fbfd;
+  --primary: #60a5fa; /*  background */
+  --primary-foreground: #f9fbfd; /*  text */
+  --primary-hover: #2381d9; /*  on hover */
+  --destructive: #c72323;
+  --destructive-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #042d44;
   --accent: #ffffff;
   --accent-foreground: #71717a;
   --card: #ffffff;
@@ -14,13 +19,9 @@
   --popover: #ffffff;
   --popover-foreground: #042d44;
 
-  --secondary: #f1f5f9;
-  --secondary-foreground: #042d44;
   /* --muted: #ececf2;
   --muted-foreground: #71717a; */
 
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
   --border: #e4e4e7;
   --input: #e4e4e7;
   --ring: #0a865a;

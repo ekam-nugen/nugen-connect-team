@@ -28,7 +28,7 @@ function OTPVerification() {
   return (
     <motion.div
       {...staggerParent}
-      className="mx-auto p-6 bg-white w-full max-w-sm rounded-2xl shadow-lg overflow-x-hidden"
+      className="mx-auto p-6 bg-accent w-full max-w-sm rounded-2xl shadow-lg overflow-x-hidden"
     >
       <motion.div variants={fadeInAnimation} className="mb-4">
         <FaArrowLeft
@@ -63,7 +63,7 @@ function OTPVerification() {
         Didn’t get the code?{' '}
         <button
           onClick={toggleOptions}
-          className="text-[#2998ff] font-medium hover:underline focus:outline-none"
+          className="text-primary font-medium hover:underline focus:outline-none"
         >
           More options
         </button>
@@ -71,13 +71,13 @@ function OTPVerification() {
 
       {showOptions && (
         <div className="mt-2 text-sm text-gray-600 text-center space-y-2">
-          <button className="block w-full hover:text-[#2998ff] transition">
+          <button className="block w-full hover:text-primary transition">
             Resend OTP
           </button>
-          <button className="block w-full hover:text-[#2998ff] transition">
+          <button className="block w-full hover:text-primary transition">
             Get a call instead
           </button>
-          <button className="block w-full hover:text-[#2998ff] transition">
+          <button className="block w-full hover:text-primary transition">
             Send to email
           </button>
         </div>
@@ -87,7 +87,7 @@ function OTPVerification() {
         <Button
           disabled={otp.length !== 4}
           onClick={handleSubmit}
-          className="bg-[#2998ff] hover:bg-[#2381D9] text-white font-semibold py-2 px-6 rounded-full text-sm transition"
+          className="bg-primary hover:bg-primary-hover text-accent font-semibold py-2 px-6 rounded-full text-sm transition"
         >
           Verify
         </Button>
