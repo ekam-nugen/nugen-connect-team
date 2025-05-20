@@ -1,19 +1,7 @@
 import React from 'react';
-import { Check, LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-export interface Step {
-  id: string | number;
-  icon: LucideIcon;
-  title?: string;
-  completed?: boolean;
-  current?: boolean;
-}
-
-interface StepperProps {
-  steps: Step[];
-  className?: string;
-}
+import { StepperProps } from './types';
+import { FaCheck } from 'react-icons/fa6';
 
 export function Stepper({ steps }: Readonly<StepperProps>) {
   return (
@@ -37,7 +25,7 @@ export function Stepper({ steps }: Readonly<StepperProps>) {
               )}
             >
               {step.completed ? (
-                <Check
+                <FaCheck
                   className="text-accent w-5 h-5 md:w-6 md:h-6"
                   strokeWidth={2}
                 />

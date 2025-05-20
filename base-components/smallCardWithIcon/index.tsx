@@ -1,11 +1,6 @@
 import React from 'react';
 import { Card } from '../card';
-
-interface SmallCardWithIconType {
-  title?: string;
-  icon?: React.ReactNode;
-  iconColor?: string;
-}
+import { SmallCardWithIconType } from './types';
 
 const SmallCardWithIcon: React.FC<SmallCardWithIconType> = ({
   icon,

@@ -1,21 +1,14 @@
 import React from 'react';
 import { IoMdSearch } from 'react-icons/io';
 import { cn } from '@/lib/utils';
-import { SelectBoxOption } from './type';
-
-type SelectSearchProps = {
-  className?: string;
-  searchPlaceholder?: string;
-  options?: SelectBoxOption[];
-  setFilteredOptions: (options: SelectBoxOption[]) => void;
-};
+import { SelectSearchProps } from './types';
 
 function SelectSearch({
   className,
   searchPlaceholder,
   options = [],
   setFilteredOptions,
-}: SelectSearchProps) {
+}: Readonly<SelectSearchProps>) {
   const search = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.trim().toLowerCase();
     if (value === '') {

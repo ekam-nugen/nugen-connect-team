@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/base-components/button';
 
 function LoginPhone() {
-  const [phone, setPhone] = useState('');
+  const [phone, setPhone] = useState<string>('');
   const router = useRouter();
 
   const handlePhoneChange = (value: string) => setPhone(value);

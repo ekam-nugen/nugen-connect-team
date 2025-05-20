@@ -3,17 +3,7 @@ import React from 'react';
 import { Card } from '../card';
 import { Button } from '../button';
 import { FaEllipsis } from 'react-icons/fa6';
-
-export interface TimeClockProp {
-  smallTitle: string;
-  largeTitle: string;
-  assigned: string;
-  groupLabel: string;
-  nameTitle: string;
-  name: string;
-  buttonText: string;
-  roles: string;
-}
+import { TimeClockProps } from './types';
 
 const TimeClock = ({
   smallTitle,
@@ -24,7 +14,7 @@ const TimeClock = ({
   name,
   buttonText,
   roles,
-}: TimeClockProp) => {
+}: TimeClockProps) => {
   return (
     <div className="flex justify-start p-3">
       <Card className="h-auto rounded-lg w-full border-gray-200 shadow-none border hover:shadow-md">

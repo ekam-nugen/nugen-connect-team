@@ -2,20 +2,7 @@ import React from 'react';
 import { Card, CardDescription, CardTitle } from '../card';
 import Image from 'next/image';
 import { Button } from '../button';
-
-export interface SmallCardProps {
-  title?: string;
-  description: string;
-  icon?: React.ReactNode;
-  imageUrl?: string;
-  heading?: string;
-  className?: string;
-  buttonLabel?: string;
-  iconClassName?: string;
-  cardClassName?: string;
-  titleClassName?: string;
-  descriptionClassName?: string;
-}
+import { SmallCardProps } from './types';
 
 const SmallCard: React.FC<SmallCardProps> = ({
   title,
