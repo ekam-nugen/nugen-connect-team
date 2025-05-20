@@ -15,7 +15,7 @@ export default async function ProtectedLayout({
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <nav className="bg-blue-600 text-white p-4">
+      <nav className="bg-primary-hover text-accent p-4">
         <h1 className="text-lg font-semibold">Secure App</h1>
       </nav>
       {children}

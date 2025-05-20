@@ -63,7 +63,7 @@ const SmallCard: React.FC<SmallCardProps> = ({
             </CardDescription>
           )}
           {buttonLabel && (
-            <Button className="ring-2 ring-gray-200 text-blue-500 bg-white hover:bg-gray-100 rounded-2xl mt-3 capitalize px-4 text-sm md:text-xs lg:text-sm">
+            <Button className="ring-2 ring-gray-200 text-primary bg-accent hover:bg-gray-100 rounded-2xl mt-3 capitalize px-4 text-sm md:text-xs lg:text-sm">
               {buttonLabel}
             </Button>
           )}
