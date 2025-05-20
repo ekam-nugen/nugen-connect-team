@@ -2,30 +2,18 @@
 
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
-import { CgGirl, CgLogOff, CgProfile } from 'react-icons/cg';
+import { CgGirl } from 'react-icons/cg';
 import { MdAccessibility } from 'react-icons/md';
 import { PiChats } from 'react-icons/pi';
-import {
-  IoIosNotificationsOutline,
-  IoMdNotificationsOutline,
-  IoIosHelpCircle,
-} from 'react-icons/io';
+import { IoMdNotificationsOutline, IoIosHelpCircle } from 'react-icons/io';
 import { RiCustomerService2Line } from 'react-icons/ri';
-import { IoSettingsOutline } from 'react-icons/io5';
 import logoImage from '../../public/images/connecteam-logo.svg';
 import logoMobile from '../../public/images/icon.jpg';
 import userImage from '../../public/images/connecteam-logo.svg';
 import { Button } from '@/base-components/button';
 import { Input } from '@/base-components/input';
 import UserProfileCard from './UserAvatarCard';
-
-export const ModalCardData3 = [
-  { icon: <CgProfile />, text: "Switch to user's view" },
-  { icon: <IoSettingsOutline />, text: 'Setting' },
-  { icon: <IoIosNotificationsOutline />, text: 'Notification' },
-  { icon: <CgProfile />, text: 'Admin dashboard' },
-  { icon: <CgLogOff />, text: 'Sign out' },
-];
+import { ModalCardData3 } from './constant';
 
 const TopbarComponent = () => {
   const [modalcard, setModalcard] = useState<boolean>(false);
