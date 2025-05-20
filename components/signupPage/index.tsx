@@ -16,17 +16,18 @@ import {
   staggerParent,
   topToBottomAnimation,
 } from '@/lib/animationUtils';
+import { SignUpFormType } from './types';
 
 export default function SignUp() {
   const router = useRouter();
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<SignUpFormType>({
     firstName: '',
     lastName: '',
     email: '',
     password: '',
   });
-  const [showPwd, setShowPwd] = useState(false);
-  const [touched, setTouched] = useState(false);
+  const [showPwd, setShowPwd] = useState<boolean>(false);
+  const [touched, setTouched] = useState<boolean>(false);
 
   const emailRx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
   const pwdRx = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;

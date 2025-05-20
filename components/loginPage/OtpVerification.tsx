@@ -15,12 +15,12 @@ import {
 
 function OTPVerification() {
   const router = useRouter();
-  const [otp, setOtp] = useState('');
+  const [otp, setOtp] = useState<string>('');
 
   const handleBack = () => router.push('./');
   const handleSubmit = () => router.push('./dashboard');
 
-  const [showOptions, setShowOptions] = useState(false);
+  const [showOptions, setShowOptions] = useState<boolean>(false);
 
   const toggleOptions = () => {
     setShowOptions(prev => !prev);

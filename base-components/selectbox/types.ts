@@ -1,3 +1,4 @@
+//selectbox index types
 export type SelectBoxOption = {
   id: string;
   value: string;
@@ -28,4 +29,12 @@ export type SelectBoxProps = {
   setFilteredOptions: (options: SelectBoxOption[]) => void;
   selectedItems: string[];
   setSelectedItems: (items: string[]) => void;
+};
+
+//select search type
+export type SelectSearchProps = {
+  className?: string;
+  searchPlaceholder?: string;
+  options?: SelectBoxOption[];
+  setFilteredOptions: (options: SelectBoxOption[]) => void;
 };

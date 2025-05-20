@@ -15,7 +15,7 @@ import {
 } from '@/lib/animationUtils';
 
 function LoginPhone() {
-  const [phone, setPhone] = useState('');
+  const [phone, setPhone] = useState<string>('');
   const router = useRouter();
 
   const handlePhoneChange = (value: string) => setPhone(value);

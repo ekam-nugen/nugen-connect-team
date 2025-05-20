@@ -12,7 +12,7 @@ import {
   TooltipTrigger,
   TooltipContent,
 } from '../tooltip';
-import { InputProps } from './type';
+import { InputProps } from './types';
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
