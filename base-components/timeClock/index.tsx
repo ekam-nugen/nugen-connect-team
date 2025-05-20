@@ -1,8 +1,8 @@
-import { Ellipsis } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 import { Card } from '../card';
 import { Button } from '../button';
+import { FaEllipsis } from 'react-icons/fa6';
 
 export interface TimeClockProp {
   smallTitle: string;
@@ -63,7 +63,7 @@ const TimeClock = ({
         <hr className="border-1 border-gray-200" />
         <div className=" border-slate-400 flex items-center py-3 px-3 gap-6">
           <div className="w-10 h-10 flex justify-center items-center cursor-pointer rounded-full border-2 text-slate-400">
-            <Ellipsis />
+            <FaEllipsis />
           </div>
           <Button className="bg-blue-500 hover:bg-blue-600 text-white rounded-3xl text-base capitalize px-8 shadow shadow-blue-500 hover:shadow-blue-600 hover:shadow-sm">
             {buttonText}

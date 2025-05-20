@@ -2,14 +2,10 @@ import * as React from 'react';
 import { cn } from '@/lib/utils';
 import { Label } from '../label';
 import { Button } from '../button';
-import {
-  EyeOff,
-  Eye,
-  AlertCircle,
-  Search,
-  LoaderCircle,
-  Asterisk,
-} from 'lucide-react';
+import { IoIosEyeOff, IoIosEye, IoMdSearch } from 'react-icons/io';
+import { LuLoaderCircle } from 'react-icons/lu';
+import { CgAsterisk } from 'react-icons/cg';
+import { IoAlertCircle } from 'react-icons/io5';
 import {
   Tooltip,
   TooltipProvider,
@@ -65,7 +61,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               </Label>
 
               {requiredField && (
-                <Asterisk
+                <CgAsterisk
                   size={12}
                   className={cn(' text-red-500 cursor-pointer', iconClass, {
                     'opacity-40': disabled,
@@ -78,7 +74,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
-                    <AlertCircle
+                    <IoAlertCircle
                       className={cn(
                         'w-5 h-5 text-slate-700 cursor-pointer',
                         iconClass,
@@ -116,12 +112,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           />
           {searchIcon && (
             <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-600">
-              <Search className="w-4" onClick={searchIconClick} />
+              <IoMdSearch className="w-4" onClick={searchIconClick} />
             </div>
           )}
           <div className="flex flex-col absolute top-0 right-0 w-auto h-full items-center justify-center">
             {isLoading ? (
-              <LoaderCircle className="w-5 mr-2 text-primary animate-spin relative right-1" />
+              <LuLoaderCircle className="w-5 mr-2 text-primary animate-spin relative right-1" />
             ) : (
               suffixIcon
             )}
@@ -135,11 +131,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     setShowPassword(!showPassword);
                   }
                 }}
-                className={cn('text-slate-600', {
+                className={cn('text-slate-600 p-2', {
                   'text-red-500': error,
                 })}
               >
-                {showPassword ? <Eye /> : <EyeOff />}
+                {showPassword ? <IoIosEye /> : <IoIosEyeOff />}
               </Button>
             )}
           </div>

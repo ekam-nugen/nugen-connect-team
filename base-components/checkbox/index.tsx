@@ -1,6 +1,6 @@
 import { Label } from '../label';
 import { cn } from '@/lib/utils';
-import { Check } from 'lucide-react';
+import { FaCheck } from 'react-icons/fa';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import type { CheckedState } from '@radix-ui/react-checkbox';
 import React from 'react';
@@ -55,7 +55,7 @@ const Checkbox = ({
         <CheckboxPrimitive.Indicator
           className={cn('flex items-center justify-center text-current')}
         >
-          <Check className={cn('h-4 w-4 text-white', checkClass)} />
+          <FaCheck className={cn('h-4 w-4 text-white', checkClass)} />
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
 

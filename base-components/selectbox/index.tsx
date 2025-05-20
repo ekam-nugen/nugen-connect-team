@@ -8,7 +8,8 @@ import {
 } from './Select';
 import { Label } from '../label';
 import SelectSearch from './SelectSearch';
-import { AlertCircle, Asterisk } from 'lucide-react';
+import { IoAlertCircle } from 'react-icons/io5';
+import { CgAsterisk } from 'react-icons/cg';
 import { cn } from '@/lib/utils';
 import PageLoader from '../loader';
 import {
@@ -71,7 +72,7 @@ export const SelectBox = ({
             </Label>
 
             {requiredField && (
-              <Asterisk
+              <CgAsterisk
                 size={12}
                 className={cn('text-red-500 cursor-pointer ', iconClass, {
                   'opacity-40': disable,
@@ -83,7 +84,7 @@ export const SelectBox = ({
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
-                <AlertCircle
+                <IoAlertCircle
                   className={`${iconClass} w-5 text-slate-700 ${
                     toolkit ? '' : 'hidden'
                   } ${error ? 'text-red-600' : ''}`}

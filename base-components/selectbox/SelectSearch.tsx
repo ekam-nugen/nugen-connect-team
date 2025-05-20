@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search } from 'lucide-react';
+import { IoMdSearch } from 'react-icons/io';
 import { cn } from '@/lib/utils';
 import { SelectBoxOption } from './type';
 
@@ -32,7 +32,7 @@ function SelectSearch({
   return (
     <div className="relative" onKeyDown={e => e.stopPropagation()}>
       <div className="absolute top-0 flex h-full p-2 justify-center items-center text-foreground/40">
-        <Search className="w-4 h-4 text-slate-800/60" />
+        <IoMdSearch className="w-4 h-4 text-slate-800/60" />
       </div>
 
       <input
