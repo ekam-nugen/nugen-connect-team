@@ -28,11 +28,8 @@ export const ModalCardData3 = [
 ];
 
 const TopbarComponent = () => {
-  const [modalcard, setModalcard] = useState(false);
+  const [modalcard, setModalcard] = useState<boolean>(false);
   const modalRef = useRef<HTMLDivElement | null>(null);
-
-  const openModel = () => setModalcard(true);
-  const closeModel = () => setModalcard(false);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -41,7 +38,7 @@ const TopbarComponent = () => {
         modalRef.current &&
         !modalRef.current.contains(event.target as Node)
       ) {
-        closeModel();
+        setModalcard(false);
       }
     };
 
@@ -93,8 +90,8 @@ const TopbarComponent = () => {
         <UserProfileCard
           imagesss={userImage}
           userName="Pardeep Kumar"
-          openModel={openModel}
-          closeModel={closeModel}
+          openModel={() => setModalcard(true)}
+          closeModel={() => setModalcard(false)}
           modalcard={modalcard}
           ModalCardData3={ModalCardData3}
           modalRef={modalRef}

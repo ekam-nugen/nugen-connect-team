@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import UserProfileDropdown from './userinfo';
 import { ProfileTCardype } from './types';
+import UserProfileDropdown from './UserInfo';
 
 const UserProfileCard = ({
   imagesss,
