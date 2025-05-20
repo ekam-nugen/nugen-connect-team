@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconTextModalProps } from './types';
 
-const IconTextModal = ({
+const UserProfileDropdown = ({
   userName,
   Modaldata,
   userRole,
@@ -38,4 +38,4 @@ const IconTextModal = ({
   );
 };
 
-export default IconTextModal;
+export default UserProfileDropdown;

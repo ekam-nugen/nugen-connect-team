@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import IconTextModal from './userinfo';
+import UserProfileDropdown from './userinfo';
 import { ProfileTCardype } from './types';
 
-const UserAvatarCard = ({
+const UserProfileCard = ({
   imagesss,
   userName,
   openModel,
@@ -34,7 +34,7 @@ const UserAvatarCard = ({
           onClick={e => e.stopPropagation()}
         >
           <div ref={modalRef}>
-            <IconTextModal
+            <UserProfileDropdown
               userRole={'owner'}
               userName={userName}
               Modaldata={ModalCardData3}
@@ -47,4 +47,4 @@ const UserAvatarCard = ({
   );
 };
 
-export default UserAvatarCard;
+export default UserProfileCard;

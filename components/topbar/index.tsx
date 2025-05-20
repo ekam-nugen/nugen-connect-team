@@ -17,7 +17,7 @@ import logoMobile from '../../public/images/icon.jpg';
 import userImage from '../../public/images/connecteam-logo.svg';
 import { Button } from '@/base-components/button';
 import { Input } from '@/base-components/input';
-import UserAvatarCard from './UserAvatarCard';
+import UserProfileCard from './UserAvatarCard';
 
 export const ModalCardData3 = [
   { icon: <CgProfile />, text: "Switch to user's view" },
@@ -90,7 +90,7 @@ const TopbarComponent = () => {
           <RiCustomerService2Line className="text-2xl" />
           <IoMdNotificationsOutline className="text-2xl" />
         </div>
-        <UserAvatarCard
+        <UserProfileCard
           imagesss={userImage}
           userName="Pardeep Kumar"
           openModel={openModel}
