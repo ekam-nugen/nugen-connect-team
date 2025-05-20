@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { VideoPlayerProps } from './type';
+import { VideoPlayerProps } from './types';
 import { X } from 'lucide-react';
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
