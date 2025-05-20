@@ -18,7 +18,7 @@ interface StepperProps {
 export function Stepper({ steps }: Readonly<StepperProps>) {
   return (
     <div className="flex items-center justify-between relative w-full">
-      <div className="absolute left-0 right-0 top-4 md:top-5 h-[1px] bg-gray-400 z-0" />
+      <div className="absolute left-0 right-0 top-4 md:top-5 h-[1px] bg-accent-foreground z-0" />
       {steps?.map(step => {
         const Icon = step.icon;
         return (
@@ -30,22 +30,22 @@ export function Stepper({ steps }: Readonly<StepperProps>) {
               className={cn(
                 'flex items-center justify-center rounded-full border-2 w-8 h-8 md:w-10 md:h-10',
                 step.completed
-                  ? 'border-blue-500 bg-blue-500'
+                  ? 'border-primary bg-primary'
                   : step.current
-                    ? 'border-blue-500 bg-white shadow-lg'
-                    : 'border-gray-300 bg-white'
+                    ? 'border-primary bg-accent shadow-lg'
+                    : 'border-accent-foreground bg-accent'
               )}
             >
               {step.completed ? (
                 <Check
-                  className="text-white w-5 h-5 md:w-6 md:h-6"
+                  className="text-accent w-5 h-5 md:w-6 md:h-6"
                   strokeWidth={2}
                 />
               ) : (
                 <Icon
                   className={cn(
                     ' w-4 h-4 md:w-5 md:h-5',
-                    step.current ? 'text-blue-500' : 'text-gray-400'
+                    step.current ? 'text-primary' : 'text-accent-foreground'
                   )}
                 />
               )}
@@ -55,10 +55,10 @@ export function Stepper({ steps }: Readonly<StepperProps>) {
                 className={cn(
                   'hidden md:block text-sm text-center mt-3',
                   step.completed
-                    ? 'text-blue-500'
+                    ? 'text-primary'
                     : step.current
-                      ? 'text-blue-600'
-                      : 'text-gray-400'
+                      ? 'text-primary'
+                      : 'text-accent-foreground'
                 )}
               >
                 {step.title}
