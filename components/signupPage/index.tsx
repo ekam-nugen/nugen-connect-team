@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import phoneMock from '@/images/2187-Sign-up-form_image-update_employee-app-360-funnel_313x534px-3.webp';
+import phoneMock from '../../public/images/2187-Sign-up-form_image-update_employee-app-360-funnel_313x534px-3.webp';
 import { Input } from '@/base-components/input';
 import { Button } from '@/base-components/button';
 import SelectBox from '@/base-components/selectbox';
