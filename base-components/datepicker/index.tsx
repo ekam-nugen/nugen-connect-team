@@ -7,9 +7,10 @@ import { DateRange } from 'react-day-picker';
 import { Button } from '../button';
 import { cn } from '../../lib/utils';
 import { useEffect, useState } from 'react';
-import SelectBox, { SelectBoxOption } from '../selectbox';
+import SelectBox from '../selectbox';
 import { Popover, PopoverContent, PopoverTrigger } from './Popover';
 import { Calendar } from './Calendar';
+import { SelectBoxOption } from '../selectbox/type';
 
 type DatePickerProps = {
   className?: string;
