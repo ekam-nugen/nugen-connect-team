@@ -30,7 +30,7 @@ function SocialSignUp({
       </div>
       <motion.p
         variants={bottomToTopAnimation}
-        className="pt-5 text-center text-sm text-gray-500"
+        className="pt-5 text-center text-sm text-foreground"
       >
         Joining an existing account?{' '}
         <Link

@@ -34,7 +34,7 @@ const Topbar = () => {
   }, [modalcard]);
 
   return (
-    <div className="py-2 px-4 w-full flex flex-wrap items-center justify-between gap-y-2">
+    <div className="py-2 px-4 w-full flex flex-wrap items-center justify-between gap-y-2 bg-background">
       <div className="flex items-center gap-4">
         <Image
           src={userImage}

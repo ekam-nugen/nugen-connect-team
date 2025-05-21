@@ -38,7 +38,7 @@ const SignUpCard: React.FC<SignUpCardProps> = ({
         <div className="flex w-full flex-col px-10 py-5 md:w-[418px]">
           <motion.h3
             variants={topToBottomAnimation}
-            className="mb-6 text-center text-lg font-medium text-gray-800"
+            className="mb-6 text-center text-lg font-medium text-foreground"
           >
             A small step for you,
             <br />
