@@ -26,6 +26,13 @@
   --boldred: #b91414;
   --lightorange: #de9529;
   --radius: 12px;
+  --gray-muted: #6b7280; /* Tailwind gray-500 */
+  --gray-light: #dedfe4; /* Tailwind gray-100 */
+  --gray-subtle: #d1d5db; /* Tailwind gray-300 */
+  --gray-text: #4b5563; /* Tailwind gray-600 */
+  --zinc-text: #52525b; /* Tailwind zinc-600 */
+  --zinc-heading: #27272a; /* Tailwind zinc-800 */
+  --zinc-dark: #18181b; /* Tailwind zinc-900 */
 }
 
 @theme inline {
