@@ -7,7 +7,7 @@ export default function Disclaimer() {
   return (
     <motion.p
       variants={bottomToTopAnimation}
-      className="mx-auto mt-8 max-w-[768px] px-4 text-center text-[11px] leading-snug text-gray-400"
+      className="mx-auto mt-8 max-w-[768px] px-4 text-center text-[11px] leading-snug text-gray-muted"
     >
       By signing up, you agree to our{' '}
       <Link

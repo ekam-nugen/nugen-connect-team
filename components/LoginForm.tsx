@@ -20,7 +20,7 @@ export default function LoginForm({
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-text"
           >
             Email
           </label>
@@ -29,14 +29,14 @@ export default function LoginForm({
             name="email"
             type="email"
             required
-            className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            className="mt-1 w-full p-2 border border-gray-subtle rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
             disabled={isLoading}
           />
         </div>
         <div>
           <label
             htmlFor="password"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-gray-text"
           >
             Password
           </label>
@@ -45,7 +45,7 @@ export default function LoginForm({
             name="password"
             type="password"
             required
-            className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            className="mt-1 w-full p-2 border border-gray-subtle rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
             disabled={isLoading}
           />
         </div>

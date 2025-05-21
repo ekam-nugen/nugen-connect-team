@@ -22,7 +22,7 @@ const SmallCard: React.FC<SmallCardProps> = ({
       <Card
         className={`${cardClassName} flex flex-col p-4 md:p-2 lg:p-4 w-80 shadow-none `}
       >
-        <div className="text-xl md:text-lg lg:text-xl font-bold text-zinc-600 flex justify-start items-start">
+        <div className="text-xl md:text-lg lg:text-xl font-bold text-zinc-text flex justify-start items-start">
           {heading}
         </div>
         <div className="md:px-4 lg:px-8 md:py-2 lg:py-4 px-8 py-4 flex flex-col justify-center items-center">
@@ -57,13 +57,13 @@ const SmallCard: React.FC<SmallCardProps> = ({
           )}
           {description && (
             <CardDescription
-              className={`text-sm md:text-xs lg:text-sm font-normal text-gray-600 text-center tracking-wide ${descriptionClassName}`}
+              className={`text-sm md:text-xs lg:text-sm font-normal text-gray-text text-center tracking-wide ${descriptionClassName}`}
             >
               {description}
             </CardDescription>
           )}
           {buttonLabel && (
-            <Button className="ring-2 ring-gray-200 text-primary bg-background hover:bg-gray-100 rounded-2xl mt-3 capitalize px-4 text-sm md:text-xs lg:text-sm">
+            <Button className="ring-2 ring-gray-subtle text-primary bg-background hover:bg-gray-light rounded-2xl mt-3 capitalize px-4 text-sm md:text-xs lg:text-sm">
               {buttonLabel}
             </Button>
           )}

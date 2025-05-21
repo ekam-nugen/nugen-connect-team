@@ -32,20 +32,20 @@ function OTPVerification() {
     >
       <motion.div variants={fadeInAnimation} className="mb-4">
         <FaArrowLeft
-          className="h-5 w-5 text-gray-400 cursor-pointer"
+          className="h-5 w-5 text-gray-muted cursor-pointer"
           onClick={handleBack}
         />
       </motion.div>
 
       <motion.h3
         variants={topToBottomAnimation}
-        className="text-xl font-bold text-center text-zinc-700 mb-1.5"
+        className="text-xl font-bold text-center text-zinc-text mb-1.5"
       >
         Enter the 4-digit code
       </motion.h3>
       <motion.p
         variants={topToBottomAnimation}
-        className="text-gray-500 mb-4 text-center text-base"
+        className="text-gray-subtle mb-4 text-center text-base"
       >
         Sent to your number
       </motion.p>
@@ -58,7 +58,7 @@ function OTPVerification() {
       </motion.div>
       <motion.p
         variants={rightToLeftAnimation}
-        className="text-center text-sm text-gray-500 mb-2"
+        className="text-center text-sm text-gray-subtle mb-2"
       >
         Didn’t get the code?{' '}
         <button
@@ -70,7 +70,7 @@ function OTPVerification() {
       </motion.p>
 
       {showOptions && (
-        <div className="mt-2 text-sm text-gray-600 text-center space-y-2">
+        <div className="mt-2 text-sm text-gray-text text-center space-y-2">
           <button className="block w-full hover:text-primary transition">
             Resend OTP
           </button>

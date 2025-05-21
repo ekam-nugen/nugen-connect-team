@@ -15,14 +15,14 @@ function SocialSignUp({
       <div className="flex gap-2 mt-6 items-center justify-center">
         <Button
           onClick={handleGoogleSignUp}
-          className="cursor-pointer bg-muted hover:bg-gradient-to-r hover:from-[#e8ecef] hover:to-[#d6e4ff] text-gray-700 px-4 py-2 text-sm rounded-full flex items-center justify-center gap-2 transition-all duration-300 shadow-sm hover:shadow-md"
+          className="cursor-pointer bg-muted hover:bg-gradient-to-r hover:from-accent hover:to-gray-light text-gray-text px-4 py-2 text-sm rounded-full flex items-center justify-center gap-2 transition-all duration-300 shadow-sm hover:shadow-md"
         >
           <FaGoogle size={20} />
           Google
         </Button>
         <Button
           onClick={handleFacebookSignUp}
-          className="cursor-pointer bg-muted hover:bg-gradient-to-r hover:from-[#e8ecef] hover:to-[#d6e4ff] text-gray-700 px-4 py-2 text-sm rounded-full flex items-center justify-center gap-2 transition-all duration-300 shadow-sm hover:shadow-md"
+          className="cursor-pointer bg-muted hover:bg-gradient-to-r hover:from-accent hover:to-gray-light text-gray-text px-4 py-2 text-sm rounded-full flex items-center justify-center gap-2 transition-all duration-300 shadow-sm hover:shadow-md"
         >
           <FaFacebook size={20} className="text-primary" />
           Facebook

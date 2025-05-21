@@ -29,7 +29,7 @@ const UserProfileDropdown = ({
           return (
             <div
               key={item.text + index}
-              className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-300 hover:text-gray-700 cursor-pointer"
+              className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-subtle hover:text-gray-text cursor-pointer"
             >
               <Icon className="text-lg" />
               <span className="text-sm">{item.text}</span>
