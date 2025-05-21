@@ -12,14 +12,14 @@ export default function Disclaimer() {
       By signing up, you agree to our{' '}
       <Link
         href="#"
-        className="text-[#2998ff] underline-offset-2 hover:underline"
+        className="text-primary underline-offset-2 hover:underline"
       >
         Terms of Use
       </Link>{' '}
       and{' '}
       <Link
         href="#"
-        className="text-[#2998ff] underline-offset-2 hover:underline"
+        className="text-primary underline-offset-2 hover:underline"
       >
         Privacy Notice
       </Link>
@@ -30,7 +30,7 @@ export default function Disclaimer() {
       any time, in accordance with our{' '}
       <Link
         href="#"
-        className="text-[#2998ff] underline-offset-2 hover:underline"
+        className="text-primary underline-offset-2 hover:underline"
       >
         Privacy Notice
       </Link>

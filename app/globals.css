@@ -13,15 +13,15 @@
   --secondary: #f1f5f9;
   --secondary-foreground: #042d44;
   --accent: #ffffff;
+  --muted: #f8f9fa;
+
+  /* Currently not used */
   --accent-foreground: #71717a;
+  --muted-foreground: #71717a;
   --card: #ffffff;
   --card-foreground: #042d44;
   --popover: #ffffff;
   --popover-foreground: #042d44;
-
-  /* --muted: #ececf2;
-  --muted-foreground: #71717a; */
-
   --border: #e4e4e7;
   --input: #e4e4e7;
   --ring: #0a865a;

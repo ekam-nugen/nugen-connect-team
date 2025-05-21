@@ -48,11 +48,11 @@ export default function SignUp() {
   return (
     <motion.div
       {...staggerParent}
-      className="min-h-screen w-full bg-white py-10 overflow-x-hidden"
+      className="min-h-screen w-full bg-accent py-10 overflow-x-hidden"
     >
       <motion.h2
         variants={fadeInAnimation}
-        className="mb-8 text-center text-3xl font-bold tracking-tight text-[#2998ff]"
+        className="mb-8 text-center text-3xl font-bold tracking-tight text-primary"
       >
         connecteam
       </motion.h2>
