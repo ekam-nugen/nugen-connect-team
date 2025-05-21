@@ -1,15 +1,6 @@
 import React from 'react';
 import { FiArrowRight, FiDownload } from 'react-icons/fi';
-
-type TaskCardProps = {
-  title: string;
-  subtitle?: string;
-  progress?: number;
-  total?: number;
-  showProgress?: boolean;
-  iconType?: 'arrow' | 'download' | 'none';
-  onClick?: () => void;
-};
+import { TaskCardProps } from './types';
 
 const TaskCard = ({
   title,

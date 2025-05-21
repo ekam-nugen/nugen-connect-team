@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { FaFilter, FaCog } from 'react-icons/fa';
 import clsx from 'clsx';
 import { Button } from '@/base-components/button';
-import { attendanceData, getMessage } from '../constant';
+import { attendanceData, getMessage } from '../constants';
 import { Input } from '@/base-components/input';
 
 export default function AttendanceSection() {

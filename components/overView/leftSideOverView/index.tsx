@@ -8,7 +8,7 @@ import { FaTimes } from 'react-icons/fa';
 import creditLogo from '../../../public/images/free-credits.svg';
 import { PiNumberThreeBold } from 'react-icons/pi';
 import { MdStar } from 'react-icons/md';
-import { achievedMilestone, nextMilestones } from '../constant';
+import { achievedMilestone, nextMilestones } from '../constants';
 
 function LeftSideOverview() {
   return (

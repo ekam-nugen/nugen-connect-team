@@ -1,10 +1,5 @@
 import React from 'react';
-export type AttendanceCardProps = {
-  count: number;
-  label: string;
-  isSelected?: boolean;
-  onClick?: () => void;
-};
+import { AttendanceCardProps } from '../types';
 
 const AttendanceCard = ({
   count,

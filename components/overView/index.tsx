@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Card, CardTitle } from '@/base-components/card';
-import { dailyActivity, quickActions, tasks } from './constant';
+import { dailyActivity, quickActions, tasks } from './constants';
 import TaskCard from '@/base-components/activityCard';
 import SmallCardWithIcon from '@/base-components/smallCardWithIcon';
 import EngagementCard from '@/base-components/graphs';
