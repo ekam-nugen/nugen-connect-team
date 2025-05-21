@@ -2,6 +2,8 @@ import React from 'react';
 import { sideBarData } from './constant';
 import { CgMenuGridO } from 'react-icons/cg';
 import { IoAddOutline } from 'react-icons/io5';
+import { BsThreeDotsVertical } from 'react-icons/bs';
+
 import { cn } from '@/lib/utils';
 
 export default function Sidebar() {
@@ -19,18 +21,23 @@ export default function Sidebar() {
                 className={cn(
                   'group relative flex items-center gap-2 hover:bg-gray-100 px-2 py-1.5 rounded-lg cursor-pointer',
                   section.hoverAnimate !== false &&
-                    'duration-500 hover:translate-x-0.5 transition-transform '
+                    'duration-500 hover:translate-x-1 transition-transform '
                 )}
               >
                 {section.hoverAnimate !== false && (
-                  <CgMenuGridO className="h-4 w-4 mr-0.5 text-gray-500 hidden group-hover:flex transition-opacity group-hover:duration-500" />
+                  <CgMenuGridO className="h-6 w-6 text-gray-500 hidden group-hover:flex transition-opacity group-hover:duration-500" />
                 )}
                 <span
                   className={`text-xl ${section?.section ? 'text-background' : 'text-foreground'} flex items-center justify-center rounded-md ${item?.color} px-1 p-1`}
                 >
                   <item.icon />
                 </span>
-                <div className="text-sm cursor-pointer">{item.title}</div>
+                <div className="flex justify-between w-full">
+                  <div className="text-sm cursor-pointer">{item.title}</div>
+                  {section.hoverAnimate !== false && (
+                    <BsThreeDotsVertical className="h-4 w-4 mr-0.5 text-gray-500 hidden group-hover:flex transition-opacity group-hover:duration-500" />
+                  )}
+                </div>
               </div>
             ))}
           </ul>
