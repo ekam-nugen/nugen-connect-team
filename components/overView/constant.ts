@@ -1,6 +1,4 @@
 // src/data/dashboardData.ts
-
-import React from 'react';
 import {
   FaUsers,
   FaCrown,
@@ -31,7 +29,7 @@ export type Task = {
 
 export type TQuickAction = {
   title: string;
-  icon: React.ReactElement;
+  icon: IconType;
   iconColor: string;
 };
 
@@ -39,7 +37,7 @@ export type ChecklistItem = {
   id: number;
   title: string;
   description?: string;
-  icon: React.ReactElement;
+  icon: IconType;
   progress: string;
   status: 'completed' | 'in_progress' | 'pending';
   color: string;
@@ -59,7 +57,7 @@ export type AttendanceItem = {
 };
 
 export type MessageData = {
-  icon: React.ElementType;
+  icon: IconType;
   message: string;
 };
 
@@ -125,30 +123,30 @@ export const tasks: Task[] = [
 
 // QUICK ACTIONS
 export const quickActions: TQuickAction[] = [
-  { title: 'Add users', iconColor: 'text-green-500', icon: <FaUsers /> },
-  { title: 'Add admins', iconColor: 'text-yellow-500', icon: <FaCrown /> },
+  { title: 'Add users', iconColor: 'text-green-500', icon: FaUsers },
+  { title: 'Add admins', iconColor: 'text-yellow-500', icon: FaCrown },
   {
     title: 'Add a task',
     iconColor: 'text-purple-500',
-    icon: <FaClipboardCheck />,
+    icon: FaClipboardCheck,
   },
-  { title: 'Send an update', iconColor: 'text-blue-500', icon: <FaEnvelope /> },
+  { title: 'Send an update', iconColor: 'text-blue-500', icon: FaEnvelope },
 ];
 
 export const quickTask = [
   {
-    icons: <FaUserPlus />,
+    icons: FaUserPlus,
     iconDescription: 'Add Users',
     color: 'text-green-500',
   },
-  { icons: <FaCrown />, iconDescription: 'Add Admin', color: 'text-amber-500' },
+  { icons: FaCrown, iconDescription: 'Add Admin', color: 'text-amber-500' },
   {
-    icons: <FaClipboardCheck />,
+    icons: FaClipboardCheck,
     iconDescription: 'Add a Task',
     color: 'text-purple-500',
   },
   {
-    icons: <FaEnvelope />,
+    icons: FaEnvelope,
     iconDescription: 'Send an Update',
     color: 'text-blue-500',
   },
@@ -156,8 +154,8 @@ export const quickTask = [
 
 // ATTENDANCE
 export const attendance = [
-  { icons: <FaRunning />, iconDescription: 'Nobody is running late' },
-  { icons: <FaClock />, iconDescription: 'Nobody is clocked in' },
+  { icons: FaRunning, iconDescription: 'Nobody is running late' },
+  { icons: FaClock, iconDescription: 'Nobody is clocked in' },
 ];
 
 export const attendanceData: AttendanceItem[] = [
@@ -180,7 +178,7 @@ export const checklistItems: ChecklistItem[] = [
   {
     id: 1,
     title: 'Activate 5 features',
-    icon: <></>,
+    icon: FaChevronRight,
     progress: '5/5',
     status: 'completed',
     color: 'bg-gradient-to-b from-red-500 via-orange-500 to-amber-900',
@@ -188,7 +186,7 @@ export const checklistItems: ChecklistItem[] = [
   {
     id: 2,
     title: 'Add 3 admins to your dashboard',
-    icon: <FaChevronRight />,
+    icon: FaChevronRight,
     progress: '1/3',
     status: 'in_progress',
     color: 'bg-gradient-to-b from-teal-200 via-cyan-500 to-teal-900',
@@ -196,7 +194,7 @@ export const checklistItems: ChecklistItem[] = [
   {
     id: 3,
     title: 'Add 10 users to test the mobile app',
-    icon: <FaChevronRight />,
+    icon: FaChevronRight,
     progress: '5/10',
     status: 'in_progress',
     color: 'bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500',
@@ -206,7 +204,7 @@ export const checklistItems: ChecklistItem[] = [
     title: 'Download our product presentation',
     description:
       'It will guide you on how to evaluate Connecteam for your company',
-    icon: <FaDownload />,
+    icon: FaDownload,
     progress: '',
     status: 'pending',
     color: 'bg-gradient-to-b from-amber-200 via-orange-500 to-yellow-900',
@@ -214,7 +212,7 @@ export const checklistItems: ChecklistItem[] = [
   {
     id: 5,
     title: 'Follow this checklist during your trial',
-    icon: <FaDownload />,
+    icon: FaDownload,
     progress: '',
     status: 'pending',
     color: 'bg-gradient-to-b from-teal-400 via-cyan-500 to-green-900',
@@ -224,7 +222,7 @@ export const checklistItems: ChecklistItem[] = [
     title: 'Download our product presentation',
     description:
       'Share it with colleagues and other decision makers in your company',
-    icon: <FaChevronRight />,
+    icon: FaChevronRight,
     progress: '1/3',
     status: 'in_progress',
     color: 'bg-gradient-to-b from-indigo-400 via-sky-500 to-cyan-900',
@@ -232,7 +230,7 @@ export const checklistItems: ChecklistItem[] = [
   {
     id: 7,
     title: 'Add 10 users to test the mobile app',
-    icon: <FaChevronRight />,
+    icon: FaChevronRight,
     progress: '5/10',
     status: 'in_progress',
     color: 'bg-gradient-to-b from-amber-200 via-orange-500 to-yellow-900',
@@ -242,7 +240,7 @@ export const checklistItems: ChecklistItem[] = [
     title: 'Download our product presentation',
     description:
       'It will guide you on how to evaluate Connecteam for your company',
-    icon: <FaDownload />,
+    icon: FaDownload,
     progress: '',
     status: 'pending',
     color: 'bg-gradient-to-b from-teal-900 via-cyan-500 to-green-900',
@@ -285,7 +283,7 @@ export const nextMilestones: Milestone[] = [
 ];
 export const dailyActivity = {
   title: 'Daily Activity',
-  icon: <TfiAlignRight />, // ✅ Ensure this path is correct or place your icon here
+  icon: TfiAlignRight,
   messageTitle: 'No activity to display',
   messageSubtitle: 'Once your users interact with the app\nyou’ll see it here',
   buttonLabel: 'View History',

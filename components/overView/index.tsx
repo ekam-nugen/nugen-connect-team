@@ -2,14 +2,14 @@
 
 import React from 'react';
 import { Card, CardTitle } from '@/base-components/card';
-import LeftSideDashboard from './leftSideOverView';
 import { dailyActivity, quickActions, tasks } from './constant';
 import TaskCard from '@/base-components/activityCard';
 import SmallCardWithIcon from '@/base-components/smallCardWithIcon';
 import EngagementCard from '@/base-components/graphs';
 import AttendanceSection from './attendanceSection/AttendanceSection';
+import LeftSideOverview from './leftSideOverView';
 
-function DashboardComponent() {
+function OverviewComponent() {
   return (
     <div className="flex justify-between gap-4 md:gap-2 lg:gap-4">
       <div className="w-full">
@@ -47,7 +47,7 @@ function DashboardComponent() {
                 className="text-6xl text-zinc-400 flex items-center justify-center mb-4"
                 style={{ width: 100, height: 100 }}
               >
-                {dailyActivity.icon}
+                {dailyActivity.icon && <dailyActivity.icon />}
               </span>
               <h3 className="font-semibold text-lg text-zinc-800 mb-1">
                 {dailyActivity.messageTitle}
@@ -74,10 +74,10 @@ function DashboardComponent() {
         </div>
       </div>
       <div className="flex justify-end">
-        <LeftSideDashboard />
+        <LeftSideOverview />
       </div>
     </div>
   );
 }
 
-export default DashboardComponent;
+export default OverviewComponent;

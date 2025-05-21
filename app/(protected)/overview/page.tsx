@@ -1,12 +1,12 @@
 import React from 'react';
-import DashboardComponent from '@/components/overView';
+import OverviewComponent from '@/components/overView';
 
-function DashboardPage() {
+function OverViewPage() {
   return (
     <>
-      <DashboardComponent />
+      <OverviewComponent />
     </>
   );
 }
 
-export default DashboardPage;
+export default OverViewPage;

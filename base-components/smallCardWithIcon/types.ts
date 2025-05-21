@@ -1,5 +1,7 @@
+import { IconType } from 'react-icons';
+
 export interface SmallCardWithIconType {
   title?: string;
-  icon?: React.ReactNode;
+  icon?: IconType;
   iconColor?: string;
 }

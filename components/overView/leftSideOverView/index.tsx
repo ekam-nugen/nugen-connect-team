@@ -10,7 +10,7 @@ import { PiNumberThreeBold } from 'react-icons/pi';
 import { MdStar } from 'react-icons/md';
 import { achievedMilestone, nextMilestones } from '../constant';
 
-function LeftSideDashboard() {
+function LeftSideOverview() {
   return (
     <div className="flex flex-col gap-4 md:gap-2 lg:gap-4 items-center">
       <Card className="p-4">
@@ -104,4 +104,4 @@ function LeftSideDashboard() {
   );
 }
 
-export default LeftSideDashboard;
+export default LeftSideOverview;
