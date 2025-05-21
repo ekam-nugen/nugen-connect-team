@@ -13,10 +13,8 @@
   --secondary: #f1f5f9;
   --secondary-foreground: #042d44;
   --accent: #ffffff;
-  --muted: #f8f9fa;
-
-  /* Currently not used */
   --accent-foreground: #71717a;
+  --muted: #f8f9fa;
   --muted-foreground: #71717a;
   --card: #ffffff;
   --card-foreground: #042d44;

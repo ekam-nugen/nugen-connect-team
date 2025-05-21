@@ -63,7 +63,7 @@ function LoginPhone() {
       <div className="text-center mt-6">
         <Button
           onClick={handleLogin}
-          className="bg-primary hover:bg-primary-hover text-accent font-semibold py-2 px-6 rounded-full text-sm transition"
+          className="bg-primary hover:bg-primary-hover text-primary-foreground font-semibold py-2 px-6 rounded-full text-sm transition"
         >
           Verify
         </Button>

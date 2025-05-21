@@ -73,13 +73,11 @@ export default function Sidebar() {
           {section.addOption && !collapsed && (
             <div className="my-2 pl-2 flex items-center gap-2">
               <span
-                className={`text-xl w-6 h-6 flex text-blue-400 items-center justify-center rounded-full border-[1px] border-gray-400 px-1 p-1`}
+                className={`text-xl w-6 h-6 flex text-primary items-center justify-center rounded-full border-[1px] border-gray-400 px-1 p-1`}
               >
                 <IoAddOutline />
               </span>
-              <div className="text-sm text-blue-400 cursor-pointer">
-                Add New
-              </div>
+              <div className="text-sm text-primary cursor-pointer">Add New</div>
             </div>
           )}
           <div className="w-full border-[1px] border-gray-200"></div>

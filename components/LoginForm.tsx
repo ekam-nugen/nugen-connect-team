@@ -52,7 +52,7 @@ export default function LoginForm({
         {error && <p className="text-destructive text-sm">{error}</p>}
         <button
           type="submit"
-          className="w-full bg-primary text-accent p-2 rounded-md hover:bg-primary-hover disabled:bg-blue-300"
+          className="w-full bg-primary text-primary-foreground p-2 rounded-md hover:bg-primary-hover disabled:bg-blue-300"
           disabled={isLoading}
         >
           {isLoading ? 'Logging in...' : 'Login'}
