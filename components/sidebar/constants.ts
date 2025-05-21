@@ -1,25 +1,22 @@
-import { PiChats } from 'react-icons/pi';
-import { SlEvent } from 'react-icons/sl';
-import { PiAddressBook } from 'react-icons/pi';
+import { SidebarDataType } from './types';
+import {
+  IoGiftOutline,
+  IoDocumentOutline,
+  IoPeopleOutline,
+} from 'react-icons/io5';
 import { CiMail } from 'react-icons/ci';
-import { SiBookstack } from 'react-icons/si';
-import { MdOutlineSupportAgent } from 'react-icons/md';
-import { IoPeopleOutline } from 'react-icons/io5';
-import { LuMessageSquareMore } from 'react-icons/lu';
-import { TiStopwatch } from 'react-icons/ti';
-import { SiReacthookform } from 'react-icons/si';
-import { AiOutlineSchedule } from 'react-icons/ai';
-import { IoGiftOutline } from 'react-icons/io5';
-import { IoDocumentOutline } from 'react-icons/io5';
-import { MdOutlineCelebration } from 'react-icons/md';
-import { BiAlarmOff } from 'react-icons/bi';
-import { SlUser } from 'react-icons/sl';
 import { FiUsers } from 'react-icons/fi';
+import { TiStopwatch } from 'react-icons/ti';
 import { CgFormatLeft } from 'react-icons/cg';
-import { LuLayoutGrid } from 'react-icons/lu';
-import { BiSelectMultiple } from 'react-icons/bi';
+import { SlEvent, SlUser } from 'react-icons/sl';
+import { AiOutlineSchedule } from 'react-icons/ai';
+import { PiChats, PiAddressBook } from 'react-icons/pi';
+import { SiBookstack, SiReacthookform } from 'react-icons/si';
+import { MdOutlineSupportAgent, MdOutlineCelebration } from 'react-icons/md';
+import { BiSelectMultiple, BiAlarmOff } from 'react-icons/bi';
+import { LuLayoutGrid, LuMessageSquareMore } from 'react-icons/lu';
 
-export const sideBarData = [
+export const sideBarData: SidebarDataType[] = [
   {
     title: 'Overview',
     hoverAnimate: false,
