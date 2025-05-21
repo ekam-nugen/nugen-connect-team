@@ -1,6 +1,6 @@
 'use client';
 
-import useAuth from '@/hooks/useAuth';
+import { useAuth } from '@/hooks/useAuth';
 
 export default function DashboardContent() {
   const { user, isLoading, error } = useAuth();

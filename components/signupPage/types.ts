@@ -14,6 +14,7 @@ export interface IErrs {
 export interface SignUpCardProps {
   form: SignUpFormType;
   errs: IErrs;
+  isLoading?: boolean;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: () => void;
   handleGoogleSignUp?: () => void;

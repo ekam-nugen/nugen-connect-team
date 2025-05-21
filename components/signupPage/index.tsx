@@ -7,6 +7,7 @@ import { fadeInAnimation, staggerParent } from '@/lib/animationUtils';
 import { SignUpFormType } from './types';
 import DisclaimerText from './Disclaimer';
 import SignUpCard from './SignUpCard';
+import { useAuthSignup, useSocialSignup } from '@/hooks/useAuth';
 
 export default function SignUp() {
   const router = useRouter();
@@ -17,9 +18,11 @@ export default function SignUp() {
     password: '',
   });
   const [touched, setTouched] = useState<boolean>(false);
+  const { Signup, isLoading, error } = useAuthSignup();
+  const { signupWithSocial } = useSocialSignup();
 
   const emailRx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-  const pwdRx = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  const pwdRx = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z\d])[A-Za-z\d\S]{8,}$/;
 
   const errs = {
     email: touched && (!form.email || !emailRx.test(form.email)),
@@ -31,20 +34,30 @@ export default function SignUp() {
     setForm(p => ({ ...p, [name]: value }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setTouched(true);
 
     const emailValid = form.email && emailRx.test(form.email);
     const passwordValid = form.password && pwdRx.test(form.password);
 
-    if (!emailValid || !passwordValid) {
+    if (!emailValid) {
       return;
     }
 
-    console.table(form);
-    router.push('/signup/verification');
+    try {
+      const result = await Signup(form);
+      router.push('/dashboard');
+    } catch (err) {
+      console.error('Signup Error:', err);
+    }
+  };
+  const handleGoogleSignUp = async () => {
+    const success = await signupWithSocial({ provider: 'google' });
   };
 
+  const handleFacebookSignUp = async () => {
+    const success = await signupWithSocial({ provider: 'facebook' });
+  };
   return (
     <motion.div
       {...staggerParent}
@@ -59,9 +72,12 @@ export default function SignUp() {
 
       <SignUpCard
         form={form}
-        errs={errs}
+        errs={errs ?? error}
+        isLoading={isLoading}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        handleGoogleSignUp={handleGoogleSignUp}
+        handleFacebookSignUp={handleFacebookSignUp}
       />
 
       {/* footer text */}
