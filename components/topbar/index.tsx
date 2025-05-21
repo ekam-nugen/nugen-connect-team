@@ -34,14 +34,14 @@ const Topbar = () => {
   }, [modalcard]);
 
   return (
-    <div className="py-2 px-4 w-full flex flex-wrap items-center justify-between gap-y-2">
-      <div className="flex items-center gap-4">
+    <div className="py-2 px-4 w-full flex flex-wrap items-center justify-between gap-y-2 sticky top-0 z-50 shadow-sm">
+      <div className="flex items-center gap-7">
         <Image
           src={userImage}
           alt="Logo"
           width={120}
           height={50}
-          className="hidden lg:block object-scale-down"
+          className="hidden lg:block object-scale-down w-full"
         />
         <Image
           src={logoMobile}

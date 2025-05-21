@@ -18,7 +18,7 @@ export default function Sidebar() {
   return (
     <div
       className={cn(
-        'h-screen bg-background  transition-all duration-300 ease-in-out',
+        'max-h-[92vh] bg-background transition-all duration-300 ease-in-out overflow-y-scroll scrollbar-thin sticky top-14 z-40',
         collapsed ? 'w-16' : 'w-56 space-y-4 '
       )}
     >
