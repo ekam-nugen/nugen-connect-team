@@ -1,6 +1,8 @@
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { verifyToken } from '@/lib/auth';
+import Topbar from '@/components/topbar';
+import Sidebar from '@/components/sidebar';
 
 export default async function ProtectedLayout({
   children,
@@ -14,11 +16,12 @@ export default async function ProtectedLayout({
   if (!token || !verifyToken(token)) redirect('/login');
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <nav className="bg-blue-600 text-white p-4">
-        <h1 className="text-lg font-semibold">Secure App</h1>
-      </nav>
-      {children}
+    <div className="bg-gray-100 flex flex-col">
+      <Topbar />
+      <div className="flex flex-1">
+        <Sidebar />
+        <main className="flex-1">{children}</main>
+      </div>
     </div>
   );
 }
