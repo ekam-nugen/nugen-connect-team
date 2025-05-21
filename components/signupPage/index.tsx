@@ -40,7 +40,7 @@ export default function SignUp() {
     const emailValid = form.email && emailRx.test(form.email);
     const passwordValid = form.password && pwdRx.test(form.password);
 
-    if (!emailValid) {
+    if (!emailValid || !passwordValid) {
       return;
     }
 
