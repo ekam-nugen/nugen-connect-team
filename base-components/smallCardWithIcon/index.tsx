@@ -8,7 +8,7 @@ const SmallCardWithIcon: React.FC<SmallCardWithIconType> = ({
   iconColor,
 }) => {
   return (
-    <Card className="w-44 min-h-24 rounded-3xl py-4 px-6 drop-shadow-2xl flex flex-col justify-center gap-2 border-none">
+    <Card className="w-44 min-h-24 rounded-3xl py-4 px-4 drop-shadow-xl hover:bg-[#eeeeee] cursor-pointer flex-col justify-center gap-2 border-none">
       <div className={`flex justify-center text-[32px] ${iconColor}`}>
         {icon}
       </div>
