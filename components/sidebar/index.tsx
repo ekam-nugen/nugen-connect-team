@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { sideBarData } from './constant';
+import { sideBarData } from './constants';
 import { CgMenuGridO } from 'react-icons/cg';
 import {
   IoAddOutline,
@@ -10,6 +10,7 @@ import {
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { cn } from '@/lib/utils';
 import { Button } from '@/base-components/button';
+import { SidebarDataType, SidebarItems } from './types';
 
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState<boolean>(false);
@@ -17,7 +18,7 @@ export default function Sidebar() {
   return (
     <div
       className={cn(
-        'h-screen bg-background  transition-all duration-300 ease-in-out border',
+        'h-screen bg-background  transition-all duration-300 ease-in-out',
         collapsed ? 'w-16' : 'w-56 space-y-4 '
       )}
     >
@@ -29,13 +30,13 @@ export default function Sidebar() {
           {collapsed ? <IoChevronForwardSharp /> : <IoChevronBackSharp />}
         </Button>
       </div>
-      {sideBarData.map((section, index) => (
+      {sideBarData?.map((section: SidebarDataType, index: number) => (
         <div key={section.title + index} className="p-1">
           {!collapsed && section?.section && (
             <h2 className="text-sm font-bold mb-2 pl-2">{section.section}</h2>
           )}
           <ul className="space-y-1">
-            {section.items.map((item, index) => (
+            {section.items.map((item: SidebarItems, index: number) => (
               <div
                 key={item.title + index}
                 className={cn(

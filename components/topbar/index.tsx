@@ -12,7 +12,7 @@ import userImage from '../../public/images/connecteam-logo.svg';
 import { Button } from '@/base-components/button';
 import { Input } from '@/base-components/input';
 import UserProfileCard from './UserAvatarCard';
-import { ModalCardData3 } from './constant';
+import { ModalCardData3 } from './constants';
 
 const Topbar = () => {
   const [modalcard, setModalcard] = useState<boolean>(false);
