@@ -37,7 +37,7 @@ export type ChecklistItem = {
 export interface Milestone {
   icon: IconType;
   label: string;
-  progress: number; // 0 to 100
+  progress: number;
   gradient: string;
   stars?: number;
 }
