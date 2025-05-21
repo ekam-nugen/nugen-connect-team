@@ -14,7 +14,7 @@ export default function LoginForm({
   error,
 }: LoginFormProps) {
   return (
-    <div className="bg-accent p-8 rounded-lg shadow-lg w-full max-w-md">
+    <div className="bg-background p-8 rounded-lg shadow-lg w-full max-w-md">
       <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
       <form onSubmit={onSubmit} className="space-y-4">
         <div>

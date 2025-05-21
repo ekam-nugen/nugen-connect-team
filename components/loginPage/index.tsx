@@ -29,7 +29,7 @@ function LoginPhone() {
   return (
     <motion.div
       {...staggerParent}
-      className="mx-auto p-6 bg-accent w-full max-w-sm rounded-2xl shadow-lg overflow-hidden"
+      className="mx-auto p-6 bg-background w-full max-w-sm rounded-2xl shadow-lg overflow-hidden"
     >
       <motion.h2
         variants={topToBottomAnimation}

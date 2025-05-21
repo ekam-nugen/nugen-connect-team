@@ -48,7 +48,7 @@ export default function SignUp() {
   return (
     <motion.div
       {...staggerParent}
-      className="min-h-screen w-full bg-accent py-10 overflow-x-hidden"
+      className="min-h-screen w-full bg-background py-10 overflow-x-hidden"
     >
       <motion.h2
         variants={fadeInAnimation}

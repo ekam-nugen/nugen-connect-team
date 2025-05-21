@@ -24,7 +24,7 @@ const SignUpCard: React.FC<SignUpCardProps> = ({
   const [showPwd, setShowPwd] = useState<boolean>(false);
   return (
     <section className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 md:flex-row overflow-x-hidden">
-      <div className="flex overflow-hidden rounded-2xl bg-accent shadow-[0_25px_60px_-15px_rgba(0,0,0,0.15)] md:min-w-3xl">
+      <div className="flex overflow-hidden rounded-2xl bg-background shadow-[0_25px_60px_-15px_rgba(0,0,0,0.15)] md:min-w-3xl">
         <motion.div
           variants={fadeInAnimation}
           className="relative hidden flex-none items-center justify-center bg-gradient-to-br from-purple-50 to-purple-200 md:flex md:w-[350px]"

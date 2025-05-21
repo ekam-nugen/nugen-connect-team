@@ -28,7 +28,7 @@ function OTPVerification() {
   return (
     <motion.div
       {...staggerParent}
-      className="mx-auto p-6 bg-accent w-full max-w-sm rounded-2xl shadow-lg overflow-x-hidden"
+      className="mx-auto p-6 bg-background w-full max-w-sm rounded-2xl shadow-lg overflow-x-hidden"
     >
       <motion.div variants={fadeInAnimation} className="mb-4">
         <FaArrowLeft
