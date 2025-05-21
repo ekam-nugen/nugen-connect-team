@@ -1,7 +1,8 @@
 import React from 'react';
 import { sideBarData } from './constant';
-// import { CgMenuGridO } from 'react-icons/cg';
+import { CgMenuGridO } from 'react-icons/cg';
 import { IoAddOutline } from 'react-icons/io5';
+import { cn } from '@/lib/utils';
 
 export default function Sidebar() {
   return (
@@ -15,11 +16,15 @@ export default function Sidebar() {
             {section.items.map((item, index) => (
               <div
                 key={item.title + index}
-                className="flex items-center gap-2 group hover:bg-gray-100 shadow-x-lg  px-2 py-1.5 rounded-lg cursor-pointer  duration-500 hover:translate-x-1 transition-transform"
+                className={cn(
+                  'group relative flex items-center gap-2 hover:bg-gray-100 px-2 py-1.5 rounded-lg cursor-pointer',
+                  section.hoverAnimate !== false &&
+                    'duration-500 hover:translate-x-0.5 transition-transform '
+                )}
               >
-                {/* <div className="">
-                          <CgMenuGridO className="h-4 w-4 mr-1  text-gray-500" />
-                        </div> */}
+                {section.hoverAnimate !== false && (
+                  <CgMenuGridO className="h-4 w-4 mr-0.5 text-gray-500 hidden group-hover:flex transition-opacity group-hover:duration-500" />
+                )}
                 <span
                   className={`text-xl ${section?.section ? 'text-background' : 'text-foreground'} flex items-center justify-center rounded-md ${item?.color} px-1 p-1`}
                 >

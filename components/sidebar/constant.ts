@@ -22,6 +22,7 @@ import { BiSelectMultiple } from 'react-icons/bi';
 export const sideBarData = [
   {
     title: 'Overview',
+    hoverAnimate: false,
     items: [
       {
         icon: LuLayoutGrid,
@@ -37,6 +38,7 @@ export const sideBarData = [
   },
   {
     title: 'User',
+    hoverAnimate: false,
     items: [
       {
         icon: SlUser,
