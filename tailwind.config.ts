@@ -17,10 +17,22 @@ const config: Config = {
         primary: {
           DEFAULT: 'var(--primary)',
           foreground: 'var(--primary-foreground)',
+          hover: 'var(--primary-hover)',
         },
         secondary: {
           DEFAULT: 'var(--secondary)',
           foreground: 'var(--secondary-foreground)',
+        },
+        gray: {
+          light: 'var(--gray-light)',
+          text: 'var(--gray-text)',
+          subtle: 'var(--gray-subtle)',
+          muted: 'var(--gray-muted)',
+        },
+        zinc: {
+          text: 'var(--zinc-text)',
+          heading: 'var(--zinc-heading)',
+          dark: 'var(--zinc-dark)',
         },
         destructive: {
           DEFAULT: 'var(--destructive)',

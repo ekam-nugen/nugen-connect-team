@@ -12,7 +12,7 @@ const UserProfileDropdown = ({
       {loginUserIcon && (
         <>
           <div className="flex items-center rounded-lg p-2 mb-2">
-            <div className="relative w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-primary text-accent font-bold text-sm">
+            <div className="relative w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-primary text-primary-foreground font-bold text-sm">
               PK
             </div>
             <div className="ml-3">
@@ -29,7 +29,7 @@ const UserProfileDropdown = ({
           return (
             <div
               key={item.text + index}
-              className="flex items-center gap-2 p-2 rounded-lg hover:bg-accent-foreground hover:text-accent cursor-pointer"
+              className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-subtle hover:text-gray-text cursor-pointer"
             >
               <Icon className="text-lg" />
               <span className="text-sm">{item.text}</span>

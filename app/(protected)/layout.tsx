@@ -16,7 +16,7 @@ export default async function ProtectedLayout({
   if (!token || !verifyToken(token)) redirect('/login');
 
   return (
-    <div className="bg-gray-100 flex flex-col">
+    <div className="bg-gray-light flex flex-col">
       <Topbar />
       <div className="flex flex-1">
         <Sidebar />

@@ -52,7 +52,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                   'h-5 font-normal text-sm text-slate-900',
                   labelClass,
                   {
-                    'text-red-500': error,
+                    'text-destructive': error,
                     'text-slate-700/40': disabled,
                   }
                 )}
@@ -63,7 +63,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               {requiredField && (
                 <CgAsterisk
                   size={12}
-                  className={cn(' text-red-500 cursor-pointer', iconClass, {
+                  className={cn(' text-destructive cursor-pointer', iconClass, {
                     'opacity-40': disabled,
                   })}
                 />
@@ -79,7 +79,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                         'w-5 h-5 text-slate-700 cursor-pointer',
                         iconClass,
                         {
-                          'text-red-500': error,
+                          'text-destructive': error,
                           'opacity-40': disabled,
                         }
                       )}
@@ -99,7 +99,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
               'flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none w-full placeholder:text-sm placeholder:text-medium',
               inputBoxClass,
               {
-                'border border-red-500': error,
+                'border border-destructive': error,
                 'disabled:cursor-not-allowed disabled:opacity-50 bg-slate-500/20 text-slate-900':
                   disabled,
                 'pl-8': searchIcon,
@@ -132,7 +132,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                   }
                 }}
                 className={cn('text-slate-600 p-2', {
-                  'text-red-500': error,
+                  'text-destructive': error,
                 })}
               >
                 {showPassword ? <IoIosEye /> : <IoIosEyeOff />}
@@ -145,7 +145,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             className={cn(
               'max-w-fit font-normal text-xs pt-1 px-2 whitespace-pre-wrap',
               {
-                'text-red-500': error,
+                'text-destructive': error,
               }
             )}
           >
