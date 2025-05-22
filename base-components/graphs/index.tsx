@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiChevronDown, FiRefreshCw } from 'react-icons/fi';
+import { FiRefreshCw } from 'react-icons/fi';
 import {
   XAxis,
   YAxis,
@@ -8,42 +8,61 @@ import {
   Area,
   AreaChart,
 } from 'recharts';
+import { EngagementChartProps } from './types';
+import { DatePicker } from '../datepicker';
+import SelectBox from '../selectbox';
 
-const data = [
-  { date: '08/05', value: 0 },
-  { date: '10/05', value: 0 },
-  { date: '12/05', value: 0 },
-  { date: '14/05', value: 0 },
-  { date: '16/05', value: 0 },
-  { date: '18/05', value: 1 },
-  { date: '20/05', value: 2 },
-  { date: '21/05', value: 1 },
-];
-
-export default function EngagementChart() {
+export default function EngagementChart({
+  data,
+  title,
+  subtitle,
+}: EngagementChartProps) {
   return (
     <div className="bg-white rounded-2xl p-4 shadow-sm w-full">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold text-gray-900">Engagement</h2>
-        <div className="flex items-center space-x-2">
-          <button className="flex items-center px-3 py-3 border rounded-full text-sm text-gray-700">
-            All users group <FiChevronDown className="ml-2" />
-          </button>
-          <button className="flex items-center px-3 py-3 border rounded-full text-sm text-gray-700">
-            Day <FiChevronDown className="ml-2" />
-          </button>
-          <button className="flex items-center px-3 py-3 border rounded-full text-sm text-gray-700">
-            07/05 to 21/05 <FiChevronDown className="ml-2" />
-          </button>
+      <div className="flex flex-col md:flex-row justify-between items-center mb-4 gap-4">
+        <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
+        <div className="flex flex-wrap md:flex-nowrap items-center gap-2">
+          <div className="min-w-[180px]">
+            <SelectBox
+              placeholder="All Users Groups"
+              onChange={() => ''}
+              filteredOptions={[
+                { id: 'admin', value: 'Admin Groups', label: 'Admin Groups' },
+                { id: 'team1', value: 'Team 1', label: 'Team 1' },
+                { id: 'team2', value: 'Team 2', label: 'Team 2' },
+              ]}
+              setFilteredOptions={() => ''}
+              selectedItems={[]}
+              setSelectedItems={() => ''}
+            />
+          </div>
+
+          <div className="min-w-[80px]">
+            <SelectBox
+              placeholder="Day"
+              onChange={() => ''}
+              filteredOptions={[
+                { id: 'day', value: 'Day', label: 'Day' },
+                { id: 'week', value: 'Week', label: 'Week' },
+                { id: 'month', value: 'Month', label: 'Month' },
+              ]}
+              setFilteredOptions={() => ''}
+              selectedItems={[]}
+              setSelectedItems={() => ''}
+            />
+          </div>
+
+          <div className="min-w-[100px]">
+            <DatePicker mode="range" />
+          </div>
+
           <button className="p-2 border rounded-full">
             <FiRefreshCw />
           </button>
         </div>
       </div>
-      <p className="text-sm text-gray-600 mb-2">
-        Users activity throughout the period
-      </p>
-      <div className="h-60">
+      <p className="text-sm text-gray-600 mb-2">{subtitle}</p>
+      <div className="h-60 sm:h-72 md:h-80">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data}>
             <defs>

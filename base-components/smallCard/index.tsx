@@ -20,7 +20,7 @@ const SmallCard: React.FC<SmallCardProps> = ({
   return (
     <div className="flex flex-col">
       <Card
-        className={`${cardClassName} flex flex-col p-4 md:p-2 lg:p-4 w-80 shadow-none `}
+        className={`${cardClassName} flex flex-col p-4 md:p-2 lg:p-4 w-full shadow-none `}
       >
         <div className="text-xl md:text-lg lg:text-xl font-bold text-zinc-text flex justify-start items-start">
           {heading}

@@ -2,25 +2,30 @@
 
 import React from 'react';
 import { Card, CardTitle } from '@/base-components/card';
-import { dailyActivity, quickActions, tasks } from './constants';
+import {
+  dailyActivity,
+  engagementData,
+  quickActions,
+  tasks,
+} from './constants';
 import TaskCard from '@/base-components/activityCard';
 import SmallCardWithIcon from '@/base-components/smallCardWithIcon';
-import EngagementCard from '@/base-components/graphs';
 import AttendanceSection from './attendanceSection/AttendanceSection';
 import LeftSideOverview from './leftSideOverView';
+import EngagementChart from '@/base-components/graphs';
 
 function OverviewComponent() {
   return (
-    <div className="flex justify-between gap-4 md:gap-2 lg:gap-4">
-      <div className="w-full">
+    <div className="flex flex-col lg:flex-row gap-4">
+      <div className="w-full lg:w-2/3">
         <Card className="p-5 space-x-6 md:p-3 lg:p-5 shadow-none">
           <CardTitle className="text-xl md:text-lg lg:text-xl text-zinc-700 font-bold m-3 md:m-2 lg:m-3">
             Quick Actions
           </CardTitle>
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex justify-center gap-x-6 gap-y-4 flex-wrap">
             {quickActions.map((action, index) => (
               <SmallCardWithIcon
-                key={index}
+                key={action.title + index}
                 icon={action.icon}
                 title={action.title}
                 iconColor={action.iconColor}
@@ -28,17 +33,23 @@ function OverviewComponent() {
             ))}
           </div>
         </Card>
-        <div className="p-6 space-y-6">
+        <div className="w-full py-4 space-y-6">
           <AttendanceSection />
         </div>
-        <EngagementCard />
-        <div className="space-y-6 p-5">
-          <Card className="p-6 bg-white rounded-xl shadow-none">
+        <EngagementChart
+          data={engagementData}
+          title="Engagement"
+          subtitle="Activity data for selected timeframe"
+          groupLabel="Marketing Team"
+          timeFrameLabel="Week"
+        />
+        <div className="space-y-6 py-4">
+          <Card className="p-4 w-full bg-white rounded-xl shadow-none min-h-[300px]">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold text-zinc-800">
                 Daily Activity
               </h2>
-              <button className="border border-gray-300 text-blue-600 font-medium rounded-full px-6 py-2 hover:bg-gray-100 transition">
+              <button className="border border-gray-300 text-blue-600 font-medium rounded-full lg:px-6 px-2 md:px-4 py-2 hover:bg-gray-100 transition">
                 View History
               </button>
             </div>
@@ -58,10 +69,10 @@ function OverviewComponent() {
             </div>
           </Card>
         </div>
-        <div className="space-y-4 bg-accent p-10">
+        <div className="space-y-4 rounded-xl bg-white p-10">
           {tasks.map((task, index) => (
             <TaskCard
-              key={index}
+              key={task.title + index}
               title={task.title}
               subtitle={task.subtitle}
               progress={task.progress}
@@ -73,7 +84,7 @@ function OverviewComponent() {
           ))}
         </div>
       </div>
-      <div className="flex justify-end">
+      <div className="hidden lg:block lg:w-1/3">
         <LeftSideOverview />
       </div>
     </div>

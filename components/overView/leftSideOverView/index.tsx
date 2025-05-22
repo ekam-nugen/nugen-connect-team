@@ -12,15 +12,15 @@ import { achievedMilestone, nextMilestones } from '../constants';
 
 function LeftSideOverview() {
   return (
-    <div className="flex flex-col gap-4 md:gap-2 lg:gap-4 items-center">
-      <Card className="p-4">
+    <div className="flex flex-col gap-4 md:gap-2 lg:gap-4 items-center w-full max-w-md mx-auto">
+      <Card className="p-4 w-full">
         <div className="flex justify-between items-center">
           <CardTitle className="text-xl font-bold text-zinc-600">
             All about Connecteam
           </CardTitle>
           <FaTimes className="h-4 w-4 text-gray-500 cursor-pointer" />
         </div>
-        <div className="w-[290px] h-[173px]">
+        <div className="w-full aspect-video">
           <VideoPlayer
             src="https://www.w3schools.com/html/mov_bbb.mp4"
             type="video/mp4"
@@ -33,16 +33,18 @@ function LeftSideOverview() {
           'Get up to 170$ worth of credits to use when upgrading to our paid'
         }
         descriptionClassName="text-sm"
-        buttonLabel={' Get Credit'}
+        buttonLabel=" Get Credit"
         imageUrl={creditLogo}
       />
-      <SmallCard
-        description={"Users didn't log in to the app yet"}
-        buttonLabel="Select users to invite"
-        icon={<PiNumberThreeBold />}
-        iconClassName="text-white bg-gradient-to-r from-blue-600 to-violet-600 rounded-md text-2xl shadow-xl"
-      />
-      <Card className="p-5 w-full max-w-md bg-white shadow-md rounded-2xl">
+      <div className="w-full">
+        <SmallCard
+          description={"Users didn't log in to the app yet"}
+          buttonLabel="Select users to invite"
+          icon={<PiNumberThreeBold />}
+          iconClassName="text-white bg-gradient-to-r from-blue-600 to-violet-600 rounded-md text-2xl shadow-xl"
+        />
+      </div>
+      <Card className="p-5 w-full bg-white shadow-md rounded-2xl">
         <div>
           <h2 className="text-lg font-bold text-gray-800 mb-4">
             Achieved milestones

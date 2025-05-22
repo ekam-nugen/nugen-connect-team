@@ -23,6 +23,10 @@ import {
   ChecklistItem,
   Milestone,
 } from './types';
+import {
+  EngagementChartData,
+  TdailyActivity,
+} from '@/base-components/graphs/types';
 
 export const tasks: Task[] = [
   {
@@ -243,10 +247,21 @@ export const nextMilestones: Milestone[] = [
     gradient: 'from-blue-400 to-blue-600',
   },
 ];
-export const dailyActivity = {
+export const dailyActivity: TdailyActivity = {
   title: 'Daily Activity',
   icon: TfiAlignRight,
   messageTitle: 'No activity to display',
   messageSubtitle: 'Once your users interact with the app\nyou’ll see it here',
   buttonLabel: 'View History',
 };
+
+export const engagementData: EngagementChartData[] = [
+  { date: '08/05', value: 0 },
+  { date: '10/05', value: 0 },
+  { date: '12/05', value: 0 },
+  { date: '14/05', value: 0 },
+  { date: '16/05', value: 0 },
+  { date: '18/05', value: 1 },
+  { date: '20/05', value: 2 },
+  { date: '21/05', value: 1 },
+];

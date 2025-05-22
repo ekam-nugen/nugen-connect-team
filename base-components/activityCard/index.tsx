@@ -12,7 +12,7 @@ const TaskCard = ({
   onClick,
 }: TaskCardProps) => {
   return (
-    <div className="relative flex items-center bg-accent shadow-md rounded-xl px-6 py-6 w-full max-w-3xl">
+    <div className="relative flex items-center bg-white shadow-md rounded-xl px-6 py-6 w-full max-w-3xl">
       {/* Left Gradient Line */}
       <div className="absolute left-0 top-0 bottom-0 w-2 rounded-l-full bg-gradient-to-b from-purple-500 to-blue-400" />
       <div className="flex flex-1 items-center justify-between pl-4 w-full">
