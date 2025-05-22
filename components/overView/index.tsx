@@ -6,6 +6,7 @@ import {
   dailyActivity,
   engagementData,
   quickActions,
+  tabledata,
   tasks,
 } from './constants';
 import TaskCard from '@/base-components/activityCard';
@@ -23,7 +24,7 @@ function OverviewComponent() {
             Quick Actions
           </CardTitle>
           <div className="flex justify-center gap-x-6 gap-y-4 flex-wrap">
-            {quickActions.map((action, index) => (
+            {quickActions?.map((action, index) => (
               <SmallCardWithIcon
                 key={action.title + index}
                 icon={action.icon}
@@ -36,21 +37,23 @@ function OverviewComponent() {
         <div className="w-full py-4 space-y-6">
           <AttendanceSection />
         </div>
-        <EngagementChart
-          data={engagementData}
-          title="Engagement"
-          subtitle="Activity data for selected timeframe"
-          groupLabel="Marketing Team"
-          timeFrameLabel="Week"
-        />
+        {tabledata?.map((data, index) => (
+          <EngagementChart
+            key={data.title + index}
+            data={engagementData}
+            title={data.title}
+            subtitle={data.subtitle}
+            groupLabel={data.groupLabel}
+          />
+        ))}
         <div className="space-y-6 py-4">
           <Card className="p-4 w-full bg-white rounded-xl shadow-none min-h-[300px]">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold text-zinc-800">
-                Daily Activity
+                {dailyActivity?.title}
               </h2>
               <button className="border border-gray-300 text-blue-600 font-medium rounded-full lg:px-6 px-2 md:px-4 py-2 hover:bg-gray-100 transition">
-                View History
+                {dailyActivity?.buttonLabel}
               </button>
             </div>
             <div className="flex flex-col items-center justify-center text-center">

@@ -34,14 +34,6 @@ export type ChecklistItem = {
   color: string;
 };
 
-export interface Milestone {
-  icon: IconType;
-  label: string;
-  progress: number;
-  gradient: string;
-  stars?: number;
-}
-
 export type AttendanceItem = {
   label: string;
   value: number;

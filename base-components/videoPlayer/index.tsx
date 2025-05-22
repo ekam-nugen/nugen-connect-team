@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { VideoPlayerProps } from './types';
-import { X } from 'lucide-react';
+import { AiOutlineClose } from 'react-icons/ai';
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
   src,
@@ -66,7 +66,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
             onClick={handleClosePopup}
             className="absolute top-[25px] right-8 z-10 text-white bg-black/60 rounded-full p-2 hover:bg-black/80"
           >
-            <X size={20} />
+            <AiOutlineClose size={20} />
           </button>
           <video
             className="w-full h-auto rounded-xl"

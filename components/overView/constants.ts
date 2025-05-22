@@ -1,4 +1,3 @@
-// src/data/dashboardData.ts
 import {
   FaUsers,
   FaCrown,
@@ -21,12 +20,14 @@ import {
   AttendanceItem,
   MessageData,
   ChecklistItem,
-  Milestone,
 } from './types';
 import {
   EngagementChartData,
   TdailyActivity,
 } from '@/base-components/graphs/types';
+import { PiNumberThreeBold } from 'react-icons/pi';
+import { FaTimes } from 'react-icons/fa';
+import creditLogo from '../../public/images/free-credits.svg';
 
 export const tasks: Task[] = [
   {
@@ -213,40 +214,6 @@ export const checklistItems: ChecklistItem[] = [
   },
 ];
 
-// MILESTONES
-export const achievedMilestone = {
-  icon: MdChatBubbleOutline,
-  count: 1,
-  label: 'chats',
-};
-
-export const nextMilestones: Milestone[] = [
-  {
-    icon: FaClock,
-    label: '5 clock-ins made',
-    progress: 0,
-    gradient: 'from-blue-400 to-blue-600',
-  },
-  {
-    icon: FaCalendarAlt,
-    label: '5 published shifts',
-    progress: 25,
-    gradient: 'from-blue-400 to-blue-600',
-  },
-  {
-    icon: MdChatBubbleOutline,
-    label: '50 chat messages sent',
-    progress: 5,
-    gradient: 'from-purple-400 to-purple-600',
-    stars: 2,
-  },
-  {
-    icon: FaEnvelope,
-    label: '5 update interactions',
-    progress: 90,
-    gradient: 'from-blue-400 to-blue-600',
-  },
-];
 export const dailyActivity: TdailyActivity = {
   title: 'Daily Activity',
   icon: TfiAlignRight,
@@ -265,3 +232,73 @@ export const engagementData: EngagementChartData[] = [
   { date: '20/05', value: 2 },
   { date: '21/05', value: 1 },
 ];
+
+export const tabledata = [
+  {
+    title: 'Engagement',
+    subtitle: 'Activity data for selected timeframe',
+    groupLabel: 'Marketing Team',
+  },
+];
+
+//leftsidedashboard
+
+export const leftSideOverviewData = {
+  videoCard: {
+    title: 'All about Connecteam',
+    video: {
+      src: 'https://www.w3schools.com/html/mov_bbb.mp4',
+      type: 'video/mp4',
+    },
+    closeIcon: FaTimes,
+  },
+  creditCard: {
+    description:
+      'Get up to 170$ worth of credits to use when upgrading to our paid',
+    buttonLabel: 'Get Credit',
+    imageUrl: creditLogo,
+  },
+  inviteCard: {
+    description: "Users didn't log in to the app yet",
+    buttonLabel: 'Select users to invite',
+    icon: PiNumberThreeBold,
+    iconClassName:
+      'text-white bg-gradient-to-r from-blue-600 to-violet-600 rounded-md text-2xl shadow-xl',
+  },
+  milestones: {
+    achieved: {
+      title: 'Achieved milestones',
+      icon: PiNumberThreeBold,
+      count: 3,
+      label: 'Tasks Completed',
+    },
+    nextTitle: 'Next milestones',
+    next: [
+      {
+        icon: FaClock,
+        label: '5 clock-ins made',
+        progress: 0,
+        gradient: 'from-blue-400 to-blue-600',
+      },
+      {
+        icon: FaCalendarAlt,
+        label: '5 published shifts',
+        progress: 25,
+        gradient: 'from-blue-400 to-blue-600',
+      },
+      {
+        icon: MdChatBubbleOutline,
+        label: '50 chat messages sent',
+        progress: 5,
+        gradient: 'from-purple-400 to-purple-600',
+        stars: 2,
+      },
+      {
+        icon: FaEnvelope,
+        label: '5 update interactions',
+        progress: 90,
+        gradient: 'from-blue-400 to-blue-600',
+      },
+    ],
+  },
+};
