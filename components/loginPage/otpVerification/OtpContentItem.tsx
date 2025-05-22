@@ -10,11 +10,11 @@ import {
 import { IconType } from 'react-icons';
 import { IOptions, OtpContentItemProps } from '../types';
 
-const OtpContentItem: React.FC<OtpContentItemProps> = ({
+export default function OtpContentItem({
   item,
   action,
   showOptions,
-}) => {
+}: Readonly<OtpContentItemProps>) {
   const [otp, setOtp] = useState<string>('');
   const Icon = item.icon as IconType;
   switch (item.type) {
@@ -97,6 +97,4 @@ const OtpContentItem: React.FC<OtpContentItemProps> = ({
     default:
       return null;
   }
-};
-
-export default OtpContentItem;
+}
