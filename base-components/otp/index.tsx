@@ -102,7 +102,7 @@ const OTP: React.FC<OTPProps> = ({
             type="text"
             inputMode="numeric"
             maxLength={2}
-            className="w-10 h-10 text-center text-base font-medium border-b-2 border-gray-subtle focus:outline-none"
+            className="w-10 h-10 text-center text-base font-medium border-b-2 border-gray-muted focus:outline-none"
             ref={el => {
               inputRefs.current[idx] = el!;
             }}
