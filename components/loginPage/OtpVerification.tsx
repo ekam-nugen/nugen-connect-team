@@ -28,24 +28,24 @@ function OTPVerification() {
   return (
     <motion.div
       {...staggerParent}
-      className="mx-auto p-6 bg-white w-full max-w-sm rounded-2xl shadow-lg overflow-x-hidden"
+      className="mx-auto p-6 bg-background w-full max-w-sm rounded-2xl shadow-lg overflow-x-hidden"
     >
       <motion.div variants={fadeInAnimation} className="mb-4">
         <FaArrowLeft
-          className="h-5 w-5 text-gray-400 cursor-pointer"
+          className="h-5 w-5 text-gray-muted cursor-pointer"
           onClick={handleBack}
         />
       </motion.div>
 
       <motion.h3
         variants={topToBottomAnimation}
-        className="text-xl font-bold text-center text-zinc-700 mb-1.5"
+        className="text-xl font-bold text-center text-zinc-text mb-1.5"
       >
         Enter the 4-digit code
       </motion.h3>
       <motion.p
         variants={topToBottomAnimation}
-        className="text-gray-500 mb-4 text-center text-base"
+        className="text-gray-subtle mb-4 text-center text-base"
       >
         Sent to your number
       </motion.p>
@@ -58,26 +58,26 @@ function OTPVerification() {
       </motion.div>
       <motion.p
         variants={rightToLeftAnimation}
-        className="text-center text-sm text-gray-500 mb-2"
+        className="text-center text-sm text-gray-subtle mb-2"
       >
         Didn’t get the code?{' '}
         <button
           onClick={toggleOptions}
-          className="text-[#2998ff] font-medium hover:underline focus:outline-none"
+          className="text-primary font-medium hover:underline focus:outline-none"
         >
           More options
         </button>
       </motion.p>
 
       {showOptions && (
-        <div className="mt-2 text-sm text-gray-600 text-center space-y-2">
-          <button className="block w-full hover:text-[#2998ff] transition">
+        <div className="mt-2 text-sm text-gray-text text-center space-y-2">
+          <button className="block w-full hover:text-primary transition">
             Resend OTP
           </button>
-          <button className="block w-full hover:text-[#2998ff] transition">
+          <button className="block w-full hover:text-primary transition">
             Get a call instead
           </button>
-          <button className="block w-full hover:text-[#2998ff] transition">
+          <button className="block w-full hover:text-primary transition">
             Send to email
           </button>
         </div>
@@ -87,7 +87,7 @@ function OTPVerification() {
         <Button
           disabled={otp.length !== 4}
           onClick={handleSubmit}
-          className="bg-[#2998ff] hover:bg-[#2381D9] text-white font-semibold py-2 px-6 rounded-full text-sm transition"
+          className="bg-primary hover:bg-primary-hover text-primary-foreground font-semibold py-2 px-6 rounded-full text-sm transition"
         >
           Verify
         </Button>

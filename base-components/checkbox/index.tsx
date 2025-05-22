@@ -43,7 +43,7 @@ const Checkbox = ({
         <CheckboxPrimitive.Indicator
           className={cn('flex items-center justify-center text-current')}
         >
-          <FaCheck className={cn('h-4 w-4 text-white', checkClass)} />
+          <FaCheck className={cn('h-4 w-4 text-accent', checkClass)} />
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
 

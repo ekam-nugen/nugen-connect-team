@@ -20,13 +20,13 @@ export function Stepper({ steps }: Readonly<StepperProps>) {
                 step.completed
                   ? 'border-primary bg-primary'
                   : step.current
-                    ? 'border-primary bg-accent shadow-lg'
-                    : 'border-accent-foreground bg-accent'
+                    ? 'border-primary bg-background shadow-lg'
+                    : 'border-accent-foreground bg-background'
               )}
             >
               {step.completed ? (
                 <FaCheck
-                  className="text-accent w-5 h-5 md:w-6 md:h-6"
+                  className="text-destructive-foreground w-5 h-5 md:w-6 md:h-6"
                   strokeWidth={2}
                 />
               ) : (

@@ -64,7 +64,7 @@ export const SelectBox = ({
           <div className="flex gap-0.5">
             <Label
               className={cn(lableClass, {
-                'text-red-600': error,
+                'text-destructive': error,
               })}
               htmlFor="select"
             >
@@ -74,7 +74,7 @@ export const SelectBox = ({
             {requiredField && (
               <CgAsterisk
                 size={12}
-                className={cn('text-red-500 cursor-pointer ', iconClass, {
+                className={cn('text-destructive cursor-pointer ', iconClass, {
                   'opacity-40': disable,
                 })}
               />
@@ -87,7 +87,7 @@ export const SelectBox = ({
                 <IoAlertCircle
                   className={`${iconClass} w-5 text-slate-700 ${
                     toolkit ? '' : 'hidden'
-                  } ${error ? 'text-red-600' : ''}`}
+                  } ${error ? 'text-destructive' : ''}`}
                 />
               </TooltipTrigger>
               <TooltipContent className="left-full mr-16">
@@ -161,7 +161,7 @@ export const SelectBox = ({
       </Select>
 
       {error && (
-        <Label className={`text-red-600 text-xs font-normal px-3`}>
+        <Label className={`text-destructive text-xs font-normal px-3`}>
           {helpText}
         </Label>
       )}

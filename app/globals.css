@@ -4,29 +4,35 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0a0a0a;
-  --primary: #60a5fa;
-  --primary-foreground: #f9fbfd;
-  --accent: #ffffff;
+  --foreground: #6e7886;
+  --primary: #60a5fa; /*  background */
+  --primary-foreground: #f9fbfd; /*  text */
+  --primary-hover: #2381d9; /*  on hover */
+  --destructive: #c72323;
+  --destructive-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #042d44;
+  --accent: #ececf2;
   --accent-foreground: #71717a;
+  --muted: #f8f9fa;
+  --muted-foreground: #71717a;
   --card: #ffffff;
   --card-foreground: #042d44;
   --popover: #ffffff;
   --popover-foreground: #042d44;
-
-  --secondary: #f1f5f9;
-  --secondary-foreground: #042d44;
-  /* --muted: #ececf2;
-  --muted-foreground: #71717a; */
-
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
   --border: #e4e4e7;
   --input: #e4e4e7;
   --ring: #0a865a;
   --boldred: #b91414;
   --lightorange: #de9529;
   --radius: 12px;
+  --gray-muted: #6b7280; /* Tailwind gray-500 */
+  --gray-light: #dedfe4; /* Tailwind gray-100 */
+  --gray-subtle: #d1d5db; /* Tailwind gray-300 */
+  --gray-text: #4b5563; /* Tailwind gray-600 */
+  --zinc-text: #52525b; /* Tailwind zinc-600 */
+  --zinc-heading: #27272a; /* Tailwind zinc-800 */
+  --zinc-dark: #18181b; /* Tailwind zinc-900 */
 }
 
 @theme inline {

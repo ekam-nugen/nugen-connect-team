@@ -6,7 +6,7 @@ export default function ProfileSlot() {
   const { user, isLoading, error } = useAuth();
 
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div className="text-red-500">{error}</div>;
+  if (error) return <div className="text-destructive">{error}</div>;
 
   return (
     <div>

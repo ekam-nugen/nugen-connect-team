@@ -13,9 +13,9 @@ export default function DashboardLayout({
 }) {
   return (
     <div className="grid grid-cols-2 gap-4">
-      <section className="bg-white shadow p-4">{dashboard}</section>
-      <section className="bg-white shadow p-4">{profile}</section>
-      {/* <section className="bg-white shadow p-4">{user}</section> */}
+      <section className="bg-background shadow p-4">{dashboard}</section>
+      <section className="bg-background shadow p-4">{profile}</section>
+      {/* <section className="bg-background shadow p-4">{user}</section> */}
       <div className="col-span-2">{children}</div>
     </div>
   );

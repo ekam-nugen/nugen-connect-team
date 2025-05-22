@@ -25,7 +25,7 @@ const SignUpCard: React.FC<SignUpCardProps> = ({
   const [showPwd, setShowPwd] = useState<boolean>(false);
   return (
     <section className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 md:flex-row overflow-x-hidden">
-      <div className="flex overflow-hidden rounded-2xl bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.15)] md:min-w-3xl">
+      <div className="flex overflow-hidden rounded-2xl bg-background shadow-[0_25px_60px_-15px_rgba(0,0,0,0.15)] md:min-w-3xl">
         <motion.div
           variants={fadeInAnimation}
           className="relative hidden flex-none items-center justify-center bg-gradient-to-br from-purple-50 to-purple-200 md:flex md:w-[350px]"
@@ -39,13 +39,16 @@ const SignUpCard: React.FC<SignUpCardProps> = ({
         <div className="flex w-full flex-col px-10 py-5 md:w-[418px]">
           <motion.h3
             variants={topToBottomAnimation}
-            className="mb-6 text-center text-xl font-medium text-gray-800"
+            className="mb-6 text-center text-lg font-medium text-foreground"
           >
             A small step for you,
             <br />
             <span className="font-normal">a giant leap for your business.</span>
           </motion.h3>
-          <motion.div variants={rightToLeftAnimation} className="space-y-4">
+          <motion.div
+            variants={rightToLeftAnimation}
+            className="space-y-4 text-center"
+          >
             <div className="flex gap-4">
               <Input
                 name="firstName"
@@ -98,7 +101,7 @@ const SignUpCard: React.FC<SignUpCardProps> = ({
             />
             <Button
               variant="default"
-              className="cursor-pointer w-full rounded-full bg-[#2998ff] py-3 text-sm font-semibold text-white shadow-[0_6px_12px_-4px_rgba(41,152,255,0.5)] transition hover:bg-[#2381d9] focus:outline-none disabled:opacity-40"
+              className="cursor-pointer w-full rounded-full bg-primary py-3 text-sm font-semibold text-primary-foreground shadow-[0_6px_12px_-4px_rgba(41,152,255,0.5)] transition hover:bg-primary-hover focus:outline-none disabled:opacity-40"
               disabled={isLoading || errs.email || errs.password}
               onClick={handleSubmit}
               loading={isLoading}

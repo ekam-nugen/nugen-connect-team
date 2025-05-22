@@ -9,13 +9,13 @@ export default function ProtectedError({
 }) {
   return (
     <div className="p-4 text-center">
-      <h1 className="text-xl font-bold text-red-600">
+      <h1 className="text-xl font-bold text-destructive">
         Error in Protected Route
       </h1>
-      <p className="mt-2 text-gray-600">{error.message}</p>
+      <p className="mt-2 text-gray-text">{error.message}</p>
       <button
         onClick={reset}
-        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        className="mt-4 bg-primary text-primary-foreground px-4 py-2 rounded hover:bg-primary-hover"
       >
         Retry
       </button>
