@@ -59,6 +59,19 @@ export const useSocialSignup = () => {
   return { signupWithSocial };
 };
 
+export const useProviderCallback = (
+  provider: string,
+  queryParams: Record<string, string>
+) => {
+  const queryString = new URLSearchParams(queryParams).toString();
+  const url = `/auth/${provider}/callback?${queryString}`;
+
+  const { data, error, isLoading } = useSWR(url, fetcher, {
+    revalidateOnFocus: false,
+  });
+
+  return { data, error: error?.message, isLoading };
+};
 export const useLogin = () => {
   const { trigger, isMutating, error } = useSWRMutation(
     '/auth/login',

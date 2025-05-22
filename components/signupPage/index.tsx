@@ -45,18 +45,18 @@ export default function SignUp() {
     }
 
     try {
-      const result = await Signup(form);
+      await Signup(form);
       router.push('/dashboard');
     } catch (err) {
       console.error('Signup Error:', err);
     }
   };
   const handleGoogleSignUp = async () => {
-    const success = await signupWithSocial({ provider: 'google' });
+    await signupWithSocial({ provider: 'google' });
   };
 
   const handleFacebookSignUp = async () => {
-    const success = await signupWithSocial({ provider: 'facebook' });
+    await signupWithSocial({ provider: 'facebook' });
   };
   return (
     <motion.div

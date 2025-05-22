@@ -1,3 +1,4 @@
+import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(
@@ -12,6 +13,8 @@ export async function GET(
     });
 
     const data = await apiRes.json();
+    const cookieStore = await cookies();
+    cookieStore.set('provider', provider, { httpOnly: true });
     return NextResponse.json({ data });
   } catch (error) {
     return NextResponse.json(
