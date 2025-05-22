@@ -1,5 +1,6 @@
 'use client';
 
+// import DashboardContent from '@/components/DashboardContent';
 import { useProviderCallback } from '@/hooks/useAuth';
 import { useSearchParams } from 'next/navigation';
 
@@ -24,6 +25,7 @@ export default function DashboardSlot() {
 
       {isLoading && <p>Loading user data...</p>}
       {error && <p className="text-red-500">Error: {error}</p>}
+      {/* <DashboardContent />; */}
     </div>
   );
 }
