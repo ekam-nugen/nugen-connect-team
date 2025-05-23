@@ -8,7 +8,7 @@ export async function GET(
   try {
     const { provider } = context.params;
 
-    const apiRes = await fetch(`http://192.168.1.14:2001/${provider}/login`, {
+    const apiRes = await fetch(`http://192.168.1.2:2001/${provider}/login`, {
       method: 'GET',
     });
 

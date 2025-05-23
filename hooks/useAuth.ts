@@ -8,10 +8,10 @@ import { SignUpFormType } from '@/components/signupPage/types';
 
 const fetcher = (url: string) => axiosInstance.get(url).then(res => res.data);
 
-export const useAuth = () => {
-  const { data, error, isLoading } = useSWR<User>('/api/user', fetcher);
-  return { user: data, isLoading, error: error?.message };
-};
+// export const useAuth = () => {
+//   const { data, error, isLoading } = useSWR<User>('/user', fetcher);
+//   return { user: data, isLoading, error: error?.message };
+// };
 
 export const useAuthSignup = () => {
   const { trigger, isMutating, error } = useSWRMutation(
@@ -63,8 +63,9 @@ export const useProviderCallback = (
   provider: string,
   queryParams: Record<string, string>
 ) => {
+  const hasParams = Object.values(queryParams).some(val => val !== '');
   const queryString = new URLSearchParams(queryParams).toString();
-  const url = `/auth/${provider}/callback?${queryString}`;
+  const url = hasParams ? `/auth/${provider}/callback?${queryString}` : null;
 
   const { data, error, isLoading } = useSWR(url, fetcher, {
     revalidateOnFocus: false,
