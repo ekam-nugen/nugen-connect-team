@@ -1,3 +1,4 @@
+import { baseUrl } from '@/lib/axios';
 import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -11,7 +12,7 @@ export async function GET(
     const url = new URL(req.url);
     const searchParams = url.searchParams.toString();
 
-    const apiUrl = `http://192.168.1.14:2001/${provider}/callback?${searchParams}`;
+    const apiUrl = `${baseUrl}/${provider}/callback?${searchParams}`;
     const apiRes = await fetch(apiUrl, {
       method: 'GET',
     });
