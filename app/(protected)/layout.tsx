@@ -11,6 +11,8 @@ export default async function ProtectedLayout({
 }) {
   const cookieStore = await cookies();
   const token = cookieStore.get('token')?.value;
+  console.log(token, 'token');
+
   const provider = cookieStore.get('provider')?.value;
 
   if (!provider && (!token || !verifyToken(token))) {

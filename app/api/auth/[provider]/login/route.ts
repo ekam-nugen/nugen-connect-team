@@ -1,3 +1,4 @@
+import { baseUrl } from '@/lib/axios';
 import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -8,7 +9,7 @@ export async function GET(
   try {
     const { provider } = context.params;
 
-    const apiRes = await fetch(`http://192.168.1.2:2001/${provider}/login`, {
+    const apiRes = await fetch(`${baseUrl}/${provider}/login`, {
       method: 'GET',
     });
 

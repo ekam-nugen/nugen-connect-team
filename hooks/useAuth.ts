@@ -5,7 +5,9 @@ import axiosInstance from '@/lib/axios';
 import { LoginData, LoginResponse, User } from '@/types';
 import useSWRMutation from 'swr/mutation';
 import { SignUpFormType } from '@/components/signupPage/types';
-
+type ForgotPasswordPayload = {
+  email: string;
+};
 const fetcher = (url: string) => axiosInstance.get(url).then(res => res.data);
 
 // export const useAuth = () => {
@@ -92,4 +94,52 @@ export const useLogin = () => {
   };
 
   return { login, isLoading: isMutating, error: error?.message };
+};
+
+export const useAuthForgotPassword = () => {
+  const { trigger, isMutating, error } = useSWRMutation(
+    '/auth/forgot-password',
+    async (url, { arg }: { arg: ForgotPasswordPayload }) => {
+      const res = await axiosInstance.post(url, arg);
+      return res.data;
+    }
+  );
+
+  const forgotPassword = async (data: ForgotPasswordPayload) => {
+    try {
+      await trigger(data);
+      return true;
+    } catch (err) {
+      return false;
+    }
+  };
+
+  return { forgotPassword, isLoading: isMutating, error: error?.message };
+};
+
+type ResetPasswordPayload = {
+  newPassword: string;
+  // confirmPassword: string;
+};
+
+export const useAuthResetPassword = (token: string | null) => {
+  const { trigger, isMutating, error } = useSWRMutation(
+    token ? `/auth/reset-password?token=${token}` : null,
+    async (url, { arg }: { arg: ResetPasswordPayload }) => {
+      if (!url) throw new Error('Token is missing');
+      const res = await axiosInstance.post(url, arg);
+      return res.data;
+    }
+  );
+
+  const resetPassword = async (data: ResetPasswordPayload) => {
+    try {
+      await trigger(data);
+      return true;
+    } catch (err) {
+      return false;
+    }
+  };
+
+  return { resetPassword, isLoading: isMutating, error: error?.message };
 };
