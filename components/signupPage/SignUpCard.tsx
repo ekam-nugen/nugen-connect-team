@@ -16,6 +16,7 @@ import { SignUpCardProps } from './types';
 const SignUpCard: React.FC<SignUpCardProps> = ({
   form,
   errs,
+  isLoading,
   handleChange,
   handleSubmit,
   handleGoogleSignUp,
@@ -101,8 +102,9 @@ const SignUpCard: React.FC<SignUpCardProps> = ({
             <Button
               variant="default"
               className="cursor-pointer w-full rounded-full bg-primary py-3 text-sm font-semibold text-primary-foreground shadow-[0_6px_12px_-4px_rgba(41,152,255,0.5)] transition hover:bg-primary-hover focus:outline-none disabled:opacity-40"
-              disabled={errs.email || errs.password}
+              disabled={isLoading || errs.email || errs.password}
               onClick={handleSubmit}
+              loading={isLoading}
             >
               LET&apos;S GO
             </Button>
