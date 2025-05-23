@@ -1,5 +1,6 @@
 'use client';
 
+import { SOMETHING_WENT_WRONG } from '@/lib/en';
 import { Component } from 'react';
 
 interface Props {
@@ -20,7 +21,7 @@ export default class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         <div className="text-center mt-10 text-destructive">
-          Something went wrong.
+          {SOMETHING_WENT_WRONG}
         </div>
       );
     }

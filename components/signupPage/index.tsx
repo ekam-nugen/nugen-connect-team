@@ -1,13 +1,13 @@
 'use client';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
 import { motion } from 'framer-motion';
 import { fadeInAnimation, staggerParent } from '@/lib/animationUtils';
 import { SignUpFormType } from './types';
 import DisclaimerText from './Disclaimer';
 import SignUpCard from './SignUpCard';
 import { useAuthSignup, useSocialSignup } from '@/hooks/useAuth';
+import { CONNECT_TEAM } from '@/lib/en';
 
 export default function SignUp() {
   const router = useRouter();
@@ -67,9 +67,8 @@ export default function SignUp() {
         variants={fadeInAnimation}
         className="mb-8 text-center text-3xl font-bold tracking-tight text-primary"
       >
-        connecteam
+        {CONNECT_TEAM}
       </motion.h2>
-
       <SignUpCard
         form={form}
         errs={errs ?? error}

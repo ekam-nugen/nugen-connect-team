@@ -1,5 +1,6 @@
 import React from 'react';
 import { IconTextModalProps } from './types';
+import { PK } from '@/lib/en';
 
 const UserProfileDropdown = ({
   userName,
@@ -13,7 +14,7 @@ const UserProfileDropdown = ({
         <>
           <div className="flex items-center rounded-lg p-2 mb-2">
             <div className="relative w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-primary text-primary-foreground font-bold text-sm">
-              PK
+              {PK}
             </div>
             <div className="ml-3">
               <p className="text-black font-bold text-sm">{userName}</p>

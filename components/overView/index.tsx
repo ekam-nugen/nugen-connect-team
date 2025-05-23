@@ -22,6 +22,7 @@ import {
   topToBottomAnimation,
 } from '@/lib/animationUtils';
 import { Button } from '@/base-components/button';
+import { QUICK_ACTIONS } from '@/lib/en';
 function OverviewComponent() {
   return (
     <motion.div {...staggerParent} className="flex flex-col lg:flex-row gap-4">
@@ -29,7 +30,7 @@ function OverviewComponent() {
         <motion.div variants={topToBottomAnimation} className="space-y-6 py-4">
           <Card className="p-5 space-x-6 md:p-3 lg:p-5 shadow-none">
             <CardTitle className="text-xl md:text-lg lg:text-xl text-zinc-700 font-bold m-3 md:m-2 lg:m-3">
-              Quick Actions
+              {QUICK_ACTIONS}
             </CardTitle>
             <div className="flex justify-center gap-x-6 gap-y-4 flex-wrap">
               {quickActions?.map((action, index) => (

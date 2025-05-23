@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import { Button } from '@/base-components/button';
 import { attendanceData, getMessage } from '../constants';
 import { Input } from '@/base-components/input';
+import { ATTENDANCE } from '@/lib/en';
 
 export default function AttendanceSection() {
   const [selectedLabel, setSelectedLabel] = useState<string | null>(null);
@@ -13,7 +14,7 @@ export default function AttendanceSection() {
   return (
     <div className="p-6 bg-accent rounded-xl shadow-sm">
       <div className="flex justify-between items-center mb-6 flex-wrap gap-4">
-        <h2 className="text-2xl font-bold text-slate-800">Attendance</h2>
+        <h2 className="text-2xl font-bold text-slate-800">{ATTENDANCE}</h2>
         <div className="flex items-center gap-2">
           <div className="relative">
             <Input searchIcon placeholder="Search" />
