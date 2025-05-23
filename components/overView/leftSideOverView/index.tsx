@@ -44,7 +44,7 @@ function LeftSideOverview() {
           iconClassName={inviteCard.iconClassName}
         />
       </div>
-      <Card className="p-5 w-full bg-white shadow-md rounded-2xl">
+      <Card className="p-5 w-full bg-accent shadow-md rounded-2xl">
         <div className="flex flex-col items-center mb-6">
           <h2 className="text-lg font-bold text-gray-800 mb-4">
             {milestones.achieved.title}
@@ -55,7 +55,7 @@ function LeftSideOverview() {
                 className: 'text-white text-3xl',
               })}
             </div>
-            <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-white flex items-center justify-center">
+            <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-accent flex items-center justify-center">
               <MdStar className="text-yellow-400 text-sm" />
             </div>
           </div>

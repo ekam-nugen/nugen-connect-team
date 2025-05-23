@@ -18,7 +18,7 @@ export default function EngagementChart({
   subtitle,
 }: EngagementChartProps) {
   return (
-    <div className="bg-white rounded-2xl p-4 shadow-sm w-full">
+    <div className="bg-accent rounded-2xl p-4 shadow-sm w-full">
       <div className="flex flex-col md:flex-row justify-between items-center mb-4 gap-4">
         <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
         <div className="flex flex-wrap md:flex-nowrap items-center gap-2">

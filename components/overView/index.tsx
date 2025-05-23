@@ -59,7 +59,7 @@ function OverviewComponent() {
           />
         ))}
         <motion.div variants={topToBottomAnimation} className="space-y-6 py-4">
-          <Card className="p-4 w-full bg-white rounded-xl shadow-none min-h-[300px]">
+          <Card className="p-4 w-full bg-accent rounded-xl shadow-none min-h-[300px]">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold text-zinc-800">
                 {dailyActivity?.title}
@@ -86,7 +86,7 @@ function OverviewComponent() {
         </motion.div>
         <motion.div
           variants={rightToLeftAnimation}
-          className="space-y-4 rounded-xl bg-white p-10"
+          className="space-y-4 rounded-xl bg-accent p-10"
         >
           {tasks.map((task, index) => (
             <TaskCard
