@@ -2,12 +2,15 @@
 
 import useSWR from 'swr';
 import axiosInstance from '@/lib/axios';
-import { LoginData, LoginResponse, User } from '@/types';
+import {
+  EmailPayloadType,
+  LoginData,
+  LoginResponse,
+  ResetPasswordPayload,
+} from '@/types';
 import useSWRMutation from 'swr/mutation';
 import { SignUpFormType } from '@/components/signupPage/types';
-type ForgotPasswordPayload = {
-  email: string;
-};
+
 const fetcher = (url: string) => axiosInstance.get(url).then(res => res.data);
 
 // export const useAuth = () => {
@@ -99,13 +102,13 @@ export const useLogin = () => {
 export const useAuthForgotPassword = () => {
   const { trigger, isMutating, error } = useSWRMutation(
     '/auth/forgot-password',
-    async (url, { arg }: { arg: ForgotPasswordPayload }) => {
+    async (url, { arg }: { arg: EmailPayloadType }) => {
       const res = await axiosInstance.post(url, arg);
       return res.data;
     }
   );
 
-  const forgotPassword = async (data: ForgotPasswordPayload) => {
+  const forgotPassword = async (data: EmailPayloadType) => {
     try {
       await trigger(data);
       return true;
@@ -115,11 +118,6 @@ export const useAuthForgotPassword = () => {
   };
 
   return { forgotPassword, isLoading: isMutating, error: error?.message };
-};
-
-type ResetPasswordPayload = {
-  newPassword: string;
-  // confirmPassword: string;
 };
 
 export const useAuthResetPassword = (token: string | null) => {
