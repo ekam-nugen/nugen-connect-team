@@ -252,19 +252,6 @@ export const leftSideOverviewData = {
     },
     closeIcon: FaTimes,
   },
-  creditCard: {
-    description:
-      'Get up to 170$ worth of credits to use when upgrading to our paid',
-    buttonLabel: 'Get Credit',
-    imageUrl: creditLogo,
-  },
-  inviteCard: {
-    description: "Users didn't log in to the app yet",
-    buttonLabel: 'Select users to invite',
-    icon: PiNumberThreeBold,
-    iconClassName:
-      'text-white bg-gradient-to-r from-blue-600 to-violet-600 rounded-md text-2xl shadow-xl',
-  },
   milestones: {
     achieved: {
       title: 'Achieved milestones',
@@ -302,3 +289,20 @@ export const leftSideOverviewData = {
     ],
   },
 };
+export const cards = [
+  {
+    id: 'credit',
+    description:
+      'Get up to 170$ worth of credits to use when upgrading to our paid',
+    buttonLabel: 'Get Credit',
+    imageUrl: creditLogo,
+  },
+  {
+    id: 'invite',
+    description: "Users didn't log in to the app yet",
+    buttonLabel: 'Select users to invite',
+    icon: PiNumberThreeBold,
+    iconClassName:
+      'text-white bg-gradient-to-r from-blue-600 to-violet-600 rounded-md text-2xl shadow-xl',
+  },
+];

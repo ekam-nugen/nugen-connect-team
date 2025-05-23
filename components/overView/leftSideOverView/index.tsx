@@ -5,11 +5,10 @@ import { Card, CardTitle } from '@/base-components/card';
 import SmallCard from '@/base-components/smallCard';
 import VideoPlayer from '@/base-components/videoPlayer';
 import { MdStar } from 'react-icons/md';
-import { leftSideOverviewData } from '../constants';
+import { cards, leftSideOverviewData } from '../constants';
 
 function LeftSideOverview() {
-  const { videoCard, creditCard, inviteCard, milestones } =
-    leftSideOverviewData;
+  const { videoCard, milestones } = leftSideOverviewData;
 
   return (
     <div className="flex flex-col gap-4 md:gap-2 lg:gap-4 items-center w-full max-w-md mx-auto">
@@ -30,27 +29,25 @@ function LeftSideOverview() {
           />
         </div>
       </Card>
-      <SmallCard
-        description={creditCard.description}
-        descriptionClassName="text-sm"
-        buttonLabel={creditCard.buttonLabel}
-        imageUrl={creditCard.imageUrl}
-      />
-      <div className="w-full">
-        <SmallCard
-          description={inviteCard.description}
-          buttonLabel={inviteCard.buttonLabel}
-          icon={<inviteCard.icon />}
-          iconClassName={inviteCard.iconClassName}
-        />
-      </div>
+      {cards?.map(card => (
+        <div key={card.id} className="w-full">
+          <SmallCard
+            description={card.description}
+            descriptionClassName="text-sm"
+            buttonLabel={card.buttonLabel}
+            imageUrl={card.imageUrl}
+            icon={card.icon ? <card.icon /> : undefined}
+            iconClassName={card.iconClassName}
+          />
+        </div>
+      ))}
       <Card className="p-5 w-full bg-accent shadow-md rounded-2xl">
         <div className="flex flex-col items-center mb-6">
           <h2 className="text-lg font-bold text-gray-800 mb-4">
             {milestones.achieved.title}
           </h2>
           <div className="relative mb-2">
-            <div className="bg-blue-500 bg-gradient-to-b from-blue-400 to-blue-600 p-4 rounded-2xl shadow-md">
+            <div className="bg-primary bg-gradient-to-b from-blue-400 to-blue-600 p-4 rounded-2xl shadow-md">
               {React.createElement(milestones.achieved.icon, {
                 className: 'text-white text-3xl',
               })}
@@ -72,7 +69,7 @@ function LeftSideOverview() {
               <div key={idx} className="flex items-start gap-3">
                 <div className="relative">
                   <div
-                    className={`p-2 rounded-xl shadow-md text-white bg-gradient-to-r ${milestone.gradient}`}
+                    className={`p-2 rounded-xl shadow-md text-accent bg-gradient-to-r ${milestone.gradient}`}
                   >
                     {React.createElement(milestone.icon, {
                       className: 'text-xl',
@@ -90,7 +87,7 @@ function LeftSideOverview() {
                   </p>
                   <div className="h-2 bg-blue-100 rounded-full mt-1">
                     <div
-                      className="h-2 bg-blue-500 rounded-full"
+                      className="h-2 bg-primary rounded-full"
                       style={{ width: `${milestone.progress}%` }}
                     ></div>
                   </div>
