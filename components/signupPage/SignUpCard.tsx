@@ -12,6 +12,23 @@ import {
 } from '@/lib/animationUtils';
 import SocialSignUp from './SocialSignUp';
 import { SignUpCardProps } from './types';
+import {
+  EMAIL,
+  EMAIL_ERROR,
+  EMAIL_PLACEHOLDER,
+  FIND_US,
+  FIRST_NAME,
+  LAST_NAME,
+  LETS_GO,
+  PASSWORD,
+  PASSWORD_ERROR,
+  PASSWORD_PLACEHOLDER,
+  PHONE_DEMO,
+  SIGNUP_HEADING,
+  SIGNUP_SUB_HEADING,
+  TEXT,
+  VARIENT,
+} from '@/lib/en';
 
 const SignUpCard: React.FC<SignUpCardProps> = ({
   form,
@@ -32,7 +49,7 @@ const SignUpCard: React.FC<SignUpCardProps> = ({
         >
           <Image
             src={phoneMock}
-            alt="phone demo"
+            alt={PHONE_DEMO}
             className="w-[285px] drop-shadow-2xl"
           />
         </motion.div>
@@ -41,9 +58,9 @@ const SignUpCard: React.FC<SignUpCardProps> = ({
             variants={topToBottomAnimation}
             className="mb-6 text-center text-lg font-medium text-foreground"
           >
-            A small step for you,
+            {SIGNUP_HEADING}
             <br />
-            <span className="font-normal">a giant leap for your business.</span>
+            <span className="font-normal">{SIGNUP_SUB_HEADING}</span>
           </motion.h3>
           <motion.div
             variants={rightToLeftAnimation}
@@ -51,62 +68,57 @@ const SignUpCard: React.FC<SignUpCardProps> = ({
           >
             <div className="flex gap-4">
               <Input
-                name="firstName"
-                type="text"
+                name={FIRST_NAME}
+                type={TEXT}
                 value={form.firstName}
                 onChange={handleChange}
-                placeholder="First name"
+                placeholder={FIRST_NAME}
               />
               <Input
-                name="lastName"
-                type="text"
+                name={LAST_NAME}
+                type={TEXT}
                 value={form.lastName}
                 onChange={handleChange}
-                placeholder="Last name"
+                placeholder={LAST_NAME}
               />
             </div>
             <Input
-              name="email"
-              type="email"
+              name={EMAIL}
+              type={EMAIL}
               value={form.email}
               onChange={handleChange}
-              placeholder="Business email"
+              placeholder={EMAIL_PLACEHOLDER}
               error={errs.email}
-              helpText={errs.email ? 'Please enter a valid email.' : ''}
+              helpText={errs.email ? EMAIL_ERROR : ''}
             />
-
             <Input
-              name="password"
-              type="password"
+              name={PASSWORD}
+              type={PASSWORD}
               value={form.password}
               onChange={handleChange}
-              placeholder="Create a password"
+              placeholder={PASSWORD_PLACEHOLDER}
               error={errs.password}
-              helpText={
-                errs.password
-                  ? 'Password must be 8+ chars & include a number and special character.'
-                  : ''
-              }
+              helpText={errs.password ? PASSWORD_ERROR : ''}
               inputicon
               showPassword={showPwd}
               setShowPassword={setShowPwd}
             />
             <SelectBox
-              onChange={() => void {}}
-              placeholder="Where did you first here about us?"
+              onChange={() => {}}
+              placeholder={FIND_US}
               filteredOptions={[]}
               setFilteredOptions={() => {}}
               selectedItems={[]}
               setSelectedItems={() => {}}
             />
             <Button
-              variant="default"
+              variant={VARIENT}
               className="cursor-pointer w-full rounded-full bg-primary py-3 text-sm font-semibold text-primary-foreground shadow-[0_6px_12px_-4px_rgba(41,152,255,0.5)] transition hover:bg-primary-hover focus:outline-none disabled:opacity-40"
               disabled={isLoading || errs.email || errs.password}
               onClick={handleSubmit}
               loading={isLoading}
             >
-              LET&apos;S GO
+              {LETS_GO}
             </Button>
           </motion.div>
           <SocialSignUp

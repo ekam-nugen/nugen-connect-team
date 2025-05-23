@@ -11,6 +11,7 @@ import { BsThreeDotsVertical } from 'react-icons/bs';
 import { cn } from '@/lib/utils';
 import { Button } from '@/base-components/button';
 import { SidebarDataType, SidebarItems } from './types';
+import { ADD_NEW } from '@/lib/en';
 
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState<boolean>(false);
@@ -77,7 +78,9 @@ export default function Sidebar() {
               >
                 <IoAddOutline />
               </span>
-              <div className="text-sm text-primary cursor-pointer">Add New</div>
+              <div className="text-sm text-primary cursor-pointer">
+                {ADD_NEW}
+              </div>
             </div>
           )}
           <div className="w-full border-[1px] border-gray-subtle"></div>

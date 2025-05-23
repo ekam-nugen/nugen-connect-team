@@ -9,6 +9,7 @@ import { LoginContentItemProps } from './types';
 import Link from 'next/link';
 import 'react-phone-input-2/lib/style.css';
 import PhoneInput from 'react-phone-input-2';
+import { IN } from '@/lib/en';
 
 export function LoginContentItem({
   item,
@@ -63,7 +64,7 @@ export function LoginContentItem({
           className="mt-6 md:px-10 flex flex-col items-center"
         >
           <PhoneInput
-            country="in"
+            country={IN}
             value={phone}
             onChange={setPhone}
             inputClass="!w-full !rounded-lg !py-3 !text-sm !border !border-gray-subtle"
