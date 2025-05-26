@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaGoogle, FaFacebook } from 'react-icons/fa';
+import { FcGoogle } from 'react-icons/fc';
+import { FaFacebook } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { bottomToTopAnimation } from '@/lib/animationUtils';
 import { Button } from '@/base-components/button';
@@ -20,7 +21,7 @@ function SocialSignUp({
           onClick={handleGoogleSignUp}
           className="cursor-pointer bg-muted hover:bg-gradient-to-r hover:from-accent hover:to-gray-light text-gray-text px-4 py-2 text-sm rounded-full flex items-center justify-center gap-2 transition-all duration-300 shadow-sm hover:shadow-md"
         >
-          <FaGoogle size={20} />
+          <FcGoogle size={20} />
           {GOOGLE}
         </Button>
         <Button

@@ -9,7 +9,7 @@ const UserProfileDropdown = ({
   loginUserIcon = false,
 }: IconTextModalProps) => {
   return (
-    <div className="shadow-2xl rounded-xl w-64 p-4">
+    <div className="bg-background shadow-2xl rounded-xl w-64 p-4">
       {loginUserIcon && (
         <>
           <div className="flex items-center rounded-lg p-2 mb-2">
@@ -17,7 +17,7 @@ const UserProfileDropdown = ({
               {PK}
             </div>
             <div className="ml-3">
-              <p className="text-black font-bold text-sm">{userName}</p>
+              <p className="text-zinc-dark font-bold text-sm">{userName}</p>
               <p className="text-sm">{userRole}</p>
             </div>
           </div>
