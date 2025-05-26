@@ -1,4 +1,4 @@
-import { LoginContentItem } from './type';
+import { LoginContentItem } from './types';
 
 export const LoginContent: LoginContentItem[] = [
   {

@@ -10,7 +10,7 @@ import {
 } from '@/types';
 import useSWRMutation from 'swr/mutation';
 import { SignUpFormType } from '@/components/signupPage/types';
-import { LoginFormType } from '@/components/login/type';
+import { LoginFormType } from '@/components/login/types';
 
 const fetcher = (url: string) => axiosInstance.get(url).then(res => res.data);
 

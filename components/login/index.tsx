@@ -7,7 +7,7 @@ import { LoginContentItem } from './LoginContentItem';
 import SocialSignUp from '@/components/signupPage/SocialSignUp';
 import { LoginContent } from './loginContent';
 import { CLICK_HERE, CREATE_NEW_ACCOUNT, LOGIN } from '@/lib/en';
-import { LoginFormType } from './type';
+import { LoginFormType } from './types';
 
 const LoginForm = () => {
   const router = useRouter();

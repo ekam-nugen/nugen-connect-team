@@ -1,5 +1,5 @@
 import React from 'react';
-import { LoginContentItemProps } from './type';
+import { LoginContentItemProps } from './types';
 import { Input } from '@/base-components/input';
 import { Button } from '@/base-components/button';
 
