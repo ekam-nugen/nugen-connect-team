@@ -9,10 +9,6 @@ export const LoginContent: LoginContentItem[] = [
     ],
   },
   {
-    type: 'subtitle',
-    label: 'Or login with',
-  },
-  {
     type: 'link',
     label: 'Forgot your password?',
     link: {

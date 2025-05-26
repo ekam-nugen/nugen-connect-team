@@ -24,29 +24,26 @@ export const LoginContentItem: React.FC<LoginContentItemProps> = ({
               value={form[input.name]}
               onChange={handleChange}
               disabled={isLoading}
-              className="w-full p-2 border border-gray-300 rounded-md"
             />
           </div>
         ))}
-        <Button
-          onClick={handleSubmit}
-          disabled={isLoading}
-          className="mt-4 w-full bg-primary text-white p-2 rounded-md hover:bg-primary/90"
-        >
-          {isLoading ? 'Logging in...' : 'Login'}
-        </Button>
+        <div className="justify-center items-center flex">
+          <Button
+            onClick={handleSubmit}
+            disabled={isLoading}
+            className="mt-4 w-full bg-primary text-gray-light p-4 rounded-md hover:bg-primary/90"
+          >
+            {isLoading ? 'Logging in...' : 'Login'}
+          </Button>
+        </div>
       </div>
     );
-  }
-
-  if (item.type === 'subtitle') {
-    return <h2 className="text-center text-gray-500 my-4">{item.label}</h2>;
   }
 
   if (item.type === 'link') {
     return (
       <div className="text-center mt-4">
-        <a href={item.link.href} className="text-blue-600 hover:underline">
+        <a href={item.link.href} className="text-primary-hover hover:underline">
           {item.label}
         </a>
       </div>

@@ -38,7 +38,9 @@ const LoginForm = () => {
 
   return (
     <div className="bg-background p-8 rounded-lg shadow-lg w-full max-w-md">
-      <h1 className="text-2xl font-bold mb-6 text-center">{LOGIN}</h1>
+      <h1 className="text-2xl font-bold mb-6 text-center text-zinc-dark">
+        {LOGIN}
+      </h1>
       {LoginContent.map((item, index) => (
         <LoginContentItem
           key={index}
