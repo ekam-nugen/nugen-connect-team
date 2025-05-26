@@ -1,6 +1,5 @@
-// import { cookies } from 'next/headers';
-// import { redirect } from 'next/navigation';
-// import { verifyToken } from '@/lib/auth';
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
 import Topbar from '@/components/topbar';
 import Sidebar from '@/components/sidebar';
 
@@ -13,7 +12,7 @@ export default async function ProtectedLayout({
   const token = cookieStore.get('token')?.value;
   const provider = cookieStore.get('provider')?.value;
 
-  if (!provider && (!token || !verifyToken(token))) {
+  if (!provider && !token) {
     redirect('/login');
   }
 
