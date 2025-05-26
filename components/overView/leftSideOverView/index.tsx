@@ -14,11 +14,11 @@ function LeftSideOverview() {
     <div className="flex flex-col gap-4 md:gap-2 lg:gap-4 items-center w-full max-w-md mx-auto">
       <Card className="p-4 w-full">
         <div className="flex justify-between items-center">
-          <CardTitle className="text-xl font-bold text-zinc-600">
+          <CardTitle className="text-xl font-bold text-zinc-text">
             {videoCard.title}
           </CardTitle>
           {videoCard.closeIcon && (
-            <videoCard.closeIcon className="h-4 w-4 text-gray-500 cursor-pointer" />
+            <videoCard.closeIcon className="h-4 w-4 text-gray-muted cursor-pointer" />
           )}
         </div>
         <div className="w-full aspect-video">
@@ -43,25 +43,25 @@ function LeftSideOverview() {
       ))}
       <Card className="p-5 w-full bg-accent shadow-md rounded-2xl">
         <div className="flex flex-col items-center mb-6">
-          <h2 className="text-lg font-bold text-gray-800 mb-4">
+          <h2 className="text-lg font-bold text-gray-dark mb-4">
             {milestones.achieved.title}
           </h2>
           <div className="relative mb-2">
             <div className="bg-primary bg-gradient-to-b from-blue-400 to-blue-600 p-4 rounded-2xl shadow-md">
               {React.createElement(milestones.achieved.icon, {
-                className: 'text-white text-3xl',
+                className: 'text-accent text-3xl',
               })}
             </div>
             <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-accent flex items-center justify-center">
-              <MdStar className="text-yellow-400 text-sm" />
+              <MdStar className="text-lightyellow text-sm" />
             </div>
           </div>
           <p className="text-lg font-bold">{milestones.achieved.count}</p>
-          <p className="text-sm text-gray-500">{milestones.achieved.label}</p>
+          <p className="text-sm text-gray-muted">{milestones.achieved.label}</p>
         </div>
-        <hr className="my-6 border-gray-200" />
+        <hr className="my-6 border-gray-light" />
         <div>
-          <h2 className="text-lg font-bold text-gray-800 mb-4">
+          <h2 className="text-lg font-bold text-gray-dark mb-4">
             {milestones.nextTitle}
           </h2>
           <div className="flex flex-col gap-4">
@@ -77,12 +77,12 @@ function LeftSideOverview() {
                   </div>
                   <div className="absolute -bottom-1 -right-1 flex gap-[1px]">
                     {[...Array(milestone.stars ?? 1)].map((_, i) => (
-                      <MdStar key={i} className="text-yellow-400 text-xs" />
+                      <MdStar key={i} className="text-lightyellow text-xs" />
                     ))}
                   </div>
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-gray-800">
+                  <p className="text-sm font-medium text-gray-dark">
                     {milestone.label}
                   </p>
                   <div className="h-2 bg-blue-100 rounded-full mt-1">

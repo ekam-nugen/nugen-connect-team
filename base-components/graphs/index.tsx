@@ -20,7 +20,7 @@ export default function EngagementChart({
   return (
     <div className="bg-accent rounded-2xl p-4 shadow-sm w-full">
       <div className="flex flex-col md:flex-row justify-between items-center mb-4 gap-4">
-        <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
+        <h2 className="text-xl font-semibold text-gray-dark">{title}</h2>
         <div className="flex flex-wrap md:flex-nowrap items-center gap-2">
           <div className="min-w-[180px]">
             <SelectBox
@@ -61,7 +61,7 @@ export default function EngagementChart({
           </button>
         </div>
       </div>
-      <p className="text-sm text-gray-600 mb-2">{subtitle}</p>
+      <p className="text-sm text-gray-text mb-2">{subtitle}</p>
       <div className="h-60 sm:h-72 md:h-80">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data}>

@@ -2,11 +2,16 @@ import { IconType } from 'react-icons';
 
 // login json type
 export type LinkType = { type: string; label: string; href: string };
-
+export type InputType = {
+  name: string;
+  label?: string;
+  type: string;
+};
 export type LoginContentType = {
   type: string;
-  label: string;
+  label?: string;
   link?: LinkType;
+  inputs?: InputType[];
 };
 
 // login content item props

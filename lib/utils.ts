@@ -13,3 +13,7 @@ export const debounce = (callback: () => void, delay: number) => {
     timeoutId = setTimeout(callback, delay);
   };
 };
+
+export const emailRx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+export const pwdRx =
+  /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z\d])[A-Za-z\d\S]{8,}$/;

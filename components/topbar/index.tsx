@@ -13,6 +13,14 @@ import { Button } from '@/base-components/button';
 import { Input } from '@/base-components/input';
 import UserProfileCard from './UserAvatarCard';
 import { ModalCardData3 } from './constants';
+import {
+  HELP,
+  LOGO,
+  SEARCH_PLACEHOLDER,
+  TALK_TO_EXPERT,
+  UPGRADE,
+  USER_NAME,
+} from '@/lib/en';
 
 const Topbar = () => {
   const [modalcard, setModalcard] = useState<boolean>(false);
@@ -38,14 +46,14 @@ const Topbar = () => {
       <div className="flex items-center gap-7">
         <Image
           src={userImage}
-          alt="Logo"
+          alt={LOGO}
           width={120}
           height={50}
           className="hidden lg:block object-scale-down w-full"
         />
         <Image
           src={logoMobile}
-          alt="Logo"
+          alt={LOGO}
           width={40}
           height={50}
           className="block lg:hidden object-scale-down"
@@ -53,20 +61,20 @@ const Topbar = () => {
         <Input
           className="hidden lg:block"
           searchIcon
-          placeholder="Search anything..."
+          placeholder={SEARCH_PLACEHOLDER}
         />
       </div>
       <div className="flex items-center gap-4 flex-wrap justify-end">
         <Button className="hidden sm:block rounded-full bg-[#af52de]">
-          Upgrade
+          {UPGRADE}
         </Button>
         <div className="hidden sm:flex text-primary items-center gap-1 border-l-2 pl-4">
           <CgGirl className="text-2xl" />
-          <span className="hidden xl:inline">Talk to an Expert</span>
+          <span className="hidden xl:inline">{TALK_TO_EXPERT}</span>
         </div>
         <div className="hidden sm:flex text-primary items-center gap-1 border-l-2 pl-4">
           <IoIosHelpCircle className="text-xl" />
-          <span className="hidden xl:inline">Help</span>
+          <span className="hidden xl:inline">{HELP}</span>
         </div>
         <div className="flex items-center gap-3 text-accent-foreground border-l-2 pl-4">
           <MdAccessibility className="text-2xl" />
@@ -76,7 +84,7 @@ const Topbar = () => {
         </div>
         <UserProfileCard
           imagesss={userImage}
-          userName="Pardeep Kumar"
+          userName={USER_NAME}
           openModel={() => setModalcard(true)}
           closeModel={() => setModalcard(false)}
           modalcard={modalcard}

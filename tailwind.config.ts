@@ -28,11 +28,13 @@ const config: Config = {
           text: 'var(--gray-text)',
           subtle: 'var(--gray-subtle)',
           muted: 'var(--gray-muted)',
+          dark: 'var(--gray-dark)',
         },
         zinc: {
           text: 'var(--zinc-text)',
           heading: 'var(--zinc-heading)',
           dark: 'var(--zinc-dark)',
+          light: 'var(--zinc-light)',
         },
         destructive: {
           DEFAULT: 'var(--destructive)',
@@ -59,6 +61,9 @@ const config: Config = {
         },
         lightorange: {
           DEFAULT: 'var(--lightorange)',
+        },
+        lightyellow: {
+          DEFAULT: 'var(--lightyellow)',
         },
       },
     },

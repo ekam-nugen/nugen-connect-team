@@ -27,7 +27,7 @@ export default function OtpContentItem({
           />
         </motion.div>
       );
-    case 'h3':
+    case 'heading':
       return (
         <motion.h3
           variants={topToBottomAnimation}
@@ -50,7 +50,7 @@ export default function OtpContentItem({
           />
         </motion.div>
       );
-    case 'p':
+    case 'sub-heading':
       return (
         <motion.p
           variants={rightToLeftAnimation}

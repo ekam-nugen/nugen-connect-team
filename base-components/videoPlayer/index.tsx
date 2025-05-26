@@ -46,13 +46,13 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         </video>
 
         {caption && (
-          <div className="absolute top-1/3 left-4 text-white font-bold text-lg drop-shadow-md">
+          <div className="absolute top-1/3 left-4 text-accent font-bold text-lg drop-shadow-md">
             {caption}
           </div>
         )}
 
         {showTime && currentTime && (
-          <div className="absolute bottom-2 left-4 text-sm text-white bg-black/60 px-2 py-1 rounded">
+          <div className="absolute bottom-2 left-4 text-sm text-accent bg-black/60 px-2 py-1 rounded">
             {currentTime}
           </div>
         )}
@@ -64,7 +64,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         <div className="relative w-full max-w-2xl mx-auto p-4">
           <button
             onClick={handleClosePopup}
-            className="absolute top-[25px] right-8 z-10 text-white bg-black/60 rounded-full p-2 hover:bg-black/80"
+            className="absolute top-[25px] right-8 z-10 text-accent bg-black/60 rounded-full p-2 hover:bg-black/80"
           >
             <AiOutlineClose size={20} />
           </button>
