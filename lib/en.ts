@@ -26,7 +26,7 @@ export const TERMS = 'Terms of Use';
 export const AND = 'and';
 export const PRIVACY = 'Privacy Notice';
 export const PRIVACY_TERMS =
-  ' . We may use the information provided by you to contact you (including viaemail) about our products and services and to improve promotion effortsincluding through campaign measurement, audience research, and toadvertise our products and services more effectively. You may opt out atany time, in accordance with our';
+  ' . We may use the information provided by you to contact you (including via email) about our products and services and to improve promotion efforts including through campaign measurement, audience research, and toadvertise our products and services more effectively. You may opt out atany time, in accordance with our';
 export const PRIVACY_NOTICE = 'Privacy Notice';
 
 //Topbar

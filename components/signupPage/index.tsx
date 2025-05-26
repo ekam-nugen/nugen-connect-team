@@ -8,6 +8,7 @@ import DisclaimerText from './Disclaimer';
 import SignUpCard from './SignUpCard';
 import { useAuthSignup, useSocialSignup } from '@/hooks/useAuth';
 import { CONNECT_TEAM } from '@/lib/en';
+import { emailRx, pwdRx } from '@/lib/utils';
 
 export default function SignUp() {
   const router = useRouter();
@@ -20,9 +21,6 @@ export default function SignUp() {
   const [touched, setTouched] = useState<boolean>(false);
   const { Signup, isLoading, error } = useAuthSignup();
   const { signupWithSocial } = useSocialSignup();
-
-  const emailRx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-  const pwdRx = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z\d])[A-Za-z\d\S]{8,}$/;
 
   const errs = {
     email: touched && (!form.email || !emailRx.test(form.email)),

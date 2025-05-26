@@ -303,6 +303,6 @@ export const cards = [
     buttonLabel: 'Select users to invite',
     icon: PiNumberThreeBold,
     iconClassName:
-      'text-white bg-gradient-to-r from-blue-600 to-violet-600 rounded-md text-2xl shadow-xl',
+      'text-accent bg-gradient-to-r from-blue-600 to-violet-600 rounded-md text-2xl shadow-xl',
   },
 ];

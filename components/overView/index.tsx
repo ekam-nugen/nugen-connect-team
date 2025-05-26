@@ -29,7 +29,7 @@ function OverviewComponent() {
       <div className="w-full lg:w-2/3">
         <motion.div variants={topToBottomAnimation} className="space-y-6 py-4">
           <Card className="p-5 space-x-6 md:p-3 lg:p-5 shadow-none">
-            <CardTitle className="text-xl md:text-lg lg:text-xl text-zinc-700 font-bold m-3 md:m-2 lg:m-3">
+            <CardTitle className="text-xl md:text-lg lg:text-xl text-zinc-text font-bold m-3 md:m-2 lg:m-3">
               {QUICK_ACTIONS}
             </CardTitle>
             <div className="flex justify-center gap-x-6 gap-y-4 flex-wrap">
@@ -62,24 +62,24 @@ function OverviewComponent() {
         <motion.div variants={topToBottomAnimation} className="space-y-6 py-4">
           <Card className="p-4 w-full bg-accent rounded-xl shadow-none min-h-[300px]">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-xl font-bold text-zinc-800">
+              <h2 className="text-xl font-bold text-zinc-heading">
                 {dailyActivity?.title}
               </h2>
-              <Button className="border border-gray-300 text-blue-600 font-medium rounded-full lg:px-6 px-2 md:px-4 py-2 hover:bg-gray-100 transition">
+              <Button className="border border-gray-subtle text-primary font-medium rounded-full lg:px-6 px-2 md:px-4 py-2 hover:bg-gray-light transition">
                 {dailyActivity?.buttonLabel}
               </Button>
             </div>
             <div className="flex flex-col items-center justify-center text-center">
               <span
-                className="text-6xl text-zinc-400 flex items-center justify-center mb-4"
+                className="text-6xl text-zinc-light flex items-center justify-center mb-4"
                 style={{ width: 100, height: 100 }}
               >
                 {dailyActivity.icon && <dailyActivity.icon />}
               </span>
-              <h3 className="font-semibold text-lg text-zinc-800 mb-1">
+              <h3 className="font-semibold text-lg text-zinc-heading mb-1">
                 {dailyActivity.messageTitle}
               </h3>
-              <p className="text-sm text-gray-500 whitespace-pre-line">
+              <p className="text-sm text-gray-muted whitespace-pre-line">
                 {dailyActivity.messageSubtitle}
               </p>
             </div>

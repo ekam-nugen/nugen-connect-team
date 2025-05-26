@@ -18,7 +18,7 @@ export function LoginContentItem({
   handleLogin,
 }: Readonly<LoginContentItemProps>) {
   switch (item.type) {
-    case 'h2':
+    case 'title':
       return (
         <motion.h2
           variants={topToBottomAnimation}
@@ -27,7 +27,7 @@ export function LoginContentItem({
           {item.label}
         </motion.h2>
       );
-    case 'p':
+    case 'subtitle':
       if (!item.link) {
         return (
           <motion.p

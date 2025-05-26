@@ -38,10 +38,12 @@ export default function AttendanceSection() {
               'cursor-pointer rounded-xl border p-6 text-center transition-all duration-200 w-full',
               selectedLabel === label
                 ? 'bg-blue-50 border-blue-300'
-                : 'border-gray-200 hover:border-blue-200'
+                : 'border-gray-light hover:border-blue-200'
             )}
           >
-            <div className="text-2xl font-semibold text-gray-400">{value}</div>
+            <div className="text-2xl font-semibold text-gray-muted">
+              {value}
+            </div>
             <div className="mt-1 text-md font-medium text-slate-800">
               {label}
             </div>
@@ -49,12 +51,12 @@ export default function AttendanceSection() {
         ))}
       </div>
       {selectedLabel && getMessage(selectedLabel) && (
-        <div className="mt-12 flex flex-col items-center text-center text-gray-400">
+        <div className="mt-12 flex flex-col items-center text-center text-gray-muted">
           {(() => {
             const { icon: Icon, message } = getMessage(selectedLabel)!;
             return (
               <>
-                <Icon className="w-10 h-10 text-gray-300" />
+                <Icon className="w-10 h-10 text-gray-subtle" />
                 <div className="mt-3 text-sm">{message}</div>
               </>
             );
