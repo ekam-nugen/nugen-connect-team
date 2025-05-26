@@ -17,15 +17,15 @@ const TaskCard = ({
       <div className="absolute left-0 top-0 bottom-0 w-2 rounded-l-full bg-gradient-to-b from-purple-500 to-blue-400" />
       <div className="flex flex-1 items-center justify-between pl-4 w-full">
         <div className="flex flex-col">
-          <span className="text-gray-800 text-base font-medium">{title}</span>
+          <span className="text-gray-dark text-base font-medium">{title}</span>
           {subtitle && (
-            <span className="text-sm text-gray-500 mt-1">{subtitle}</span>
+            <span className="text-sm text-gray-muted mt-1">{subtitle}</span>
           )}
         </div>
         {iconType !== 'none' && (
           <div className="flex items-center gap-2">
             {showProgress && (
-              <span className="text-gray-500 text-sm">
+              <span className="text-gray-muted text-sm">
                 {progress}/{total}
               </span>
             )}

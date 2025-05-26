@@ -3,12 +3,12 @@ import { LoginContentType, OTPVerificationContentType } from './types';
 
 //login page json
 export const LoginContent: LoginContentType[] = [
-  { type: 'h2', label: 'Welcome' },
-  { type: 'p', label: 'Log in to your company app' },
+  { type: 'title', label: 'Welcome' },
+  { type: 'subtitle', label: 'Log in to your company app' },
   { type: 'input', label: 'We’ll send you a code to verify your number' },
   { type: 'button', label: 'Verify' },
   {
-    type: 'p',
+    type: 'subtitle',
     label: 'Don’t have an account?',
     link: { type: 'link', label: 'Create one now', href: '/signup' },
   },
@@ -16,11 +16,11 @@ export const LoginContent: LoginContentType[] = [
 //otp vertification json
 export const OTPVerificationContent: OTPVerificationContentType[] = [
   { type: 'icon', icon: FaArrowLeft },
-  { type: 'h3', label: 'Enter the 4-digit code' },
-  { type: 'p', label: 'Sent to your number' },
+  { type: 'heading', label: 'Enter the 4-digit code' },
+  { type: 'sub-heading', label: 'Sent to your number' },
   { type: 'otp', length: 4 },
   {
-    type: 'p',
+    type: 'sub-heading',
     label: 'Didn’t get the code?',
     link: { type: 'span', label: 'More options' },
   },
