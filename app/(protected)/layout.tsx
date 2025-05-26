@@ -9,9 +9,13 @@ export default async function ProtectedLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const cookieStore = await cookies();
-  // const token = cookieStore.get('token')?.value;
-  // if (!token || !verifyToken(token)) redirect('/login');
+  const cookieStore = await cookies();
+  const token = cookieStore.get('token')?.value;
+  const provider = cookieStore.get('provider')?.value;
+
+  if (!provider && (!token || !verifyToken(token))) {
+    redirect('/login');
+  }
 
   return (
     <div className="bg-gray-light flex flex-col">

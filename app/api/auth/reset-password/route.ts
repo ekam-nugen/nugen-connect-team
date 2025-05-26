@@ -5,8 +5,10 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+    const url = new URL(req.url);
+    const tokenUrl = url.searchParams.get('token');
 
-    const apiRes = await fetch(`${baseUrl}/email/signup`, {
+    const apiRes = await fetch(`${baseUrl}/reset-password?token=${tokenUrl}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -15,12 +17,18 @@ export async function POST(req: NextRequest) {
     });
 
     const data = await apiRes.json();
+    const token = data?.token;
 
     if (!apiRes.ok) {
       return NextResponse.json(data, { status: apiRes.status });
     }
-    const token = data.token;
 
+    if (!token) {
+      return NextResponse.json(
+        { message: 'Token missing in API response' },
+        { status: 400 }
+      );
+    }
     const cookieStore = await cookies();
     cookieStore.set('token', token, { httpOnly: true });
     return NextResponse.json({ token });

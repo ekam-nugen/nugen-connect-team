@@ -2,6 +2,7 @@ import axios from 'axios';
 import { getCookie } from 'cookies-next';
 
 const axiosInstance = axios.create({ baseURL: '/api' });
+export const baseUrl = `${process.env.NEXT_PUBLIC_API_URL}`;
 
 axiosInstance.interceptors.request.use(
   config => {
