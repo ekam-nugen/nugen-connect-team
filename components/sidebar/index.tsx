@@ -47,7 +47,7 @@ export default function Sidebar() {
                 )}
               >
                 {section.hoverAnimate !== false && !collapsed && (
-                  <CgMenuGridO className="h-6 w-6 text-gray-subtle hidden group-hover:flex transition-opacity group-hover:duration-500" />
+                  <CgMenuGridO className="h-6 w-6 text-gray-muted hidden group-hover:flex transition-opacity group-hover:duration-500" />
                 )}
                 <span
                   className={cn(
@@ -63,7 +63,7 @@ export default function Sidebar() {
                   <div className="flex justify-between w-full">
                     <div className="text-sm cursor-pointer">{item.title}</div>
                     {section.hoverAnimate !== false && (
-                      <BsThreeDotsVertical className="h-4 w-4 mr-0.5 text-gray-subtle hidden group-hover:flex transition-opacity group-hover:duration-500" />
+                      <BsThreeDotsVertical className="h-4 w-4 mr-0.5 text-gray-muted hidden group-hover:flex transition-opacity group-hover:duration-500" />
                     )}
                   </div>
                 )}

@@ -28,11 +28,11 @@ function OverviewComponent() {
     <motion.div {...staggerParent} className="flex flex-col lg:flex-row gap-4">
       <div className="w-full lg:w-2/3">
         <motion.div variants={topToBottomAnimation} className="space-y-6 py-4">
-          <Card className="p-5 space-x-6 md:p-3 lg:p-5 shadow-none">
+          <Card className="p-5 space-x-6 md:p-3 lg:p-4 shadow-none">
             <CardTitle className="text-xl md:text-lg lg:text-xl text-zinc-text font-bold m-3 md:m-2 lg:m-3">
               {QUICK_ACTIONS}
             </CardTitle>
-            <div className="flex justify-center gap-x-6 gap-y-4 flex-wrap">
+            <div className="flex justify-center gap-x-4 gap-y-8 flex-wrap">
               {quickActions?.map((action, index) => (
                 <SmallCardWithIcon
                   key={action.title + index}

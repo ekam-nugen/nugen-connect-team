@@ -22,9 +22,11 @@ const SmallCard: React.FC<SmallCardProps> = ({
       <Card
         className={`${cardClassName} flex flex-col p-4 md:p-2 lg:p-4 w-full shadow-none `}
       >
-        <div className="text-xl md:text-lg lg:text-xl font-bold text-zinc-text flex justify-start items-start">
-          {heading}
-        </div>
+        {heading && (
+          <div className="text-xl md:text-lg lg:text-xl font-bold text-zinc-text flex justify-start items-start">
+            {heading}
+          </div>
+        )}
         <div className="md:px-4 lg:px-8 md:py-2 lg:py-4 px-8 py-4 flex flex-col justify-center items-center">
           <div className="text-center mb-2 pt-2 md:pt-1 lg:pt-2 md:mb-1 lg:mb-2">
             <div

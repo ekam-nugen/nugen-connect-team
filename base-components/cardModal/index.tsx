@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button } from '../button';
 import { cn } from '@/lib/utils';
+import { FaArrowLeft } from 'react-icons/fa6';
 
 export type CardModalProps = {
-  title: React.ReactNode;
+  title?: React.ReactNode;
   children?: React.ReactNode;
   selectedItems?: string[];
   categories?: string[];
@@ -17,15 +18,19 @@ export type CardModalProps = {
   buttonClass?: string;
   isBlock?: boolean;
   cancelButton?: boolean;
+  goBackArrow?: boolean;
   handleCancel?: () => void;
   loading?: boolean;
   disabled?: boolean;
   buttonAlignCenter?: boolean;
   titleAlignCenter?: boolean;
+  noTitleBorder?: boolean;
+  handleArrowClick?: () => void;
 };
 
 const CardModal = ({
   title,
+  noTitleBorder,
   children,
   onUpdate,
   isUploading,
@@ -36,10 +41,12 @@ const CardModal = ({
   handleCancel,
   borderClass,
   buttonClass,
-  cancelButton,
+  cancelButton = false,
   isBlock,
   loading,
   disabled,
+  handleArrowClick,
+  goBackArrow = false,
   buttonAlignCenter = false,
   titleAlignCenter = false,
 }: Readonly<CardModalProps>) => {
@@ -65,7 +72,7 @@ const CardModal = ({
         // Responsive width: max width full on small screens, fixed max width on md+
         'w-[90vw] max-w-md md:max-w-lg',
         // Responsive max height & scroll overflow on y-axis if content is tall
-        'max-h-[90vh] overflow-y-auto',
+        'max-h-[90vh] overflow-y-auto scrollbar-thin',
         // Centering transform
         '-translate-x-1/2 -translate-y-1/2',
         className
@@ -74,17 +81,25 @@ const CardModal = ({
       aria-modal="true"
       aria-labelledby="modal-title"
     >
-      <div className="relative border-b pb-2">
-        <h1
-          className={cn(
-            'text-xl font-semibold',
-            titleAlignCenter ? 'text-center' : '',
-            lableClass
-          )}
-          id="modal-title"
-        >
-          {title}
-        </h1>
+      <div className={cn('relative  pb-2', noTitleBorder ? '' : 'border-b')}>
+        {goBackArrow && (
+          <FaArrowLeft
+            onClick={handleArrowClick}
+            className="absolute left-0 top-1.5 text-gray-muted  cursor-pointer"
+          />
+        )}
+        {title && (
+          <h1
+            className={cn(
+              'text-xl font-semibold',
+              titleAlignCenter ? 'text-center' : '',
+              lableClass
+            )}
+            id="modal-title"
+          >
+            {title}
+          </h1>
+        )}
         {cancelButton !== false && (
           <Button
             variant="secondary"
