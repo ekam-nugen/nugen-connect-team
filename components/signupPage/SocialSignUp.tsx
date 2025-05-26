@@ -8,6 +8,8 @@ import { SocialSignUpProps } from './types';
 import { CLICK_HERE, FACEBOOK, GOOGLE, JOIN_EXISTING_ACCOUNT } from '@/lib/en';
 
 function SocialSignUp({
+  clickHere,
+  text,
   handleGoogleSignUp,
   handleFacebookSignUp,
 }: Readonly<SocialSignUpProps>) {
@@ -33,12 +35,12 @@ function SocialSignUp({
         variants={bottomToTopAnimation}
         className="pt-5 text-center text-sm text-foreground"
       >
-        {JOIN_EXISTING_ACCOUNT}
+        {text || JOIN_EXISTING_ACCOUNT}
         <Link
           href="/login"
           className="text-primary underline-offset-2 hover:underline"
         >
-          {CLICK_HERE}
+          {clickHere || CLICK_HERE}
         </Link>
       </motion.p>
     </div>

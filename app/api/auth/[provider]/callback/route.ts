@@ -4,10 +4,10 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(
   req: NextRequest,
-  context: { params: { provider: string } }
+  { params }: { params: { provider: string } }
 ) {
   try {
-    const { provider } = context.params;
+    const { provider } = params;
 
     const url = new URL(req.url);
     const searchParams = url.searchParams.toString();
@@ -33,6 +33,7 @@ export async function GET(
         { status: 400 }
       );
     }
+
     const cookieStore = await cookies();
     cookieStore.set('token', token, { httpOnly: true });
     return NextResponse.json({ token });

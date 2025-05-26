@@ -27,11 +27,12 @@ export default function SignUp() {
     password: touched && (!form.password || !pwdRx.test(form.password)),
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setForm(p => ({ ...p, [name]: value }));
   };
-
   const handleSubmit = async () => {
     setTouched(true);
 

@@ -10,6 +10,7 @@ import {
 } from '@/types';
 import useSWRMutation from 'swr/mutation';
 import { SignUpFormType } from '@/components/signupPage/types';
+import { LoginFormType } from '@/components/login/type';
 
 const fetcher = (url: string) => axiosInstance.get(url).then(res => res.data);
 
@@ -37,6 +38,26 @@ export const useAuthSignup = () => {
   };
 
   return { Signup, isLoading: isMutating, error: error?.message };
+};
+export const useAuthLogin = () => {
+  const { trigger, isMutating, error } = useSWRMutation(
+    '/auth/login',
+    async (url, { arg }: { arg: LoginFormType }) => {
+      const res = await axiosInstance.post(url, arg);
+      return res.data;
+    }
+  );
+
+  const Login = async (data: LoginFormType) => {
+    try {
+      await trigger(data);
+      return true;
+    } catch (err) {
+      return false;
+    }
+  };
+
+  return { Login, isLoading: isMutating, error: error?.message };
 };
 
 export const useSocialSignup = () => {
