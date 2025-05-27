@@ -17,7 +17,9 @@ export interface SignUpCardProps {
   form: SignUpFormType;
   errs: IErrs;
   isLoading?: boolean;
-  handleChange: () => void;
+  handleChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => void;
   handleSubmit: () => void;
   handleGoogleSignUp?: () => void;
   handleFacebookSignUp?: () => void;
@@ -25,6 +27,8 @@ export interface SignUpCardProps {
 
 //SocialSignUp types
 export type SocialSignUpProps = {
+  clickHere?: string;
+  text?: string;
   handleGoogleSignUp?: () => void;
   handleFacebookSignUp?: () => void;
 };

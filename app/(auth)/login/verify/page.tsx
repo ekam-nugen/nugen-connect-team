@@ -1,4 +1,4 @@
-import OTPVerification from '@/components/loginPage/otpVerification';
+import OTPVerification from '@/components/loginPhone/otpVerification';
 import React from 'react';
 
 function OtpVerifyPage() {

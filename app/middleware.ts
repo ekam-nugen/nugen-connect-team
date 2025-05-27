@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { NextRequest } from 'next/server';
-import { verifyToken } from '@/lib/auth';
 
 export function middleware(request: NextRequest) {
   const token = request.cookies.get('token')?.value;
@@ -11,7 +10,7 @@ export function middleware(request: NextRequest) {
   ) {
     if (provider) {
       request.nextUrl.pathname.startsWith('/dashboard');
-    } else if (!token || !verifyToken(token)) {
+    } else if (!token) {
       return NextResponse.redirect(new URL('/login', request.url));
     }
   }
