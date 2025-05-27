@@ -3,7 +3,7 @@ export interface InputProps
   label?: string;
   error?: boolean;
   helpText?: string;
-  type?: 'text' | 'password' | 'email' | 'number';
+  type?: 'text' | 'password' | 'email' | 'number' | 'file';
   disabled?: boolean;
   help?: boolean;
   icon?: boolean;

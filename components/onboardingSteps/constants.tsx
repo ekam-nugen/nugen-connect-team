@@ -21,7 +21,14 @@ import {
   FaUserGroup,
   FaWarehouse,
 } from 'react-icons/fa6';
-import { SecondStepContentType } from './types';
+
+import {
+  SecondStepContentType,
+  TLogoUploadStep,
+  TPhoneNumberStep,
+  TStepThreeFeatureCategory,
+} from './types';
+import { MdPhoneIphone } from 'react-icons/md';
 export const FirstStepContent = [
   {
     type: 'input',
@@ -230,3 +237,48 @@ export const SecondStepContent: SecondStepContentType[] = [
     ],
   },
 ];
+
+export const StepThreeFeaturesContent: TStepThreeFeatureCategory[] = [
+  {
+    category: 'Operations',
+    features: [
+      { label: 'Time clock', icon: '⏱️' },
+      { label: 'Schedule', icon: '📅' },
+      { label: 'Forms & Checklists', icon: '📋' },
+      { label: 'Task management', icon: '🗓️' },
+    ],
+  },
+  {
+    category: 'Communication',
+    features: [
+      { label: 'Chat & Updates', icon: '💬' },
+      { label: 'Directory', icon: '📇' },
+      { label: 'Events', icon: '📆' },
+      { label: 'Knowledge base', icon: '📚' },
+    ],
+  },
+  {
+    category: 'HR & Skills',
+    features: [
+      { label: 'Time off management', icon: '🌤️' },
+      { label: 'Training & Onboarding', icon: '📖' },
+      { label: 'Document management', icon: '📁' },
+      { label: 'Recognitions & Rewards', icon: '🎁' },
+    ],
+  },
+];
+
+export const LogoUploadStepContent: TLogoUploadStep = {
+  title: 'Make it your own',
+  subtitle: 'Insert your logo',
+  uploadPrompt: 'Drag your logo here',
+  browseText: 'Browse',
+  note: 'Change from the settings menu at any time',
+};
+export const PhoneNumberStepContent: TPhoneNumberStep = {
+  title: "What's your mobile number?",
+  subtitle:
+    'Log in to your app easily and securely with your mobile phone number',
+  helperText: "We'll text you the link to download your mobile app",
+  icon: MdPhoneIphone,
+};

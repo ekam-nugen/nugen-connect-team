@@ -25,7 +25,9 @@ export type CardModalProps = {
   buttonAlignCenter?: boolean;
   titleAlignCenter?: boolean;
   noTitleBorder?: boolean;
+  isSkipButton?: boolean;
   handleArrowClick?: () => void;
+  handleSkipClick?: () => void;
 };
 
 const CardModal = ({
@@ -45,6 +47,8 @@ const CardModal = ({
   isBlock,
   loading,
   disabled,
+  handleSkipClick,
+  isSkipButton = false,
   handleArrowClick,
   goBackArrow = false,
   buttonAlignCenter = false,
@@ -82,12 +86,23 @@ const CardModal = ({
       aria-labelledby="modal-title"
     >
       <div className={cn('relative  pb-2', noTitleBorder ? '' : 'border-b')}>
-        {goBackArrow && (
-          <FaArrowLeft
-            onClick={handleArrowClick}
-            className="absolute left-0 top-1.5 text-gray-muted  cursor-pointer"
-          />
-        )}
+        <div className="relative flex items-center justify-between">
+          {goBackArrow && (
+            <FaArrowLeft
+              onClick={handleArrowClick}
+              className="absolute left-0 top-1.5 text-gray-muted  cursor-pointer"
+            />
+          )}
+          {isSkipButton && (
+            <Button
+              variant={'ghost'}
+              onClick={handleSkipClick}
+              className="absolute left-96 -top-1 text-gray-muted  cursor-pointer hover:bg-transparent hover:text-primary"
+            >
+              Skip
+            </Button>
+          )}
+        </div>
         {title && (
           <h1
             className={cn(

@@ -1,77 +1,99 @@
 'use client';
-
 import { CardModal } from '@/base-components/cardModal';
-import { Input } from '@/base-components/input';
 import React, { useState } from 'react';
-import { FirstStepContent, SecondStepContent } from './constants';
-import SecondStepContentItem from './SecondStepContentItem';
+import { useRouter } from 'next/navigation';
+import OnboardingSteps from './BoardingMultiSteps';
 
-const OnBoardingSteps: React.FC = () => {
+export default function OnboardingForm() {
+  const router = useRouter();
+  const [role, setRole] = useState<string>('');
+  const [phone, setPhone] = useState<string>('');
+  const [logo, setLogo] = useState<File | null>(null);
+  const [companyName, setCompanyName] = useState<string>('');
   const [boardingStep, setBoardingStep] = useState<number>(1);
+  const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files?.[0]) {
+      setLogo(e.target.files[0]);
+    }
+  };
+
+  const handleFeatureClick = (label: string) => {
+    setSelectedFeatures(prev =>
+      prev.includes(label) ? prev.filter(f => f !== label) : [...prev, label]
+    );
+  };
 
   const handleIndustryClick = (label: string) => {
     setSelectedIndustry(label);
   };
+
   const handleArrowClick = () => {
     if (boardingStep > 1) {
       setBoardingStep(prev => prev - 1);
     }
+    if (boardingStep === 3) {
+      setSelectedIndustry(null);
+    }
   };
+
+  const handleAccessDashboardClick = () => {
+    if (phone.length > 9) {
+      router.push('/dashboard');
+    }
+  };
+
+  const handlePhoneChange = (value: string) => setPhone(value);
   return (
     <CardModal
-      title={boardingStep === 1 && 'Customize your app in 1 minute'}
+      title={boardingStep === 1 && 'Customize your app in 1\u00a0minute'}
       lableClass="font-bold leading-7 justify-center text-zinc-dark text-center"
-      buttonLabel={'Next step'}
-      titleAlignCenter
+      buttonLabel={boardingStep === 5 ? 'Access dashboard' : 'Next step'}
       className="p-5"
       borderClass="border-none justify-center items-center"
       goBackArrow={boardingStep > 1}
       handleArrowClick={handleArrowClick}
       buttonAlignCenter
       noTitleBorder
+      isSkipButton={boardingStep === 4}
+      handleSkipClick={() => setBoardingStep(5)}
       onUpdate={() => {
-        setBoardingStep(prev => prev + 1);
+        if (boardingStep === 5) {
+          handleAccessDashboardClick();
+        } else {
+          setBoardingStep(prev => prev + 1);
+        }
+        if (boardingStep === 1) {
+          setSelectedIndustry(null);
+        }
       }}
+      disabled={
+        (boardingStep === 1 && !(companyName.trim() && role.trim())) ||
+        (boardingStep === 2 && selectedIndustry === null) ||
+        (boardingStep === 3 && selectedFeatures.length === 0) ||
+        (boardingStep === 4 && !logo) ||
+        (boardingStep === 5 ? phone.length < 9 : false)
+      }
     >
-      {boardingStep === 1 && (
-        <div className="flex flex-col py-3 gap-y-8">
-          {FirstStepContent?.map((item, index) => {
-            if (item.type === 'input') {
-              return (
-                <Input
-                  key={item.label + index}
-                  type={'text'}
-                  placeholder={item.placeholder}
-                  label={item.label}
-                  labelClass="mx-auto !text-center font-semibold text-gray-dark"
-                  className="space-y-2 p-2"
-                />
-              );
-            }
-          })}
-        </div>
-      )}
-      {boardingStep === 2 &&
-        SecondStepContent?.map((item, index) => {
-          const hasMatchingIndustry = item.options.some(
-            option => option.label === selectedIndustry
-          );
-
-          if (!selectedIndustry || hasMatchingIndustry) {
-            return (
-              <SecondStepContentItem
-                key={item.label + index}
-                item={item}
-                selectedIndustry={selectedIndustry}
-                setSelectedIndustry={setSelectedIndustry}
-                handleIndustryClick={handleIndustryClick}
-              />
-            );
-          }
-        })}
+      <OnboardingSteps
+        boardingStep={boardingStep}
+        companyName={companyName}
+        setCompanyName={setCompanyName}
+        role={role}
+        setRole={setRole}
+        selectedIndustry={selectedIndustry}
+        setSelectedIndustry={setSelectedIndustry}
+        handleIndustryClick={handleIndustryClick}
+        selectedFeatures={selectedFeatures}
+        handleFeatureClick={handleFeatureClick}
+        logo={logo}
+        setLogo={setLogo}
+        handleFileChange={handleFileChange}
+        phone={phone}
+        handlePhoneChange={handlePhoneChange}
+      />
     </CardModal>
   );
-};
-
-export default OnBoardingSteps;
+}
