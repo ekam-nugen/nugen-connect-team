@@ -11,6 +11,7 @@ import { CLICK_HERE, FACEBOOK, GOOGLE, JOIN_EXISTING_ACCOUNT } from '@/lib/en';
 function SocialSignUp({
   clickHere,
   text,
+  href,
   handleGoogleSignUp,
   handleFacebookSignUp,
 }: Readonly<SocialSignUpProps>) {
@@ -38,7 +39,7 @@ function SocialSignUp({
       >
         {text || JOIN_EXISTING_ACCOUNT}
         <Link
-          href="/login"
+          href={href || '/login'}
           className="text-primary underline-offset-2 hover:underline"
         >
           {clickHere || CLICK_HERE}

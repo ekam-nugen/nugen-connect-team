@@ -29,6 +29,7 @@ export interface SignUpCardProps {
 export type SocialSignUpProps = {
   clickHere?: string;
   text?: string;
+  href?: string;
   handleGoogleSignUp?: () => void;
   handleFacebookSignUp?: () => void;
 };

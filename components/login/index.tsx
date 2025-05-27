@@ -54,6 +54,7 @@ const LoginForm = () => {
       ))}
       {error && <p className="text-destructive text-sm text-center">{error}</p>}
       <SocialSignUp
+        href="/signup"
         clickHere={CLICK_HERE}
         text={CREATE_NEW_ACCOUNT}
         handleGoogleSignUp={handleGoogleSignUp}
