@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
-import { Props, TableDataType } from './constants';
+import { Props, TableDataType } from './types';
 import { TableHeaderComponent } from './UtilityComponents';
 import { Table, TableBody, TableCell, TableRow } from '@/base-components/table';
 import { Button } from '@/base-components/button';

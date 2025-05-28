@@ -1,5 +1,5 @@
 import { TableHead, TableHeader, TableRow } from '@/base-components/table';
-import { CommonTableHeader } from './constants';
+import { CommonTableHeader } from './types';
 import { cn } from '@/lib/utils';
 import { FaChevronDown } from 'react-icons/fa6';
 

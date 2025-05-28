@@ -11,7 +11,7 @@ import image1 from '../../../public/1.jpg';
 import {
   CommonTableHeader,
   TableDataType,
-} from '@/base-components/common/table/constants';
+} from '@/base-components/common/table/types';
 import EditableCell from '@/base-components/common/table/EditableCell';
 
 const Page = () => {

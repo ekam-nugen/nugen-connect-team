@@ -1,7 +1,7 @@
 'use client';
 
 import { ChangeEvent } from 'react';
-import { EditableCellProps } from './constants';
+import { EditableCellProps } from './types';
 
 const EditableCell = ({
   value,

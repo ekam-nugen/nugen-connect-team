@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from '../card';
-import { HeaderBoxProp } from '@/types';
+import { HeaderBoxProp } from './types';
 
 const HeaderBox = ({
   header,

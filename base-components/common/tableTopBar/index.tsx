@@ -1,6 +1,6 @@
 import { DatePicker } from '@/base-components/datepicker';
 import { Input } from '@/base-components/input';
-import { TableTopbarProps } from './constants';
+import { TableTopbarProps } from './types';
 
 const TableTopbar: React.FC<TableTopbarProps> = ({
   isSearch,
