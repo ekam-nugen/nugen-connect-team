@@ -51,7 +51,7 @@ export const LOGIN_LOADING = 'Logging in...';
 export const EMAIL_CAPITAL = 'Email';
 export const PASSWORD_CAPITAL = 'Password';
 export const IN = 'in';
-export const CREATE_NEW_ACCOUNT = 'Create New Account ';
+export const CREATE_NEW_ACCOUNT = 'Create new account ';
 export const FORGOT_ACCOUNT_PASSWORD = 'Forgot Password';
 export const DONT_HAVE_ACCOUNT = "Don't have an account?";
 
