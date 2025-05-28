@@ -4,9 +4,9 @@ import React from 'react';
 import { FaRegStar } from 'react-icons/fa';
 import Image from 'next/image';
 import { LogoUploadStepProps } from './types';
-import { LogoUploadStepContent } from './constants';
 
 export default function LogoUploadStep({
+  data,
   logo,
   handleRemoveClick,
   handleFileChange,
@@ -14,11 +14,9 @@ export default function LogoUploadStep({
   return (
     <div className="max-w-xl flex flex-col justify-center items-center mx-auto pt-6 text-center">
       <h2 className="text-2xl font-semibold text-gray-dark mb-1">
-        {LogoUploadStepContent?.title}
+        {data?.title}
       </h2>
-      <p className="text-gray-muted text-sm  mb-6">
-        {LogoUploadStepContent?.subtitle}
-      </p>
+      <p className="text-gray-muted text-sm  mb-6">{data?.subtitle}</p>
 
       <div className=" flex border-2 border-dashed rounded-xl p-6 mb-2 bg-muted w-fit ">
         {!logo ? (
@@ -34,10 +32,10 @@ export default function LogoUploadStep({
               </div>
               <div className="flex flex-col justify-center">
                 <span className="text-sm text-gray-muted">
-                  {LogoUploadStepContent?.uploadPrompt} <br />
+                  {data?.uploadPrompt} <br />
                   Or{' '}
                   <span className="text-primary cursor-pointer text-sm">
-                    {LogoUploadStepContent?.browseText}
+                    {data?.browseText}
                   </span>
                 </span>
               </div>
@@ -69,9 +67,7 @@ export default function LogoUploadStep({
           </div>
         )}
       </div>
-      <p className="text-xs text-gray-muted mb-4">
-        {LogoUploadStepContent?.note}
-      </p>
+      <p className="text-xs text-gray-muted mb-4">{data?.note}</p>
     </div>
   );
 }

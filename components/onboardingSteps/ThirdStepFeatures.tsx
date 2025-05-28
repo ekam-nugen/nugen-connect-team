@@ -1,5 +1,4 @@
 import React from 'react';
-import { StepThreeFeaturesContent } from './constants';
 import {
   TStepThreeFeatureCategory,
   TStepThreeFeatureItem,
@@ -7,6 +6,7 @@ import {
 } from './types';
 
 export default function StepThreeFeatures({
+  data,
   selectedFeatures,
   handleFeatureClick,
 }: Readonly<StepThreeFeaturesProps>) {
@@ -21,7 +21,7 @@ export default function StepThreeFeatures({
       </p>
 
       <div className="space-y-8 w-full">
-        {StepThreeFeaturesContent?.map((section: TStepThreeFeatureCategory) => (
+        {data?.map((section: TStepThreeFeatureCategory) => (
           <div key={section.category} className="flex items-start gap-4">
             {/* Vertical category label */}
             <div className="w-6 flex items-center justify-center cursor-pointer ">

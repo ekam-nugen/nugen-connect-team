@@ -3,9 +3,11 @@ import { CardModal } from '@/base-components/cardModal';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import OnboardingSteps from './BoardingMultiSteps';
+import { Onboarding } from '@/hooks/useAuth';
 
 export default function OnboardingForm() {
   const router = useRouter();
+  const { data } = Onboarding();
   const [role, setRole] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
   const [logo, setLogo] = useState<File | null>(null);
@@ -78,6 +80,7 @@ export default function OnboardingForm() {
       }
     >
       <OnboardingSteps
+        boardingStepsData={data?.data}
         boardingStep={boardingStep}
         companyName={companyName}
         setCompanyName={setCompanyName}

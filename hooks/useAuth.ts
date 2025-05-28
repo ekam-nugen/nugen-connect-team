@@ -162,3 +162,8 @@ export const useAuthResetPassword = (token: string | null) => {
 
   return { resetPassword, isLoading: isMutating, error: error?.message };
 };
+
+export const Onboarding = () => {
+  const { data, isLoading, error } = useSWR('/onboarding', fetcher);
+  return { data, isLoading, error: error?.message };
+};

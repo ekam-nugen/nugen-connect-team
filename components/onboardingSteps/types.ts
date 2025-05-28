@@ -1,9 +1,11 @@
-import { ReactNode } from 'react';
-import { IconType } from 'react-icons';
-
+export type FirstStepContentType = {
+  type: string;
+  placeholder: string;
+  label: string;
+};
 export interface ISecondStepOption {
   label: string;
-  icon?: ReactNode;
+  icon?: string;
   subIndustries?: string[];
 }
 
@@ -29,6 +31,7 @@ export type TStepThreeFeatureCategory = {
   features: TStepThreeFeatureItem[];
 };
 export type StepThreeFeaturesProps = {
+  data: TStepThreeFeatureCategory[];
   selectedFeatures: string[];
   handleFeatureClick: (label: string) => void;
 };
@@ -42,6 +45,7 @@ export type TLogoUploadStep = {
 };
 
 export type LogoUploadStepProps = {
+  data: TLogoUploadStep;
   logo: File | null;
   handleRemoveClick: () => void;
   handleFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -51,14 +55,22 @@ export type TPhoneNumberStep = {
   title: string;
   subtitle: string;
   helperText: string;
-  icon: IconType;
+  icon: string;
 };
 export type PhoneNumberStepProps = {
+  data: TPhoneNumberStep;
   phone: string;
   setPhone: (phone: string) => void;
 };
 
 export interface OnboardingStepsProps {
+  boardingStepsData: {
+    FirstStepContent: FirstStepContentType[];
+    SecondStepContent: SecondStepContentType[];
+    StepThreeFeaturesContent: TStepThreeFeatureCategory[];
+    LogoUploadStepContent: TLogoUploadStep;
+    PhoneNumberStepContent: TPhoneNumberStep;
+  };
   boardingStep: number;
   companyName: string;
   setCompanyName: (val: string) => void;

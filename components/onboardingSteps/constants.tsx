@@ -23,13 +23,36 @@ import {
 } from 'react-icons/fa6';
 
 import {
+  FirstStepContentType,
   SecondStepContentType,
   TLogoUploadStep,
   TPhoneNumberStep,
   TStepThreeFeatureCategory,
 } from './types';
 import { MdPhoneIphone } from 'react-icons/md';
-export const FirstStepContent = [
+export const iconMap: Record<string, React.ReactNode> = {
+  FaBuilding: <FaBuilding className="text-yellow-500" />,
+  FaHeartbeat: <FaHeartbeat className="text-rose-500" />,
+  FaUtensils: <FaUtensils className="text-orange-500" />,
+  FaShoppingBag: <FaShoppingBag className="text-purple-500" />,
+  FaBroom: <FaBroom className="text-blue-500" />,
+  FaIndustry: <FaIndustry className="text-lime-500" />,
+  FaShieldAlt: <FaShieldAlt className="text-blue-800" />,
+  FaHotel: <FaHotel className="text-amber-700" />,
+  FaUserGroup: <FaUserGroup className="text-pink-500" />,
+  FaTruck: <FaTruck className="text-amber-950" />,
+  FaMusic: <FaMusic className="text-pink-500" />,
+  FaHome: <FaHome className="text-green-600" />,
+  FaUniversity: <FaUniversity className="text-blue-600" />,
+  FaBook: <FaBook className="text-indigo-600" />,
+  FaInfoCircle: <FaInfoCircle className="text-teal-500" />,
+  FaWarehouse: <FaWarehouse className="text-orange-700" />,
+  FaMoneyBillWave: <FaMoneyBillWave className="text-green-700" />,
+  FaClipboardCheck: <FaClipboardCheck className="text-cyan-600" />,
+  FaHandsHelping: <FaHandsHelping className="text-pink-600" />,
+  MdPhoneIphone: <MdPhoneIphone />,
+};
+export const FirstStepContent: FirstStepContentType[] = [
   {
     type: 'input',
     placeholder: 'Company name',
@@ -61,7 +84,7 @@ export const SecondStepContent: SecondStepContentType[] = [
     options: [
       {
         label: 'Construction',
-        icon: <FaBuilding className="text-yellow-500" />,
+        icon: 'FaBuilding ',
         subIndustries: [
           'Commercial',
           'Heavy Civil',
@@ -73,7 +96,7 @@ export const SecondStepContent: SecondStepContentType[] = [
       },
       {
         label: 'Healthcare',
-        icon: <FaHeartbeat className="text-rose-500" />,
+        icon: 'FaHeartbeat ',
         subIndustries: [
           'Ambulatory',
           'Assisted Living',
@@ -86,12 +109,12 @@ export const SecondStepContent: SecondStepContentType[] = [
       },
       {
         label: 'Food & Beverage',
-        icon: <FaUtensils className="text-orange-500" />,
+        icon: 'FaUtensils ',
         subIndustries: ['Bars', 'Caterers', 'Restaurants', 'Other'],
       },
       {
         label: 'Retail',
-        icon: <FaShoppingBag className="text-purple-500" />,
+        icon: 'FaShoppingBag ',
         subIndustries: [
           'Apparel',
           'Home Goods',
@@ -102,12 +125,12 @@ export const SecondStepContent: SecondStepContentType[] = [
       },
       {
         label: 'Cleaning',
-        icon: <FaBroom className="text-blue-500" />,
+        icon: 'FaBroom ',
         subIndustries: ['Commercial', 'Residential', 'Other'],
       },
       {
         label: 'Manufacturing',
-        icon: <FaIndustry className="text-lime-500" />,
+        icon: 'FaIndustry ',
         subIndustries: [
           'Food & Beverages',
           'Machinery',
@@ -121,12 +144,12 @@ export const SecondStepContent: SecondStepContentType[] = [
       },
       {
         label: 'Security',
-        icon: <FaShieldAlt className="text-blue-800" />,
+        icon: 'FaShieldAlt ',
         subIndustries: [],
       },
       {
         label: 'Accommodation',
-        icon: <FaHotel className="text-amber-700" />,
+        icon: 'FaHotel ',
         subIndustries: [
           'Air BnB',
           'B&B Inns',
@@ -138,12 +161,12 @@ export const SecondStepContent: SecondStepContentType[] = [
       },
       {
         label: 'Staffing',
-        icon: <FaUserGroup className="text-pink-500" />,
+        icon: 'FaUserGroup ',
         subIndustries: ['Healthcare', 'Other'],
       },
       {
         label: 'Transportation',
-        icon: <FaTruck className="text-amber-950" />,
+        icon: 'FaTruck ',
         subIndustries: [
           'Logistics',
           'Truck Transportation',
@@ -153,7 +176,7 @@ export const SecondStepContent: SecondStepContentType[] = [
       },
       {
         label: 'Entertainment & Recreation',
-        icon: <FaMusic className="text-pink-500" />,
+        icon: 'FaMusic ',
         subIndustries: [
           'Live Entertainment',
           'Museums & Monuments',
@@ -163,12 +186,12 @@ export const SecondStepContent: SecondStepContentType[] = [
       },
       {
         label: 'Real Estate',
-        icon: <FaHome className="text-green-600" />,
+        icon: 'FaHome ',
         subIndustries: ['Licensing', 'Real Estate', 'Rental Services', 'Other'],
       },
       {
         label: 'Government',
-        icon: <FaUniversity className="text-blue-600" />,
+        icon: 'FaUniversity ',
         subIndustries: [
           'Economic Management',
           'Government Administration',
@@ -179,12 +202,12 @@ export const SecondStepContent: SecondStepContentType[] = [
       },
       {
         label: 'Education',
-        icon: <FaBook className="text-indigo-600" />,
+        icon: 'FaBook ',
         subIndustries: ['Other'],
       },
       {
         label: 'Information',
-        icon: <FaInfoCircle className="text-teal-500" />,
+        icon: 'FaInfoCircle ',
         subIndustries: [
           'Information Services',
           'Telecommunication',
@@ -195,12 +218,12 @@ export const SecondStepContent: SecondStepContentType[] = [
       },
       {
         label: 'Warehousing',
-        icon: <FaWarehouse className="text-orange-700" />,
+        icon: 'FaWarehouse ',
         subIndustries: ['Warehousing', 'Storage', 'Other'],
       },
       {
         label: 'Finance',
-        icon: <FaMoneyBillWave className="text-green-700" />,
+        icon: 'FaMoneyBillWave ',
         subIndustries: [
           'Monetary Authority',
           'Commercial Banking',
@@ -210,7 +233,7 @@ export const SecondStepContent: SecondStepContentType[] = [
       },
       {
         label: 'Insurance',
-        icon: <FaClipboardCheck className="text-cyan-600" />,
+        icon: 'FaClipboardCheck ',
         subIndustries: [
           'Agencies & Brokerages',
           'Funds & Trusts',
@@ -220,7 +243,7 @@ export const SecondStepContent: SecondStepContentType[] = [
       },
       {
         label: 'Personal Services',
-        icon: <FaHandsHelping className="text-pink-600" />,
+        icon: 'FaHandsHelping ',
         subIndustries: [
           'Household',
           'Personal Care',
@@ -280,5 +303,5 @@ export const PhoneNumberStepContent: TPhoneNumberStep = {
   subtitle:
     'Log in to your app easily and securely with your mobile phone number',
   helperText: "We'll text you the link to download your mobile app",
-  icon: MdPhoneIphone,
+  icon: 'MdPhoneIphone',
 };

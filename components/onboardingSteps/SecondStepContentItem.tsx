@@ -9,6 +9,7 @@ import { ISecondStepOption, SecondStepContentItemProps } from './types';
 import { Button } from '@/base-components/button';
 import { RxCross2 } from 'react-icons/rx';
 import { cn } from '@/lib/utils';
+import { iconMap } from './constants';
 
 function SecondStepContentItem({
   item,
@@ -32,6 +33,7 @@ function SecondStepContentItem({
       <div className="flex flex-wrap justify-center gap-3">
         {item?.options?.map((option: ISecondStepOption, idx: number) => {
           const { icon, label, subIndustries } = option;
+          const Icon = iconMap[icon as string] ?? null;
           const isSelected = selectedIndustry === label;
 
           return (
@@ -49,7 +51,7 @@ function SecondStepContentItem({
                       : setSelectedEmp(label)
                   }
                 >
-                  {icon && <span className="text-sm">{icon}</span>}
+                  {icon && <span className="text-sm">{Icon}</span>}
                   <span>{label}</span>
                 </Button>
               )}
@@ -60,7 +62,7 @@ function SecondStepContentItem({
                     className="flex items-center mb-6 mx-auto gap-2 border border-primary bg-blue-50  rounded-lg py-0.5 px-2 text-gray-muted font-semibold text-xs shadow-sm transition duration-150 ease-in-out"
                     onClick={() => setSelectedIndustry(null)}
                   >
-                    {icon && <span className="text-sm">{icon}</span>}
+                    {icon && <span className="text-sm">{iconMap[icon]}</span>}
                     <span>{label}</span>
                     <RxCross2 className="ml-2" />
                   </Button>
