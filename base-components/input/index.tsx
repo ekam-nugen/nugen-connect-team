@@ -45,7 +45,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <div className={cn('flex flex-col items-start gap-1 w-full', className)}>
         {(label || icon || requiredField) && (
           <div className="flex justify-between items-center px-3 w-full">
-            <div className="flex gap-0.5">
+            <div className="flex gap-0.5 w-full">
               <Label
                 htmlFor={type}
                 className={cn(
