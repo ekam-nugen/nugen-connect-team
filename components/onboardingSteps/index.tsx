@@ -21,17 +21,14 @@ export default function OnboardingForm() {
       setLogo(e.target.files[0]);
     }
   };
-
   const handleFeatureClick = (label: string) => {
     setSelectedFeatures(prev =>
       prev.includes(label) ? prev.filter(f => f !== label) : [...prev, label]
     );
   };
-
   const handleIndustryClick = (label: string) => {
     setSelectedIndustry(label);
   };
-
   const handleArrowClick = () => {
     if (boardingStep > 1) {
       setBoardingStep(prev => prev - 1);
@@ -40,14 +37,13 @@ export default function OnboardingForm() {
       setSelectedIndustry(null);
     }
   };
-
   const handleAccessDashboardClick = () => {
     if (phone.length > 9) {
       router.push('/dashboard');
     }
   };
-
   const handlePhoneChange = (value: string) => setPhone(value);
+
   return (
     <CardModal
       title={boardingStep === 1 && 'Customize your app in 1\u00a0minute'}
