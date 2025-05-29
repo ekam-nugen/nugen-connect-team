@@ -52,6 +52,11 @@ export default function OnboardingForm() {
           handleArrowClick={handleArrowClick}
           buttonAlignCenter
           noTitleBorder
+          showStepper
+          stepData={{
+            steps: ['Profile', 'Industry', 'Features', 'Logo', 'Phone'],
+            currentStep: boardingStep - 1,
+          }}
           isSkipButton={boardingStep === 4}
           handleSkipClick={() => setBoardingStep(5)}
           onUpdate={() => {
