@@ -12,8 +12,8 @@ export const categories = [
   {
     name: 'General groups',
     count: 2,
-    color: 'text-blue-600',
-    dot: 'bg-blue-500',
+    color: 'text-blue-400',
+    dot: 'bg-blue-300',
     tableData: {
       header: TableHeader,
       data: [
@@ -39,8 +39,8 @@ export const categories = [
   {
     name: 'Groups by Location',
     count: 0,
-    color: 'text-blue-400',
-    dot: 'bg-blue-300',
+    color: 'text-orange-400',
+    dot: 'bg-orange-300',
     tableData: {
       header: TableHeader,
       data: [
@@ -66,8 +66,8 @@ export const categories = [
   {
     name: 'Groups by Department',
     count: 3,
-    color: 'text-blue-600',
-    dot: 'bg-blue-500',
+    color: 'text-rose-500',
+    dot: 'bg-rose-400',
     tableData: {
       header: TableHeader,
       data: [

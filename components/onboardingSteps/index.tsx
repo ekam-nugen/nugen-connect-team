@@ -16,10 +16,9 @@ export default function OnboardingForm() {
   const [boardingStep, setBoardingStep] = useState<number>(1);
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
   const [selectedIndustry, setSelectedIndustry] = useState<string | null>(null);
+
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files?.[0]) {
-      setLogo(e.target.files[0]);
-    }
+    if (e.target.files?.[0]) setLogo(e.target.files[0]);
   };
   const handleFeatureClick = (label: string) => {
     setSelectedFeatures(prev =>
@@ -30,17 +29,11 @@ export default function OnboardingForm() {
     setSelectedIndustry(label);
   };
   const handleArrowClick = () => {
-    if (boardingStep > 1) {
-      setBoardingStep(prev => prev - 1);
-    }
-    if (boardingStep === 3) {
-      setSelectedIndustry(null);
-    }
+    if (boardingStep > 1) setBoardingStep(prev => prev - 1);
+    if (boardingStep === 3) setSelectedIndustry(null);
   };
   const handleAccessDashboardClick = () => {
-    if (phone.length > 9) {
-      router.push('/dashboard');
-    }
+    if (phone.length > 9) router.push('/dashboard');
   };
   const handlePhoneChange = (value: string) => setPhone(value);
 
