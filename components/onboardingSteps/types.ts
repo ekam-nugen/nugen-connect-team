@@ -62,15 +62,15 @@ export type PhoneNumberStepProps = {
   phone: string;
   setPhone: (phone: string) => void;
 };
-
+export type OnboardingStepsDataType = {
+  FirstStepContent: FirstStepContentType[];
+  SecondStepContent: SecondStepContentType[];
+  StepThreeFeaturesContent: TStepThreeFeatureCategory[];
+  LogoUploadStepContent: TLogoUploadStep;
+  PhoneNumberStepContent: TPhoneNumberStep;
+};
 export interface OnboardingStepsProps {
-  boardingStepsData: {
-    FirstStepContent: FirstStepContentType[];
-    SecondStepContent: SecondStepContentType[];
-    StepThreeFeaturesContent: TStepThreeFeatureCategory[];
-    LogoUploadStepContent: TLogoUploadStep;
-    PhoneNumberStepContent: TPhoneNumberStep;
-  };
+  boardingStepsData: OnboardingStepsDataType;
   boardingStep: number;
   companyName: string;
   setCompanyName: (val: string) => void;
