@@ -3,9 +3,13 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   try {
-    const apiRes = await fetch(`${baseUrl}/organization/nodeData`, {
-      method: 'GET',
-    });
+    const apiRes = await fetch(
+      `${baseUrl}/create/org/json
+ `,
+      {
+        method: 'GET',
+      }
+    );
     const data = await apiRes.json();
     return NextResponse.json(data, { status: 200 });
   } catch (error) {

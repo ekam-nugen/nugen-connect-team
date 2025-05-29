@@ -45,7 +45,7 @@ export default function SignUp() {
 
     try {
       await Signup(form);
-      router.push('/dashboard');
+      router.push('/onboarding');
     } catch (err) {
       console.error('Signup Error:', err);
     }

@@ -6,7 +6,7 @@ function ViewImageModal({
   closeModal,
   selectedImage,
 }: Readonly<{
-  closeModal: () => void;
+  closeModal?: () => void;
   selectedImage: string;
 }>) {
   return (

@@ -19,7 +19,7 @@ export default async function ProtectedLayout({
   return (
     <div className="bg-gray-light flex flex-col">
       <Topbar />
-      <div className="z-10 flex flex-1">
+      <div className=" flex flex-1">
         <Sidebar />
         <main className="flex-1 p-4 overflow-y-auto w-full h-full">
           {children}

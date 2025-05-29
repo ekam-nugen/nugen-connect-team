@@ -1,5 +1,4 @@
 'use client';
-
 import useSWR from 'swr';
 import axiosInstance from '@/lib/axios';
 import {
@@ -163,7 +162,7 @@ export const useAuthResetPassword = (token: string | null) => {
   return { resetPassword, isLoading: isMutating, error: error?.message };
 };
 
-export const Onboarding = () => {
+export const UseOnboarding = () => {
   const { data, isLoading, error } = useSWR('/onboarding', fetcher);
   return { data, isLoading, error: error?.message };
 };
