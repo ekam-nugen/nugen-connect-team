@@ -20,7 +20,8 @@ export default function TableComponent({
   setSelectedImage,
   closeModal,
 }: Readonly<Props>) {
-  const handleImageClick = (imageUrl: string) => setSelectedImage(imageUrl);
+  const handleImageClick = (imageUrl: string) =>
+    setSelectedImage && setSelectedImage(imageUrl);
 
   return (
     <div
@@ -91,9 +92,9 @@ export default function TableComponent({
                         <img
                           src={imageSrc}
                           alt={title}
-                          width={50}
-                          height={50}
-                          className="object-cover rounded-md"
+                          width={40}
+                          height={40}
+                          className="object-cover rounded-full !max-w-[80%] !h-8"
                         />
                       </button>
                     </TableCell>
@@ -154,7 +155,7 @@ export default function TableComponent({
                 return (
                   <TableCell
                     key={title + index}
-                    className="text-center capitalize pl-4 md:pl-24 lg:pl-32"
+                    className="text-center capitalize text-sm text-gray-muted"
                   >
                     {value as ReactNode}
                   </TableCell>

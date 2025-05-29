@@ -42,7 +42,7 @@ const Topbar = () => {
   }, [modalcard]);
 
   return (
-    <div className="py-2 px-4 w-full flex flex-wrap items-center justify-between gap-y-2 sticky top-0 z-50 shadow-sm bg-background">
+    <div className="py-2 px-4 w-full flex flex-wrap items-center justify-between gap-y-2 sticky top-0 z-40 shadow-sm bg-background">
       <div className="flex items-center gap-7">
         <Image
           src={userImage}

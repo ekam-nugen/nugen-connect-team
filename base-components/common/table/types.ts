@@ -54,9 +54,9 @@ export type TableProps = {
 };
 
 export type Props = TableProps & {
-  selectedImage: string | null;
-  setSelectedImage: (value: string | null) => void;
-  closeModal: () => void;
+  selectedImage?: string | null;
+  setSelectedImage?: (value: string | null) => void;
+  closeModal?: () => void;
 };
 
 export interface EditableCellProps {
