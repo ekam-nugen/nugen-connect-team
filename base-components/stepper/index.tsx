@@ -1,60 +1,75 @@
 import React from 'react';
+import { FaRegCheckCircle, FaRegCircle } from 'react-icons/fa';
 import { cn } from '@/lib/utils';
-import { StepperProps } from './types';
-import { FaCheck } from 'react-icons/fa6';
+export type StepperProps = {
+  steps: string[];
+  currentStep: number;
+  orientation?: 'horizontal' | 'vertical'; // optional, defaults to horizontal
+};
 
-export function Stepper({ steps }: Readonly<StepperProps>) {
+export const Stepper: React.FC<StepperProps> = ({
+  steps,
+  currentStep,
+  orientation = 'horizontal',
+}) => {
+  const isVertical = orientation === 'vertical';
+
   return (
-    <div className="flex items-center justify-between relative w-full">
-      <div className="absolute left-0 right-0 top-4 md:top-5 h-[1px] bg-accent-foreground z-0" />
-      {steps?.map(step => {
-        const Icon = step.icon;
+    <div
+      className={cn(
+        'relative mb-6',
+        isVertical
+          ? 'flex flex-col items-start space-y-4'
+          : 'flex justify-between items-center'
+      )}
+    >
+      {!isVertical && (
+        <div className="absolute top-2.5 left-0 right-0 h-0.5 bg-gray-300 z-0" />
+      )}
+
+      {steps?.map((label, index) => {
+        const isActive = index === currentStep;
+        const isCompleted = index < currentStep;
+
         return (
           <div
-            key={step.id}
-            className="flex flex-col items-center relative z-10"
+            key={index}
+            className={cn(
+              'flex z-10',
+              isVertical
+                ? 'items-start space-x-2'
+                : 'flex-col items-center w-full relative'
+            )}
           >
-            <div
-              className={cn(
-                'flex items-center justify-center rounded-full border-2 w-8 h-8 md:w-10 md:h-10',
-                step.completed
-                  ? 'border-primary bg-primary'
-                  : step.current
-                    ? 'border-primary bg-background shadow-lg'
-                    : 'border-accent-foreground bg-background'
-              )}
-            >
-              {step.completed ? (
-                <FaCheck
-                  className="text-destructive-foreground w-5 h-5 md:w-6 md:h-6"
-                  strokeWidth={2}
-                />
+            {/* Icon */}
+            <div className="bg-background">
+              {isCompleted ? (
+                <FaRegCheckCircle className="text-green-500 w-5 h-5" />
               ) : (
-                <Icon
+                <FaRegCircle
                   className={cn(
-                    ' w-4 h-4 md:w-5 md:h-5',
-                    step.current ? 'text-primary' : 'text-accent-foreground'
+                    'w-5 h-5',
+                    isActive ? 'text-primary' : 'text-accent-foreground'
                   )}
                 />
               )}
             </div>
-            {step.title && (
-              <h4
-                className={cn(
-                  'hidden md:block text-sm text-center mt-3',
-                  step.completed
-                    ? 'text-primary'
-                    : step.current
-                      ? 'text-primary'
-                      : 'text-accent-foreground'
-                )}
-              >
-                {step.title}
-              </h4>
-            )}
+
+            {/* Label */}
+            <span
+              className={cn(
+                'text-xs text-center whitespace-nowrap',
+                isVertical ? '' : 'mt-1',
+                isActive
+                  ? 'font-semibold text-primary'
+                  : 'text-accent-foreground'
+              )}
+            >
+              {label}
+            </span>
           </div>
         );
       })}
     </div>
   );
-}
+};
