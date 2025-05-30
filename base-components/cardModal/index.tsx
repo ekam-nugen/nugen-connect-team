@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '../button';
 import { cn } from '@/lib/utils';
 import { FaArrowLeft } from 'react-icons/fa6';
+import { Stepper } from '../stepper';
 
 export type CardModalProps = {
   title?: React.ReactNode;
@@ -28,6 +29,11 @@ export type CardModalProps = {
   isSkipButton?: boolean;
   handleArrowClick?: () => void;
   handleSkipClick?: () => void;
+  showStepper?: boolean;
+  stepData?: {
+    steps: string[];
+    currentStep: number;
+  };
 };
 
 const CardModal = ({
@@ -53,6 +59,8 @@ const CardModal = ({
   goBackArrow = false,
   buttonAlignCenter = false,
   titleAlignCenter = false,
+  showStepper = false,
+  stepData,
 }: Readonly<CardModalProps>) => {
   const buttonText = isUploading
     ? 'Uploading...'
@@ -85,19 +93,23 @@ const CardModal = ({
       aria-modal="true"
       aria-labelledby="modal-title"
     >
-      <div className={cn('relative  pb-2', noTitleBorder ? '' : 'border-b')}>
+      {showStepper && stepData && (
+        <Stepper steps={stepData.steps} currentStep={stepData.currentStep} />
+      )}
+
+      <div className={cn('relative pb-2', noTitleBorder ? '' : 'border-b')}>
         <div className="relative flex items-center justify-between">
           {goBackArrow && (
             <FaArrowLeft
               onClick={handleArrowClick}
-              className="absolute left-0 top-1.5 text-gray-muted  cursor-pointer"
+              className="absolute left-0 top-1.5 text-gray-muted cursor-pointer"
             />
           )}
           {isSkipButton && (
             <Button
               variant={'ghost'}
               onClick={handleSkipClick}
-              className="absolute left-96 -top-1 text-gray-muted  cursor-pointer hover:bg-transparent hover:text-primary"
+              className="absolute left-96 -top-1 text-gray-muted cursor-pointer hover:bg-transparent hover:text-primary"
             >
               Skip
             </Button>
