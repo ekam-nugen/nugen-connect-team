@@ -16,7 +16,7 @@ import { TableDataItem, Task } from './types';
 import DailyActivity from './DailyActivity';
 
 import QuickActionSection from './QuickAction';
-function OverviewComponent() {
+function Dashboard() {
   const { data } = UseDashboard();
   const dashboardData = data?.data;
   return (
@@ -72,4 +72,4 @@ function OverviewComponent() {
   );
 }
 
-export default OverviewComponent;
+export default Dashboard;
