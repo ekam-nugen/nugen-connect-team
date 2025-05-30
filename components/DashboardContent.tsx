@@ -1,8 +1,8 @@
 'use client';
 
 import { useProviderCallback } from '@/hooks/useAuth';
-import OverviewComponent from './overView';
 import { useSearchParams } from 'next/navigation';
+import Dashboard from './dashboard';
 
 export default function DashboardContent() {
   const searchParams = useSearchParams();
@@ -24,7 +24,7 @@ export default function DashboardContent() {
 
   return (
     <div>
-      <OverviewComponent />
+      <Dashboard />
     </div>
   );
 }

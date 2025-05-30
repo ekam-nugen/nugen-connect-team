@@ -4,10 +4,10 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { provider: string } }
+  context: { params: Promise<{ provider: string }> }
 ) {
   try {
-    const { provider } = params;
+    const { provider } = await context.params;
 
     const url = new URL(req.url);
     const searchParams = url.searchParams.toString();

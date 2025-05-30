@@ -1,5 +1,4 @@
 import {
-  FaUsers,
   FaCrown,
   FaClipboardCheck,
   FaEnvelope,
@@ -10,23 +9,21 @@ import {
   FaRunning,
   FaUserCheck,
   FaMagic,
-  FaCalendarAlt,
 } from 'react-icons/fa';
-import { MdChatBubbleOutline } from 'react-icons/md';
-import { TfiAlignRight } from 'react-icons/tfi';
 import {
   Task,
   TQuickAction,
   AttendanceItem,
   MessageData,
   ChecklistItem,
+  TableDataItem,
+  LeftSideOverviewData,
+  CardItem,
 } from './types';
 import {
   EngagementChartData,
   TdailyActivity,
 } from '@/base-components/graphs/types';
-import { PiNumberThreeBold } from 'react-icons/pi';
-import { FaTimes } from 'react-icons/fa';
 import creditLogo from '../../public/images/free-credits.svg';
 
 export const tasks: Task[] = [
@@ -90,14 +87,14 @@ export const tasks: Task[] = [
 
 // QUICK ACTIONS
 export const quickActions: TQuickAction[] = [
-  { title: 'Add users', iconColor: 'text-green-500', icon: FaUsers },
-  { title: 'Add admins', iconColor: 'text-yellow-500', icon: FaCrown },
+  { title: 'Add users', iconColor: 'text-green-500', icon: 'FaUsers' },
+  { title: 'Add admins', iconColor: 'text-yellow-500', icon: 'FaCrown ' },
   {
     title: 'Add a task',
     iconColor: 'text-purple-500',
-    icon: FaClipboardCheck,
+    icon: 'FaClipboardCheck',
   },
-  { title: 'Send an update', iconColor: 'text-blue-500', icon: FaEnvelope },
+  { title: 'Send an update', iconColor: 'text-blue-500', icon: 'FaEnvelope' },
 ];
 
 export const quickTask = [
@@ -216,7 +213,7 @@ export const checklistItems: ChecklistItem[] = [
 
 export const dailyActivity: TdailyActivity = {
   title: 'Daily Activity',
-  icon: TfiAlignRight,
+  icon: 'TfiAlignRight',
   messageTitle: 'No activity to display',
   messageSubtitle: 'Once your users interact with the app\nyou’ll see it here',
   buttonLabel: 'View History',
@@ -233,7 +230,7 @@ export const engagementData: EngagementChartData[] = [
   { date: '21/05', value: 1 },
 ];
 
-export const tabledata = [
+export const tabledata: TableDataItem[] = [
   {
     title: 'Engagement',
     subtitle: 'Activity data for selected timeframe',
@@ -242,46 +239,45 @@ export const tabledata = [
 ];
 
 //leftsidedashboard
-
-export const leftSideOverviewData = {
+export const leftSideOverviewData: LeftSideOverviewData = {
   videoCard: {
     title: 'All about Connecteam',
     video: {
       src: 'https://www.w3schools.com/html/mov_bbb.mp4',
       type: 'video/mp4',
     },
-    closeIcon: FaTimes,
+    closeIcon: 'FaTimes',
   },
   milestones: {
     achieved: {
       title: 'Achieved milestones',
-      icon: PiNumberThreeBold,
+      icon: 'PiNumberThreeBold',
       count: 3,
       label: 'Tasks Completed',
     },
     nextTitle: 'Next milestones',
     next: [
       {
-        icon: FaClock,
+        icon: 'FaClock',
         label: '5 clock-ins made',
         progress: 0,
         gradient: 'from-blue-400 to-blue-600',
       },
       {
-        icon: FaCalendarAlt,
+        icon: 'FaCalendarAlt',
         label: '5 published shifts',
         progress: 25,
         gradient: 'from-blue-400 to-blue-600',
       },
       {
-        icon: MdChatBubbleOutline,
+        icon: 'MdChatBubbleOutline',
         label: '50 chat messages sent',
         progress: 5,
         gradient: 'from-purple-400 to-purple-600',
         stars: 2,
       },
       {
-        icon: FaEnvelope,
+        icon: 'FaEnvelope',
         label: '5 update interactions',
         progress: 90,
         gradient: 'from-blue-400 to-blue-600',
@@ -289,7 +285,8 @@ export const leftSideOverviewData = {
     ],
   },
 };
-export const cards = [
+
+export const cards: CardItem[] = [
   {
     id: 'credit',
     description:
@@ -301,7 +298,7 @@ export const cards = [
     id: 'invite',
     description: "Users didn't log in to the app yet",
     buttonLabel: 'Select users to invite',
-    icon: PiNumberThreeBold,
+    icon: 'PiNumberThreeBold',
     iconClassName:
       'text-accent bg-gradient-to-r from-blue-600 to-violet-600 rounded-md text-2xl shadow-xl',
   },
