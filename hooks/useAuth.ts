@@ -166,3 +166,8 @@ export const UseOnboarding = () => {
   const { data, isLoading, error } = useSWR('/onboarding', fetcher);
   return { data, isLoading, error: error?.message };
 };
+
+export const UseDashboard = () => {
+  const { data, isLoading, error } = useSWR('/dashboard', fetcher);
+  return { data, isLoading, error: error?.message };
+};

@@ -4,15 +4,20 @@ import { useState } from 'react';
 import { FaFilter, FaCog } from 'react-icons/fa';
 import clsx from 'clsx';
 import { Button } from '@/base-components/button';
-import { attendanceData, getMessage } from '../constants';
+import { getMessage } from '../constants';
 import { Input } from '@/base-components/input';
 import { ATTENDANCE } from '@/lib/en';
+import { AttendanceItem } from '../types';
 
-export default function AttendanceSection() {
+export default function AttendanceSection({
+  attendanceData,
+}: Readonly<{
+  attendanceData: AttendanceItem[];
+}>) {
   const [selectedLabel, setSelectedLabel] = useState<string | null>(null);
 
   return (
-    <div className="p-6 bg-accent rounded-xl shadow-sm">
+    <div className="p-6 bg-background rounded-xl shadow-sm">
       <div className="flex justify-between items-center mb-6 flex-wrap gap-4">
         <h2 className="text-2xl font-bold text-slate-800">{ATTENDANCE}</h2>
         <div className="flex items-center gap-2">
@@ -30,7 +35,7 @@ export default function AttendanceSection() {
 
       {/* Attendance Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {attendanceData.map(({ label, value }) => (
+        {attendanceData?.map(({ label, value }) => (
           <div
             key={label}
             onClick={() => setSelectedLabel(label)}
