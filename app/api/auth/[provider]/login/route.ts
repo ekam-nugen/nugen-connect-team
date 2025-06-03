@@ -4,10 +4,10 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(
   req: NextRequest,
-  context: { params: { provider: string } }
+  context: { params: Promise<{ provider: string }> }
 ) {
   try {
-    const { provider } = context.params;
+    const { provider } = await context.params;
 
     const apiRes = await fetch(`${baseUrl}/${provider}/login`, {
       method: 'GET',

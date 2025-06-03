@@ -1,5 +1,3 @@
-import { IconType } from 'react-icons';
-
 export type EngagementChartData = {
   date: string;
   value: number;
@@ -15,7 +13,7 @@ export type EngagementChartProps = {
 
 export type TdailyActivity = {
   title: string;
-  icon: IconType;
+  icon: string;
   messageTitle: string;
   messageSubtitle: string;
   buttonLabel: string;
