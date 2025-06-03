@@ -48,18 +48,10 @@ export const allIcons: Record<string, React.ReactNode> = {
   FaClipboardCheck: <FaClipboardCheck />,
   PiNumberThreeBold: <PiNumberThreeBold />,
   MdChatBubbleOutline: <MdChatBubbleOutline />,
-};
-
-export function getIconByName(name: string): React.ReactNode {
-  return allIcons[name];
-}
-
-export const sideBarIcons: Record<string, React.ReactNode> = {
   LuLayoutGrid: <LuLayoutGrid />,
   CgFormatLeft: <CgFormatLeft />,
   SlUser: <SlUser />,
   FiUsers: <FiUsers />,
-  FaTimes: <FaTimes />,
   PiChats: <PiChats />,
   CiMail: <CiMail />,
   PiAddressBook: <PiAddressBook />,
@@ -73,6 +65,6 @@ export const sideBarIcons: Record<string, React.ReactNode> = {
   IoDocumentOutline: <IoDocumentOutline />,
 };
 
-export function getIcon(name: string): React.ReactNode {
-  return sideBarIcons[name];
+export function getIconByName(name: string): React.ReactNode {
+  return allIcons[name];
 }

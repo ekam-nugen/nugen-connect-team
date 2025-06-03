@@ -12,7 +12,7 @@ import { Button } from '@/base-components/button';
 import { SidebarDataType, SidebarItems } from './types';
 import { ADD_NEW } from '@/lib/en';
 import { UseSideBar } from '@/hooks/useAuth';
-import { getIcon } from '@/lib/iconMap';
+import { getIconByName } from '@/lib/iconMap';
 
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState<boolean>(false);
@@ -40,10 +40,8 @@ export default function Sidebar() {
             <h2 className="text-sm font-bold mb-2 pl-2">{section.section}</h2>
           )}
           <ul className="space-y-1">
-            {section.items.map((item: SidebarItems, index: number) => {
-              const Icon = getIcon(
-                typeof item.icon === 'string' ? item.icon : ''
-              );
+            {section?.items?.map((item: SidebarItems, index: number) => {
+              const Icon = getIconByName(item?.icon);
               return (
                 <div
                   key={item.title + index}
