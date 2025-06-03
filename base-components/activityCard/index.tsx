@@ -31,7 +31,7 @@ const TaskCard = ({
             )}
             <button
               onClick={onClick}
-              className="bg-blue-500 hover:bg-blue-600 text-accent rounded-full w-8 h-8 flex items-center justify-center shadow"
+              className="bg-blue-500 hover:bg-blue-600 text-background rounded-full w-8 h-8 flex items-center justify-center shadow"
             >
               {iconType === 'arrow' ? (
                 <FiArrowRight size={16} />
