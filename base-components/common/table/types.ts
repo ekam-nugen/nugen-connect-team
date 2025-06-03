@@ -13,7 +13,7 @@ export type CommonTableHeader = {
     prevValue,
   }: {
     row: TableDataType;
-    getValue: () => any;
+    getValue: () => string;
     setFunction: (val: TableDataType[]) => void;
     prevValue: TableDataType[];
   }) => React.ReactNode;
