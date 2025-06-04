@@ -172,7 +172,7 @@ export const UseDashboard = () => {
   return { data, isLoading, error: error?.message };
 };
 
-export const UseSideBar = () => {
-  const { data, isLoading, error } = useSWR('/sideBar', fetcher);
+export const UseLayout = () => {
+  const { data, isLoading, error } = useSWR('/layout', fetcher);
   return { data, isLoading, error: error?.message };
 };

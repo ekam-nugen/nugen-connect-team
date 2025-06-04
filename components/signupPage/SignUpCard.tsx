@@ -12,6 +12,7 @@ import { SignUpCardProps } from './types';
 const SignUpCard = ({
   form,
   errs,
+  isLoading,
   handleChange,
   handleSubmit,
   handleGoogleSignUp,
@@ -46,6 +47,7 @@ const SignUpCard = ({
                 key={index}
                 item={item}
                 form={form}
+                isLoading={isLoading}
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
                 errs={errs}

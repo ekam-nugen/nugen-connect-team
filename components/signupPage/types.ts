@@ -73,6 +73,7 @@ export interface SignUpContentItemProps {
     }[];
     options?: { label: string; value: string }[];
   };
+  isLoading?: boolean;
   form: SignUpFormType;
   errs: IErrs;
   handleChange: (

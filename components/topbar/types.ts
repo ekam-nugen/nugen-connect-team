@@ -1,17 +1,15 @@
-import { IconType } from 'react-icons/lib';
-
 export type ProfileTCardype = {
   imagesss: string;
   userName?: string;
   openModel: () => void;
   closeModel?: () => void;
   modalcard: boolean;
-  ModalCardData3: ModalDataItem[];
+  ModalCardContent: ModalDataItem[];
   modalRef: React.RefObject<HTMLDivElement | null>;
 };
 
 export interface ModalDataItem {
-  icon: IconType;
+  icon: string;
   text: string;
 }
 
@@ -21,3 +19,9 @@ export interface IconTextModalProps {
   userName?: string;
   userRole?: string;
 }
+
+export type ActionItemsType = {
+  icon: string;
+  label: string;
+  iconClass: string;
+};
