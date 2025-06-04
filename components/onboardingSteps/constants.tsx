@@ -52,6 +52,13 @@ export const iconMap: Record<string, React.ReactNode> = {
   FaHandsHelping: <FaHandsHelping className="text-pink-600" />,
   MdPhoneIphone: <MdPhoneIphone />,
 };
+export const StepperStepsData = [
+  'Profile',
+  'Industry',
+  'Features',
+  'Logo',
+  'Phone',
+];
 export const FirstStepContent: FirstStepContentType[] = [
   {
     type: 'input',

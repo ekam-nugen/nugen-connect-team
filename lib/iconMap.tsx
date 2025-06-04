@@ -20,7 +20,21 @@ import {
   MdOutlineSupportAgent,
 } from 'react-icons/md';
 import { TfiAlignRight } from 'react-icons/tfi';
-import { PiAddressBook, PiChats, PiNumberThreeBold } from 'react-icons/pi';
+import {
+  IoIosAt,
+  IoMdAttach,
+  IoMdLink,
+  IoMdNotificationsOutline,
+  IoIosHelpCircle,
+  IoIosNotificationsOutline,
+} from 'react-icons/io';
+import { BsEmojiSmile } from 'react-icons/bs';
+import {
+  PiAddressBook,
+  PiChats,
+  PiNumberThreeBold,
+  PiInfinity,
+} from 'react-icons/pi';
 import { LuLayoutGrid } from 'react-icons/lu';
 import { CgFormatLeft, CgGirl, CgLogOff, CgProfile } from 'react-icons/cg';
 import { FiUsers } from 'react-icons/fi';
@@ -31,11 +45,6 @@ import { CiMail } from 'react-icons/ci';
 import { IoDocumentOutline, IoSettingsOutline } from 'react-icons/io5';
 import { SiBookstack, SiReacthookform } from 'react-icons/si';
 import { TiStopwatch } from 'react-icons/ti';
-import {
-  IoMdNotificationsOutline,
-  IoIosHelpCircle,
-  IoIosNotificationsOutline,
-} from 'react-icons/io';
 import { RiCustomerService2Line } from 'react-icons/ri';
 export const allIcons: Record<string, React.ReactNode> = {
   CgGirl: <CgGirl />,
@@ -51,28 +60,33 @@ export const allIcons: Record<string, React.ReactNode> = {
   CgLogOff: <CgLogOff />,
   CgProfile: <CgProfile />,
   FaRunning: <FaRunning />,
+  IoIosAt: <IoIosAt />,
+  IoMdLink: <IoMdLink />,
+  PiInfinity: <PiInfinity />,
   FaDownload: <FaDownload />,
   FaEnvelope: <FaEnvelope />,
   FaUserPlus: <FaUserPlus />,
   TiStopwatch: <TiStopwatch />,
   FaUserCheck: <FaUserCheck />,
   SiBookstack: <SiBookstack />,
-  LuLayoutGrid: <LuLayoutGrid />,
-  CgFormatLeft: <CgFormatLeft />,
+  IoMdAttach: <IoMdAttach />,
+  BsEmojiSmile: <BsEmojiSmile />,
   TfiAlignRight: <TfiAlignRight />,
   FaCalendarAlt: <FaCalendarAlt />,
-  PiAddressBook: <PiAddressBook />,
   FaChevronRight: <FaChevronRight />,
+  FaClipboardCheck: <FaClipboardCheck />,
+  PiNumberThreeBold: <PiNumberThreeBold />,
+  MdChatBubbleOutline: <MdChatBubbleOutline />,
+  LuLayoutGrid: <LuLayoutGrid />,
+  CgFormatLeft: <CgFormatLeft />,
+  PiAddressBook: <PiAddressBook />,
   MdAccessibility: <MdAccessibility />,
   IoIosHelpCircle: <IoIosHelpCircle />,
   SiReacthookform: <SiReacthookform />,
   BiSelectMultiple: <BiSelectMultiple />,
-  FaClipboardCheck: <FaClipboardCheck />,
   AiOutlineSchedule: <AiOutlineSchedule />,
   IoDocumentOutline: <IoDocumentOutline />,
   IoSettingsOutline: <IoSettingsOutline />,
-  PiNumberThreeBold: <PiNumberThreeBold />,
-  MdChatBubbleOutline: <MdChatBubbleOutline />,
   MdOutlineCelebration: <MdOutlineCelebration />,
   MdOutlineSupportAgent: <MdOutlineSupportAgent />,
   RiCustomerService2Line: <RiCustomerService2Line />,
