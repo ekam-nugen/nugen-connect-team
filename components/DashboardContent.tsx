@@ -22,9 +22,5 @@ export default function DashboardContent() {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div className="text-destructive">{error}</div>;
 
-  return (
-    <div>
-      <Dashboard />
-    </div>
-  );
+  return <Dashboard />;
 }

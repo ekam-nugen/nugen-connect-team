@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import OnboardingSteps from './BoardingMultiSteps';
 import { UseOnboarding } from '@/hooks/useAuth';
 import PageLoader from '@/base-components/loader';
+import { StepperStepsData } from './constants';
 
 export default function OnboardingForm() {
   const router = useRouter();
@@ -54,20 +55,16 @@ export default function OnboardingForm() {
           noTitleBorder
           showStepper
           stepData={{
-            steps: ['Profile', 'Industry', 'Features', 'Logo', 'Phone'],
+            steps: StepperStepsData,
             currentStep: boardingStep - 1,
           }}
           isSkipButton={boardingStep === 4}
           handleSkipClick={() => setBoardingStep(5)}
           onUpdate={() => {
-            if (boardingStep === 5) {
-              handleAccessDashboardClick();
-            } else {
-              setBoardingStep(prev => prev + 1);
-            }
-            if (boardingStep === 1) {
-              setSelectedIndustry(null);
-            }
+            if (boardingStep === 5) handleAccessDashboardClick();
+            else setBoardingStep(prev => prev + 1);
+
+            if (boardingStep === 1) setSelectedIndustry(null);
           }}
           disabled={
             (boardingStep === 1 && !(companyName.trim() && role.trim())) ||
