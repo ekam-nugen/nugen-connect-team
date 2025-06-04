@@ -2,25 +2,14 @@
 
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
-import { CgGirl } from 'react-icons/cg';
-import { MdAccessibility } from 'react-icons/md';
-import { PiChats } from 'react-icons/pi';
-import { IoMdNotificationsOutline, IoIosHelpCircle } from 'react-icons/io';
-import { RiCustomerService2Line } from 'react-icons/ri';
 import logoMobile from '../../public/images/icon.jpg';
 import userImage from '../../public/images/connecteam-logo.svg';
 import { Button } from '@/base-components/button';
 import { Input } from '@/base-components/input';
 import UserProfileCard from './UserAvatarCard';
-import { ModalCardData3 } from './constants';
-import {
-  HELP,
-  LOGO,
-  SEARCH_PLACEHOLDER,
-  TALK_TO_EXPERT,
-  UPGRADE,
-  USER_NAME,
-} from '@/lib/en';
+import { actionIcons, actionItems, ModalCardContent } from './constants';
+import { LOGO, SEARCH_PLACEHOLDER, UPGRADE, USER_NAME } from '@/lib/en';
+import { getIconByName } from '@/lib/iconMap';
 
 const Topbar = () => {
   const [modalcard, setModalcard] = useState<boolean>(false);
@@ -68,19 +57,21 @@ const Topbar = () => {
         <Button className="hidden sm:block rounded-full bg-[#af52de]">
           {UPGRADE}
         </Button>
-        <div className="hidden sm:flex text-primary items-center gap-1 border-l-2 pl-4">
-          <CgGirl className="text-2xl" />
-          <span className="hidden xl:inline">{TALK_TO_EXPERT}</span>
-        </div>
-        <div className="hidden sm:flex text-primary items-center gap-1 border-l-2 pl-4">
-          <IoIosHelpCircle className="text-xl" />
-          <span className="hidden xl:inline">{HELP}</span>
-        </div>
+        {actionItems?.map((item, idx) => (
+          <div
+            key={item.label + idx}
+            className="hidden sm:flex text-primary items-center gap-1 border-l-2 pl-4"
+          >
+            <span className={item.iconClass}>{getIconByName(item.icon)}</span>
+            <span className="hidden xl:inline">{item.label}</span>
+          </div>
+        ))}
         <div className="flex items-center gap-3 text-accent-foreground border-l-2 pl-4">
-          <MdAccessibility className="text-2xl" />
-          <PiChats className="text-2xl" />
-          <RiCustomerService2Line className="text-2xl" />
-          <IoMdNotificationsOutline className="text-2xl" />
+          {actionIcons?.map((icon: string, idx: number) => (
+            <span key={icon + idx} className="text-2xl">
+              {getIconByName(icon)}
+            </span>
+          ))}
         </div>
         <UserProfileCard
           imagesss={userImage}
@@ -88,7 +79,7 @@ const Topbar = () => {
           openModel={() => setModalcard(true)}
           closeModel={() => setModalcard(false)}
           modalcard={modalcard}
-          ModalCardData3={ModalCardData3}
+          ModalCardContent={ModalCardContent}
           modalRef={modalRef}
         />
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { IconTextModalProps } from './types';
 import { PK } from '@/lib/en';
+import { getIconByName } from '@/lib/iconMap';
 
 const UserProfileDropdown = ({
   userName,
@@ -26,13 +27,12 @@ const UserProfileDropdown = ({
       )}
       <div>
         {Modaldata?.map((item, index) => {
-          const Icon = item.icon;
           return (
             <div
               key={item.text + index}
               className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-subtle hover:text-gray-text cursor-pointer"
             >
-              <Icon className="text-lg" />
+              <span className="text-lg">{getIconByName(item.icon)}</span>
               <span className="text-sm">{item.text}</span>
             </div>
           );

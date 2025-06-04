@@ -8,7 +8,7 @@ const UserProfileCard = ({
   userName,
   openModel,
   modalcard,
-  ModalCardData3,
+  ModalCardContent,
   modalRef,
 }: ProfileTCardype) => {
   return (
@@ -38,7 +38,7 @@ const UserProfileCard = ({
             <UserProfileDropdown
               userRole={USER_ROLE}
               userName={userName}
-              Modaldata={ModalCardData3}
+              Modaldata={ModalCardContent}
               loginUserIcon
             />
           </div>
