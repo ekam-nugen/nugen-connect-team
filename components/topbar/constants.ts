@@ -1,4 +1,4 @@
-import { ModalDataItem } from './types';
+import { ActionItemsType, ModalDataItem } from './types';
 
 export const ModalCardContent: ModalDataItem[] = [
   { icon: 'CgProfile', text: "Switch to user's view" },
@@ -15,7 +15,7 @@ export const actionIcons = [
   'IoMdNotificationsOutline',
 ];
 
-export const actionItems = [
+export const actionItems: ActionItemsType[] = [
   {
     icon: 'CgGirl',
     label: 'Talk to an Expert',

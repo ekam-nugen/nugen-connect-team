@@ -19,3 +19,9 @@ export interface IconTextModalProps {
   userName?: string;
   userRole?: string;
 }
+
+export type ActionItemsType = {
+  icon: string;
+  label: string;
+  iconClass: string;
+};

@@ -11,13 +11,13 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/base-components/button';
 import { SidebarDataType, SidebarItems } from './types';
 import { ADD_NEW } from '@/lib/en';
-import { UseSideBar } from '@/hooks/useAuth';
 import { getIconByName } from '@/lib/iconMap';
+import { UseLayout } from '@/hooks/useAuth';
 
 export default function Sidebar() {
   const [collapsed, setCollapsed] = useState<boolean>(false);
-  const { data } = UseSideBar();
-  const sideBarData = data?.data;
+  const { data } = UseLayout();
+  const sideBarData = data?.data?.sidebar;
 
   return (
     <div

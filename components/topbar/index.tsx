@@ -7,11 +7,14 @@ import userImage from '../../public/images/connecteam-logo.svg';
 import { Button } from '@/base-components/button';
 import { Input } from '@/base-components/input';
 import UserProfileCard from './UserAvatarCard';
-import { actionIcons, actionItems, ModalCardContent } from './constants';
 import { LOGO, SEARCH_PLACEHOLDER, UPGRADE, USER_NAME } from '@/lib/en';
 import { getIconByName } from '@/lib/iconMap';
+import { UseLayout } from '@/hooks/useAuth';
+import { ActionItemsType } from './types';
 
 const Topbar = () => {
+  const { data } = UseLayout();
+  const topbarData = data?.data?.topbar;
   const [modalcard, setModalcard] = useState<boolean>(false);
   const modalRef = useRef<HTMLDivElement | null>(null);
 
@@ -57,7 +60,7 @@ const Topbar = () => {
         <Button className="hidden sm:block rounded-full bg-[#af52de]">
           {UPGRADE}
         </Button>
-        {actionItems?.map((item, idx) => (
+        {topbarData?.actionItems?.map((item: ActionItemsType, idx: number) => (
           <div
             key={item.label + idx}
             className="hidden sm:flex text-primary items-center gap-1 border-l-2 pl-4"
@@ -67,7 +70,7 @@ const Topbar = () => {
           </div>
         ))}
         <div className="flex items-center gap-3 text-accent-foreground border-l-2 pl-4">
-          {actionIcons?.map((icon: string, idx: number) => (
+          {topbarData?.actionIcons?.map((icon: string, idx: number) => (
             <span key={icon + idx} className="text-2xl">
               {getIconByName(icon)}
             </span>
@@ -79,7 +82,7 @@ const Topbar = () => {
           openModel={() => setModalcard(true)}
           closeModel={() => setModalcard(false)}
           modalcard={modalcard}
-          ModalCardContent={ModalCardContent}
+          ModalCardContent={topbarData?.ModalCardContent}
           modalRef={modalRef}
         />
       </div>
