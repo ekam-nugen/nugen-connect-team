@@ -13,6 +13,7 @@ export function SignUpContentItem({
   item,
   form,
   errs,
+  isLoading,
   handleChange,
   handleSubmit,
 }: Readonly<SignUpContentItemProps>) {
@@ -78,7 +79,7 @@ export function SignUpContentItem({
             onClick={handleSubmit}
             className="bg-primary hover:bg-primary-hover text-primary-foreground font-semibold py-2 px-6 rounded-full text-sm transition"
           >
-            {item.label}
+            {isLoading ? 'Signing up...' : item.label}
           </Button>
         </motion.div>
       );
