@@ -7,6 +7,7 @@ import { Button } from '@/base-components/button';
 import { LuPencilLine } from 'react-icons/lu';
 import ViewImageModal from '@/base-components/viewImageModal';
 import { Switch } from '@/base-components/switch';
+import Image from 'next/image';
 
 export default function TableComponent({
   data,
@@ -64,7 +65,7 @@ export default function TableComponent({
                     >
                       {cell({
                         row: rowData,
-                        getValue: () => value,
+                        getValue: () => String(value ?? ''),
                         prevValue: data,
                         setFunction: newData => {
                           onActionClick?.onEdit?.(newData);
@@ -89,7 +90,7 @@ export default function TableComponent({
                         }}
                         className="cursor-pointer"
                       >
-                        <img
+                        <Image
                           src={imageSrc}
                           alt={title}
                           width={40}

@@ -49,7 +49,7 @@ function Dashboard() {
         <DailyActivity dailyActivityData={dashboardData?.dailyActivity} />
         <motion.div
           variants={rightToLeftAnimation}
-          className="space-y-4 rounded-xl bg-accent p-10"
+          className="space-y-4 rounded-xl bg-background p-10"
         >
           {dashboardData?.tasks.map((task: Task, index: number) => (
             <TaskCard
