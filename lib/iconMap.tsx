@@ -19,7 +19,14 @@ import {
   MdOutlineSupportAgent,
 } from 'react-icons/md';
 import { TfiAlignRight } from 'react-icons/tfi';
-import { PiAddressBook, PiChats, PiNumberThreeBold } from 'react-icons/pi';
+import { IoIosAt, IoMdAttach, IoMdLink } from 'react-icons/io';
+import { BsEmojiSmile } from 'react-icons/bs';
+import {
+  PiAddressBook,
+  PiChats,
+  PiNumberThreeBold,
+  PiInfinity,
+} from 'react-icons/pi';
 import { LuLayoutGrid } from 'react-icons/lu';
 import { CgFormatLeft } from 'react-icons/cg';
 import { FiUsers } from 'react-icons/fi';
@@ -38,10 +45,15 @@ export const allIcons: Record<string, React.ReactNode> = {
   FaMagic: <FaMagic />,
   FaTimes: <FaTimes />,
   FaRunning: <FaRunning />,
+  IoIosAt: <IoIosAt />,
+  IoMdLink: <IoMdLink />,
+  PiInfinity: <PiInfinity />,
   FaDownload: <FaDownload />,
   FaEnvelope: <FaEnvelope />,
   FaUserPlus: <FaUserPlus />,
+  IoMdAttach: <IoMdAttach />,
   FaUserCheck: <FaUserCheck />,
+  BsEmojiSmile: <BsEmojiSmile />,
   TfiAlignRight: <TfiAlignRight />,
   FaCalendarAlt: <FaCalendarAlt />,
   FaChevronRight: <FaChevronRight />,

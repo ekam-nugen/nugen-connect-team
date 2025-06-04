@@ -1,11 +1,13 @@
 'use client';
 
+import PageLoader from '@/base-components/loader';
 import DashboardContent from '@/components/DashboardContent';
+import { Suspense } from 'react';
 
 export default function DashboardSlot() {
   return (
-    <div>
+    <Suspense fallback={<PageLoader />}>
       <DashboardContent />
-    </div>
+    </Suspense>
   );
 }
