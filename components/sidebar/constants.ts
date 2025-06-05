@@ -1,16 +1,4 @@
 import { SidebarDataType } from './types';
-import { IoDocumentOutline } from 'react-icons/io5';
-import { CiMail } from 'react-icons/ci';
-import { FiUsers } from 'react-icons/fi';
-import { TiStopwatch } from 'react-icons/ti';
-import { CgFormatLeft } from 'react-icons/cg';
-import { SlUser } from 'react-icons/sl';
-import { AiOutlineSchedule } from 'react-icons/ai';
-import { PiChats, PiAddressBook } from 'react-icons/pi';
-import { SiBookstack, SiReacthookform } from 'react-icons/si';
-import { MdOutlineSupportAgent, MdOutlineCelebration } from 'react-icons/md';
-import { BiSelectMultiple } from 'react-icons/bi';
-import { LuLayoutGrid } from 'react-icons/lu';
 
 export const sideBarData: SidebarDataType[] = [
   {
@@ -18,12 +6,12 @@ export const sideBarData: SidebarDataType[] = [
     hoverAnimate: false,
     items: [
       {
-        icon: LuLayoutGrid,
+        icon: 'LuLayoutGrid',
         title: 'Overview',
         color: '',
       },
       {
-        icon: CgFormatLeft,
+        icon: 'CgFormatLeft',
         title: 'Activity',
         color: '',
       },
@@ -34,12 +22,12 @@ export const sideBarData: SidebarDataType[] = [
     hoverAnimate: false,
     items: [
       {
-        icon: SlUser,
+        icon: 'SlUser',
         title: 'User',
         color: '',
       },
       {
-        icon: FiUsers,
+        icon: 'FiUsers',
         title: 'Smart groups',
         color: '',
       },
@@ -50,32 +38,32 @@ export const sideBarData: SidebarDataType[] = [
     section: 'Communicaiton',
     items: [
       {
-        icon: PiChats,
+        icon: 'PiChats',
         title: 'Chat',
         color: 'bg-orange-400',
       },
       {
-        icon: CiMail,
+        icon: 'CiMail',
         title: 'Updates',
         color: 'bg-blue-400',
       },
       {
         title: 'KnowledgeBase',
-        icon: PiAddressBook,
+        icon: 'PiAddressBook',
         color: 'bg-pink-400',
       },
       {
-        icon: TiStopwatch,
+        icon: 'TiStopwatch',
         title: 'Quizzes',
         color: 'bg-blue-400',
       },
       {
-        icon: MdOutlineSupportAgent,
+        icon: 'MdOutlineSupportAgent',
         title: 'Help Desk',
         color: 'bg-red-400',
       },
       {
-        icon: SiBookstack,
+        icon: 'SiBookstack',
         title: 'Forms',
         color: 'bg-purple-400',
       },
@@ -86,7 +74,7 @@ export const sideBarData: SidebarDataType[] = [
         options: [
           {
             title: 'forms',
-            icon: MdOutlineCelebration,
+            icon: 'MdOutlineCelebration',
           },
         ],
       },
@@ -95,7 +83,7 @@ export const sideBarData: SidebarDataType[] = [
         options: [
           {
             title: 'KnowledgeBase',
-            icon: PiAddressBook,
+            icon: 'PiAddressBook',
           },
         ],
       },
@@ -104,7 +92,7 @@ export const sideBarData: SidebarDataType[] = [
         options: [
           {
             title: 'KnowledgeBase',
-            icon: PiAddressBook,
+            icon: 'PiAddressBook',
           },
         ],
       },
@@ -115,52 +103,52 @@ export const sideBarData: SidebarDataType[] = [
     section: 'Operations',
     items: [
       {
-        icon: SiBookstack,
+        icon: 'SiBookstack',
         title: 'Courses',
         color: 'bg-blue-400',
       },
       {
-        icon: SiReacthookform,
+        icon: 'SiReacthookform',
         title: 'Forms',
         color: 'bg-purple-400',
       },
       {
-        icon: AiOutlineSchedule,
+        icon: 'AiOutlineSchedule',
         title: 'Job Schedule',
         color: 'bg-orange-400',
       },
       {
-        icon: BiSelectMultiple,
+        icon: 'BiSelectMultiple',
         title: 'Quick Task',
         color: 'bg-green-400',
       },
       {
-        icon: TiStopwatch,
+        icon: 'TiStopwatch',
         title: 'Quizzes',
         color: 'bg-blue-400',
       },
       {
-        icon: IoDocumentOutline,
+        icon: 'IoDocumentOutline',
         title: 'Documents',
         color: 'bg-sky-400',
       },
       {
-        icon: AiOutlineSchedule,
+        icon: 'AiOutlineSchedule',
         title: 'Performance tracking',
         color: 'bg-pink-400',
       },
       {
-        icon: BiSelectMultiple,
+        icon: 'BiSelectMultiple',
         title: 'Employees feedback',
         color: 'bg-green-400',
       },
       {
-        icon: MdOutlineCelebration,
+        icon: 'MdOutlineCelebration',
         title: 'Recognition & rewards',
         color: 'bg-yellow-400',
       },
       {
-        icon: IoDocumentOutline,
+        icon: 'IoDocumentOutline',
         title: 'Finance & Budgeting',
         color: 'bg-sky-400',
       },
@@ -171,7 +159,7 @@ export const sideBarData: SidebarDataType[] = [
         options: [
           {
             title: 'forms',
-            icon: MdOutlineCelebration,
+            icon: 'MdOutlineCelebration',
           },
         ],
       },
@@ -180,7 +168,7 @@ export const sideBarData: SidebarDataType[] = [
         options: [
           {
             title: 'KnowledgeBase',
-            icon: PiAddressBook,
+            icon: 'PiAddressBook',
           },
         ],
       },
@@ -189,7 +177,7 @@ export const sideBarData: SidebarDataType[] = [
         options: [
           {
             title: 'KnowledgeBase',
-            icon: PiAddressBook,
+            icon: 'PiAddressBook',
           },
         ],
       },
@@ -200,18 +188,18 @@ export const sideBarData: SidebarDataType[] = [
     section: 'HR & Skills',
     items: [
       {
-        icon: IoDocumentOutline,
+        icon: 'IoDocumentOutline',
         title: 'Documents',
         color: 'bg-sky-400',
       },
       {
-        icon: MdOutlineCelebration,
+        icon: 'MdOutlineCelebration',
         title: 'Celebrations',
         color: 'bg-orange-400',
       },
       {
         title: 'KnowledgeBase',
-        icon: PiAddressBook,
+        icon: 'PiAddressBook',
         color: 'bg-pink-400',
       },
     ],
@@ -221,7 +209,7 @@ export const sideBarData: SidebarDataType[] = [
         options: [
           {
             title: 'forms',
-            icon: MdOutlineCelebration,
+            icon: 'MdOutlineCelebration',
           },
         ],
       },
@@ -230,7 +218,7 @@ export const sideBarData: SidebarDataType[] = [
         options: [
           {
             title: 'KnowledgeBase',
-            icon: PiAddressBook,
+            icon: 'PiAddressBook',
           },
         ],
       },
@@ -239,7 +227,7 @@ export const sideBarData: SidebarDataType[] = [
         options: [
           {
             title: 'KnowledgeBase',
-            icon: PiAddressBook,
+            icon: 'PiAddressBook',
           },
         ],
       },

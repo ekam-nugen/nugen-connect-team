@@ -6,7 +6,6 @@ import SmallCard from '@/base-components/smallCard';
 import VideoPlayer from '@/base-components/videoPlayer';
 import { CardItem, LeftSideOverviewData } from '../types';
 import { getIconByName } from '@/lib/iconMap';
-import creditLogo from '@/public/images/free-credits.svg';
 import MilestonesSection from './Milestones';
 
 function LeftSideOverview({
@@ -47,7 +46,7 @@ function LeftSideOverview({
             description={card.description}
             descriptionClassName="text-sm"
             buttonLabel={card.buttonLabel}
-            imageUrl={creditLogo}
+            imageUrl={card.imageUrl}
             icon={getIconByName(card?.icon as string)}
             iconClassName={card.iconClassName}
           />
