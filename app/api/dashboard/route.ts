@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   try {
     const apiRes = await fetch(
-      `${baseUrl}/dashboard/json
+      `${baseUrl}/core/dashboard/json
  `,
       {
         method: 'GET',

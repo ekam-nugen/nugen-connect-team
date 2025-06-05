@@ -9,12 +9,9 @@ import { Input } from '@/base-components/input';
 import UserProfileCard from './UserAvatarCard';
 import { LOGO, SEARCH_PLACEHOLDER, UPGRADE, USER_NAME } from '@/lib/en';
 import { getIconByName } from '@/lib/iconMap';
-import { UseLayout } from '@/hooks/useAuth';
-import { ActionItemsType } from './types';
+import { ActionItemsType, TopbarType } from './types';
 
-const Topbar = () => {
-  const { data } = UseLayout();
-  const topbarData = data?.data?.topbar;
+const Topbar = ({ topbarData }: { topbarData: TopbarType }) => {
   const [modalcard, setModalcard] = useState<boolean>(false);
   const modalRef = useRef<HTMLDivElement | null>(null);
 

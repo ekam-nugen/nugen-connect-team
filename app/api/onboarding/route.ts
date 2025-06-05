@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   try {
     const apiRes = await fetch(
-      `${baseUrl}/create/org/json
+      `${baseUrl}/core/create/org/json
  `,
       {
         method: 'GET',
