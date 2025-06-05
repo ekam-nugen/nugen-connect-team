@@ -1,5 +1,3 @@
-import { IconType } from 'react-icons/lib';
-
 export interface SidebarItems {
   icon: string;
   title: string;
@@ -8,7 +6,7 @@ export interface SidebarItems {
 
 export interface AddOptionOptions {
   title: string;
-  icon: IconType;
+  icon: string;
 }
 
 export interface AddOptionGroup {
