@@ -65,3 +65,12 @@ export const ATTENDANCE = 'Attendance';
 
 export const ERROR_IN_PROTECTED_ROUTE = 'Error in Protected Route';
 export const RETRY = 'Retry';
+
+//time clock
+export const ACTIVITY = 'Activity';
+export const VIEW_REQUESTS = 'View requests';
+export const EXPORT = 'Export';
+export const FILTER = 'Filter';
+export const SAMPLE = 'A sample image from Unsplash';
+export const PERMISSION = 'Permissions';
+export const NO_ARCHIVED_CONTENT = 'No archived content';
