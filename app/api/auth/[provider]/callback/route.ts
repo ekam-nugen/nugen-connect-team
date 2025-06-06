@@ -12,7 +12,7 @@ export async function GET(
     const url = new URL(req.url);
     const searchParams = url.searchParams.toString();
 
-    const apiUrl = `${baseUrl}/${provider}/callback?${searchParams}`;
+    const apiUrl = `${baseUrl}/auth/${provider}/callback?${searchParams}`;
     const apiRes = await fetch(apiUrl, {
       method: 'GET',
     });

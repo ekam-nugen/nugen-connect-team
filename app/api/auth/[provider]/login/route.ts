@@ -9,7 +9,7 @@ export async function GET(
   try {
     const { provider } = await context.params;
 
-    const apiRes = await fetch(`${baseUrl}/${provider}/login`, {
+    const apiRes = await fetch(`${baseUrl}/auth/${provider}/login`, {
       method: 'GET',
     });
 
