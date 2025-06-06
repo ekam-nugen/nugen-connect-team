@@ -17,25 +17,19 @@ import DailyActivity from './DailyActivity';
 
 import QuickActionSection from './QuickAction';
 function Dashboard() {
-  const { data, isLoading } = UseDashboard();
+  const { data } = UseDashboard();
   const dashboardData = data?.data?.dashboard;
   return (
     <motion.div {...staggerParent} className="flex flex-col lg:flex-row gap-4">
       <div className="w-full lg:w-2/3">
         <motion.div variants={topToBottomAnimation} className="space-y-6 py-4">
-          <QuickActionSection
-            quickActionsData={dashboardData?.quickActions}
-            loading={isLoading}
-          />
+          <QuickActionSection quickActionsData={dashboardData?.quickActions} />
         </motion.div>
         <motion.div
           variants={topToBottomAnimation}
           className="w-full py-4 space-y-6"
         >
-          <AttendanceSection
-            attendanceData={dashboardData?.attendanceData}
-            loading={isLoading}
-          />
+          <AttendanceSection attendanceData={dashboardData?.attendanceData} />
         </motion.div>
         {dashboardData?.tabledata?.map((data: TableDataItem, index: number) => (
           <EngagementChart

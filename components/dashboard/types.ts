@@ -1,3 +1,7 @@
+import {
+  EngagementChartData,
+  TdailyActivity,
+} from '@/base-components/graphs/types';
 import { IconType } from 'react-icons';
 
 //attendancecard
@@ -92,4 +96,20 @@ export interface CardItem {
   imageUrl?: string;
   icon?: string;
   iconClassName?: string;
+}
+
+export interface DashboardData {
+  attendance: {
+    icons: string;
+    iconDescription: string;
+  }[];
+  attendanceData: AttendanceItem[];
+  cards: CardItem[];
+  checklistItems: ChecklistItem[];
+  dailyActivity: TdailyActivity;
+  engagementData: EngagementChartData[];
+  leftSideOverviewData: LeftSideOverviewData;
+  quickActions: TQuickAction[];
+  tabledata: TableDataItem[];
+  tasks: Task[];
 }
