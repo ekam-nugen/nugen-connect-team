@@ -2,6 +2,10 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import Topbar from '@/components/topbar';
 import Sidebar from '@/components/sidebar';
+import { apiRequest } from '@/lib/serverApi';
+import { endpoints } from '@/lib/endpoints';
+import { SidebarDataType } from '@/components/sidebar/types';
+import { TopbarType } from '@/components/topbar/types';
 
 export default async function ProtectedLayout({
   children,
@@ -15,12 +19,19 @@ export default async function ProtectedLayout({
   if (!provider && !token) {
     redirect('/login');
   }
+  const response: {
+    data: {
+      topbar: TopbarType;
+      sidebar: SidebarDataType[];
+    };
+  } = await apiRequest(endpoints.layout);
+  const { topbar, sidebar } = response?.data ?? {};
 
   return (
     <div className="bg-gray-light flex flex-col">
-      <Topbar />
+      <Topbar topbarData={topbar} />
       <div className=" flex flex-1">
-        <Sidebar />
+        <Sidebar sideBarData={sidebar} />
         <main className="flex-1 p-4 overflow-y-auto w-full h-full">
           {children}
         </main>

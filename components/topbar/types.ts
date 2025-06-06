@@ -25,3 +25,9 @@ export type ActionItemsType = {
   label: string;
   iconClass: string;
 };
+
+export interface TopbarType {
+  ModalCardContent: ModalDataItem[];
+  actionIcons: string[];
+  actionItems: ActionItemsType[];
+}
