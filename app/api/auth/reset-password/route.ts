@@ -8,13 +8,16 @@ export async function POST(req: NextRequest) {
     const url = new URL(req.url);
     const tokenUrl = url.searchParams.get('token');
 
-    const apiRes = await fetch(`${baseUrl}/reset-password?token=${tokenUrl}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    });
+    const apiRes = await fetch(
+      `${baseUrl}/auth/reset-password?token=${tokenUrl}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      }
+    );
 
     const data = await apiRes.json();
     const token = data?.token;

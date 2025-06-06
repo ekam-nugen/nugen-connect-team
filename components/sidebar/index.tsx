@@ -12,12 +12,13 @@ import { Button } from '@/base-components/button';
 import { SidebarDataType, SidebarItems } from './types';
 import { ADD_NEW } from '@/lib/en';
 import { getIconByName } from '@/lib/iconMap';
-import { UseLayout } from '@/hooks/useAuth';
 
-export default function Sidebar() {
+export default function Sidebar({
+  sideBarData,
+}: Readonly<{
+  sideBarData: SidebarDataType[];
+}>) {
   const [collapsed, setCollapsed] = useState<boolean>(false);
-  const { data } = UseLayout();
-  const sideBarData = data?.data?.sidebar;
 
   return (
     <div

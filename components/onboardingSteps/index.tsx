@@ -3,13 +3,15 @@ import { CardModal } from '@/base-components/cardModal';
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import OnboardingSteps from './BoardingMultiSteps';
-import { UseOnboarding } from '@/hooks/useAuth';
-import PageLoader from '@/base-components/loader';
 import { StepperStepsData } from './constants';
+import { OnboardingStepsDataType } from './types';
 
-export default function OnboardingForm() {
+export default function OnboardingForm({
+  formData,
+}: Readonly<{
+  formData: OnboardingStepsDataType;
+}>) {
   const router = useRouter();
-  const { data, isLoading } = UseOnboarding();
   const [role, setRole] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
   const [logo, setLogo] = useState<File | null>(null);
@@ -40,60 +42,56 @@ export default function OnboardingForm() {
 
   return (
     <div className="fixed inset-0 bg-gray-50 bg-opacity-40 backdrop-filter backdrop-blur-sm flex items-center justify-center z-50">
-      {isLoading ? (
-        <PageLoader />
-      ) : (
-        <CardModal
-          title={boardingStep === 1 && 'Customize your app in 1 minute'}
-          lableClass="font-bold leading-7 justify-center text-zinc-dark text-center"
-          buttonLabel={boardingStep === 5 ? 'Access dashboard' : 'Next step'}
-          className="p-5"
-          borderClass="border-none justify-center items-center"
-          goBackArrow={boardingStep > 1}
-          handleArrowClick={handleArrowClick}
-          buttonAlignCenter
-          noTitleBorder
-          showStepper
-          stepData={{
-            steps: StepperStepsData,
-            currentStep: boardingStep - 1,
-          }}
-          isSkipButton={boardingStep === 4}
-          handleSkipClick={() => setBoardingStep(5)}
-          onUpdate={() => {
-            if (boardingStep === 5) handleAccessDashboardClick();
-            else setBoardingStep(prev => prev + 1);
+      <CardModal
+        title={boardingStep === 1 && 'Customize your app in 1 minute'}
+        lableClass="font-bold leading-7 justify-center text-zinc-dark text-center"
+        buttonLabel={boardingStep === 5 ? 'Access dashboard' : 'Next step'}
+        className="p-5"
+        borderClass="border-none justify-center items-center"
+        goBackArrow={boardingStep > 1}
+        handleArrowClick={handleArrowClick}
+        buttonAlignCenter
+        noTitleBorder
+        showStepper
+        stepData={{
+          steps: StepperStepsData,
+          currentStep: boardingStep - 1,
+        }}
+        isSkipButton={boardingStep === 4}
+        handleSkipClick={() => setBoardingStep(5)}
+        onUpdate={() => {
+          if (boardingStep === 5) handleAccessDashboardClick();
+          else setBoardingStep(prev => prev + 1);
 
-            if (boardingStep === 1) setSelectedIndustry(null);
-          }}
-          disabled={
-            (boardingStep === 1 && !(companyName.trim() && role.trim())) ||
-            (boardingStep === 2 && selectedIndustry === null) ||
-            (boardingStep === 3 && selectedFeatures.length === 0) ||
-            (boardingStep === 4 && !logo) ||
-            (boardingStep === 5 ? phone.length < 9 : false)
-          }
-        >
-          <OnboardingSteps
-            boardingStepsData={data?.data}
-            boardingStep={boardingStep}
-            companyName={companyName}
-            setCompanyName={setCompanyName}
-            role={role}
-            setRole={setRole}
-            selectedIndustry={selectedIndustry}
-            setSelectedIndustry={setSelectedIndustry}
-            handleIndustryClick={handleIndustryClick}
-            selectedFeatures={selectedFeatures}
-            handleFeatureClick={handleFeatureClick}
-            logo={logo}
-            setLogo={setLogo}
-            handleFileChange={handleFileChange}
-            phone={phone}
-            handlePhoneChange={handlePhoneChange}
-          />
-        </CardModal>
-      )}
+          if (boardingStep === 1) setSelectedIndustry(null);
+        }}
+        disabled={
+          (boardingStep === 1 && !(companyName.trim() && role.trim())) ||
+          (boardingStep === 2 && selectedIndustry === null) ||
+          (boardingStep === 3 && selectedFeatures.length === 0) ||
+          (boardingStep === 4 && !logo) ||
+          (boardingStep === 5 ? phone.length < 9 : false)
+        }
+      >
+        <OnboardingSteps
+          boardingStepsData={formData}
+          boardingStep={boardingStep}
+          companyName={companyName}
+          setCompanyName={setCompanyName}
+          role={role}
+          setRole={setRole}
+          selectedIndustry={selectedIndustry}
+          setSelectedIndustry={setSelectedIndustry}
+          handleIndustryClick={handleIndustryClick}
+          selectedFeatures={selectedFeatures}
+          handleFeatureClick={handleFeatureClick}
+          logo={logo}
+          setLogo={setLogo}
+          handleFileChange={handleFileChange}
+          phone={phone}
+          handlePhoneChange={handlePhoneChange}
+        />
+      </CardModal>
     </div>
   );
 }
